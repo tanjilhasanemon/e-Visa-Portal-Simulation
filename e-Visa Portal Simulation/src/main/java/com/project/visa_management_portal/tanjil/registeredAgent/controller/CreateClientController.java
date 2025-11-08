@@ -15,10 +15,6 @@ public class CreateClientController
     @javafx.fxml.FXML
     private TextField clientPassportNoTextField;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
     }
@@ -33,5 +29,9 @@ public class CreateClientController
 
     @javafx.fxml.FXML
     public void createClientProfileOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

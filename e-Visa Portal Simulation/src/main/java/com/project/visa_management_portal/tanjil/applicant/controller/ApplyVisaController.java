@@ -24,10 +24,6 @@ public class ApplyVisaController
     @javafx.fxml.FXML
     private TextField nationalityTextField;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleValidateApplication(ActionEvent actionEvent) {
     }
@@ -50,5 +46,9 @@ public class ApplyVisaController
 
     @javafx.fxml.FXML
     public void validateApplicationOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

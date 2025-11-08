@@ -13,10 +13,6 @@ public class PayFeeController
     @javafx.fxml.FXML
     private TextField enterAmountTextField;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
     }
@@ -39,5 +35,9 @@ public class PayFeeController
 
     @javafx.fxml.FXML
     public void validateAmountOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

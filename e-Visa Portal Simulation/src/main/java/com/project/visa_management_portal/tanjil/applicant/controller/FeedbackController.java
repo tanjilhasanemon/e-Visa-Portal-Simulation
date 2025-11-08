@@ -12,10 +12,6 @@ public class FeedbackController
     @javafx.fxml.FXML
     private TextArea messageTextArea;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
     }
@@ -38,5 +34,9 @@ public class FeedbackController
 
     @javafx.fxml.FXML
     public void validateOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

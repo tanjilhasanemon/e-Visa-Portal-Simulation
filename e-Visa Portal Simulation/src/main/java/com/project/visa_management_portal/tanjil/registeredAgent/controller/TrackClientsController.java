@@ -19,10 +19,6 @@ public class TrackClientsController
     @javafx.fxml.FXML
     private TextField filterClientOrStatusTextField;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
     }
@@ -45,5 +41,9 @@ public class TrackClientsController
 
     @javafx.fxml.FXML
     public void viewDetailsOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

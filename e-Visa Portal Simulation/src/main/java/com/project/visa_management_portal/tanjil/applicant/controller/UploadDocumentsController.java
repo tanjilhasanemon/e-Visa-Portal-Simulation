@@ -14,10 +14,6 @@ public class UploadDocumentsController
     @javafx.fxml.FXML
     private TextField photoPathTextField;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
     }
@@ -56,5 +52,9 @@ public class UploadDocumentsController
 
     @javafx.fxml.FXML
     public void validateOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

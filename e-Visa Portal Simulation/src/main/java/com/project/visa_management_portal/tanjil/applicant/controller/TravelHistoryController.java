@@ -20,10 +20,6 @@ public class TravelHistoryController
     @javafx.fxml.FXML
     private TableColumn countryColumnView;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
     }
@@ -46,5 +42,9 @@ public class TravelHistoryController
 
     @javafx.fxml.FXML
     public void saveOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

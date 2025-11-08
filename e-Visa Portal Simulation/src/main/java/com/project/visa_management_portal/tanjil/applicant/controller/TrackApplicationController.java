@@ -16,10 +16,6 @@ public class TrackApplicationController
     @javafx.fxml.FXML
     private TableView trackApplicationsTableView;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
     }
@@ -34,5 +30,9 @@ public class TrackApplicationController
 
     @javafx.fxml.FXML
     public void viewDetailsOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }
