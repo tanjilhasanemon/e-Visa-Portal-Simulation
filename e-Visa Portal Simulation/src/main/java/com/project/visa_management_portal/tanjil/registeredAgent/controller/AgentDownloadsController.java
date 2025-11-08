@@ -16,10 +16,6 @@ public class AgentDownloadsController
     @javafx.fxml.FXML
     private TableColumn typeTableColumn;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
     }
@@ -34,5 +30,9 @@ public class AgentDownloadsController
 
     @javafx.fxml.FXML
     public void backToDashboardOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

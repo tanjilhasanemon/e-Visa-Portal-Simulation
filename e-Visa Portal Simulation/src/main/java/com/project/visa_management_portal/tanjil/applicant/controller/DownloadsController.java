@@ -16,10 +16,6 @@ public class DownloadsController
     @javafx.fxml.FXML
     private TableView filesTableView;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
     }
@@ -34,5 +30,9 @@ public class DownloadsController
 
     @javafx.fxml.FXML
     public void fileDownloadOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

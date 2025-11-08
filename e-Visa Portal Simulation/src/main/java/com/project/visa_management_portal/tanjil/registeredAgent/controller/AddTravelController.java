@@ -18,10 +18,6 @@ public class AddTravelController
     @javafx.fxml.FXML
     private DatePicker toDatePicker;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
     }
@@ -44,5 +40,9 @@ public class AddTravelController
 
     @javafx.fxml.FXML
     public void saveOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

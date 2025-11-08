@@ -9,12 +9,12 @@ public class ViewVisaInfoController
     @javafx.fxml.FXML
     private TextArea visaInformationTextArea;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
 
     @javafx.fxml.FXML
     public void backtomainOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

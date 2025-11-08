@@ -11,10 +11,6 @@ public class SubmitClientApplicationController
     @javafx.fxml.FXML
     private TextField applicationIdTextField;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
     }
@@ -37,5 +33,9 @@ public class SubmitClientApplicationController
 
     @javafx.fxml.FXML
     public void validateOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }

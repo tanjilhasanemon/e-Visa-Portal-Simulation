@@ -17,10 +17,6 @@ public class UploadClientDocumentsController
     private TextField tfFilePath;
 
     @javafx.fxml.FXML
-    public void initialize() {
-    }
-
-    @javafx.fxml.FXML
     public void handleBack(ActionEvent actionEvent) {
     }
 
@@ -34,5 +30,9 @@ public class UploadClientDocumentsController
 
     @javafx.fxml.FXML
     public void handleChooseFile(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 }
