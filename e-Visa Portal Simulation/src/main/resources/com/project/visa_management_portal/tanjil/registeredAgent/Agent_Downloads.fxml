@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.AgentDownloadsController">
+    <children>
+        <Label layoutX="260.0" layoutY="20.0" text="Agent Downloads" textFill="#00a1ec" underline="true">
+            <font><Font name="System Bold" size="26.0" /></font>
+        </Label>
+
+        <TableView fx:id="agentDownloadsTableView" layoutX="20.0" layoutY="70.0" prefHeight="320.0" prefWidth="660.0">
+            <columns>
+                <TableColumn fx:id="documentIdTableColumn" prefWidth="200.0" text="Document ID" />
+                <TableColumn fx:id="nameTableColumn" prefWidth="360.0" text="Name" />
+                <TableColumn fx:id="typeTableColumn" prefWidth="100.0" text="Type" />
+            </columns>
+        </TableView>
+
+        <Button layoutX="20.0" layoutY="410.0" onAction="#downloadOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Download Selected" />
+        <Button layoutX="200.0" layoutY="410.0" onAction="#backToDashboardOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+
+        <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Agent Downloads" />
+    </children>
+</AnchorPane>

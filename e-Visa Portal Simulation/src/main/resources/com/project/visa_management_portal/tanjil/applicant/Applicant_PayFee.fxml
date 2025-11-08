@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #36454F;"
+            xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.project.visa_management_portal.tanjil.applicant.controller.PayFeeController">
+    <Label layoutX="240.0" layoutY="20.0" text="Pay Fee" textFill="#00a1ec" underline="true">
+        <font>
+            <Font name="System Bold" size="26.0"/>
+        </font>
+    </Label>
+
+    <Label layoutX="60.0" layoutY="80.0" text="Required Amount:" textFill="white"/>
+    <TextField fx:id="requiredAmountTextField" editable="false" layoutX="220.0" layoutY="76.0" prefWidth="120.0"/>
+
+    <Label layoutX="60.0" layoutY="130.0" text="Enter Amount:" textFill="white"/>
+    <TextField fx:id="enterAmountTextField" layoutX="220.0" layoutY="126.0" prefWidth="120.0"/>
+
+    <Button layoutX="360.0" layoutY="126.0" onAction="#validateAmountOnAction" prefWidth="100.0"
+            style="-fx-background-color: #00a1ec;" text="Validate"/>
+    <Button layoutX="480.0" layoutY="126.0" onAction="#payAmountOnAction" prefWidth="100.0"
+            style="-fx-background-color: #00a1ec;" text="Pay"/>
+    <Button layoutX="60.0" layoutY="420.0" onAction="#backToDashBoardOnAction" prefWidth="150.0"
+            style="-fx-background-color: #00a1ec;" text="Back to Dashboard"/>
+
+    <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;"
+           text="eVisa Portal | Payments"/>
+</AnchorPane>

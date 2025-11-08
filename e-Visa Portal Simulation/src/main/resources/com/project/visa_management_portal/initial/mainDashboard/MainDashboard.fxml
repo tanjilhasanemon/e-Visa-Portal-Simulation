@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #2B2B2B;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.mainDashboard.MainDashboardController">
+
+    <Label fx:id="titleLabel" layoutX="222.0" layoutY="53.0" text="e-Visa Management Portal" textFill="white">
+        <font>
+            <Font size="28.0" />
+        </font>
+    </Label>
+
+    <Label fx:id="loginAsLabel" layoutX="350.0" layoutY="130.0" text="Login As:" textFill="white">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+
+    <Button layoutX="316.0" layoutY="174.0" onAction="#internalUserLoginOnAction" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #5B9BD5; -fx-text-fill: white; -fx-font-weight: bold;" text="Internal User Login" />
+
+    <Label fx:id="externalLabel" layoutX="345.0" layoutY="240.0" text="External Users:" textFill="white">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Label>
+
+    <Button layoutX="260.0" layoutY="270.0" onAction="#applicantOnAction" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #70AD47; -fx-text-fill: white; -fx-font-weight: bold;" text="Applicant" />
+
+    <Button layoutX="420.0" layoutY="270.0" onAction="#registeredAgentOnAction" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #70AD47; -fx-text-fill: white; -fx-font-weight: bold;" text="Registered Agent" />
+
+    <Button layoutX="320.0" layoutY="350.0" onAction="#signUpOnAction" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: #ED7D31; -fx-text-fill: white; -fx-font-weight: bold;" text="Sign Up" />
+
+    <Button layoutX="320.0" layoutY="400.0" onAction="#forgotPasswordOnAction" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: #A5A5A5; -fx-text-fill: white; -fx-font-weight: bold;" text="Forgot Password" />
+
+    <Label fx:id="messageLabel" layoutX="200.0" layoutY="450.0" prefWidth="400.0" textFill="yellow" />
+
+</AnchorPane>
