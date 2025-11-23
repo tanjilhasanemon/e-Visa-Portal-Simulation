@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.project.visa_management_portal.galib.visaOfficer.SupportReportController" prefWidth="900" prefHeight="600">
+
+    <Label text="Support Messages" layoutX="14" layoutY="14"/>
+    <TableView layoutX="14" layoutY="44" prefWidth="540" prefHeight="520">
+        <columns>
+            <TableColumn text="Msg ID" prefWidth="100"/>
+            <TableColumn text="From" prefWidth="140"/>
+            <TableColumn text="Subject" prefWidth="200"/>
+            <TableColumn text="Date" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <Label text="Subject:" layoutX="570" layoutY="44"/>
+    <TextField layoutX="650" layoutY="40" prefWidth="234"/>
+
+    <Label text="Reply / Note:" layoutX="570" layoutY="80"/>
+    <TextArea layoutX="570" layoutY="110" prefWidth="314" prefHeight="420"/>
+
+    <Button text="Reply" layoutX="650" layoutY="540"/>
+    <Button text="Add Note" layoutX="730" layoutY="540"/>
 
 </AnchorPane>

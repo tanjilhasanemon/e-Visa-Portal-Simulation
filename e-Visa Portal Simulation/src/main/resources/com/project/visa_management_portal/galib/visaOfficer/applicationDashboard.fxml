@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.project.visa_management_portal.galib.visaOfficer.ApplicationDashboardController" prefWidth="900" prefHeight="600">
+
+    <MenuBar layoutX="0" layoutY="0" prefWidth="900">
+        <menus>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="Logout" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+
+    <Label text="Applicant Dashboard" layoutX="14" layoutY="40"/>
+    <Label text="Search:" layoutX="14" layoutY="70"/>
+    <TextField layoutX="70" layoutY="66" prefWidth="240"/>
+
+    <Label text="Filter:" layoutX="330" layoutY="70"/>
+    <ComboBox layoutX="380" layoutY="66" prefWidth="140"/>
+
+    <Button text="Refresh" layoutX="540" layoutY="66"/>
+    <Button text="Open" layoutX="610" layoutY="66"/>
+
+    <TableView layoutX="14" layoutY="100" prefWidth="872" prefHeight="480">
+        <columns>
+            <TableColumn text="ID" prefWidth="80"/>
+            <TableColumn text="Name" prefWidth="220"/>
+            <TableColumn text="Visa Type" prefWidth="160"/>
+            <TableColumn text="Status" prefWidth="120"/>
+            <TableColumn text="Assignee" prefWidth="160"/>
+        </columns>
+    </TableView>
 
 </AnchorPane>

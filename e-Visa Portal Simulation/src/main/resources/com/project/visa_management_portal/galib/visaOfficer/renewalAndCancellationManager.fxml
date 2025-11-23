@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.project.visa_management_portal.galib.visaOfficer.RenewalCancellationController" prefWidth="900" prefHeight="600">
+
+    <Label text="Renewal and Cancellation Requests" layoutX="14" layoutY="14"/>
+    <TableView layoutX="14" layoutY="44" prefWidth="540" prefHeight="520">
+        <columns>
+            <TableColumn text="Req ID" prefWidth="100"/>
+            <TableColumn text="Type" prefWidth="140"/>
+            <TableColumn text="Applicant" prefWidth="140"/>
+            <TableColumn text="Date" prefWidth="120"/>
+            <TableColumn text="Status" prefWidth="80"/>
+        </columns>
+    </TableView>
+
+    <Label text="Request Detail" layoutX="570" layoutY="14"/>
+    <TextArea layoutX="570" layoutY="44" prefWidth="316" prefHeight="440"/>
+
+    <Button text="Approve" layoutX="570" layoutY="500"/>
+    <Button text="Reject" layoutX="660" layoutY="500"/>
+    <TextField promptText="Reference ID" layoutX="740" layoutY="500" prefWidth="140"/>
 
 </AnchorPane>

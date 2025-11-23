@@ -1,46 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.galib.visaOfficer.applicationReviewPannelController">
-    <children>
-        <Label layoutY="573.0" prefHeight="25.0" prefWidth="874.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
-            <font>
-                <Font name="System Bold" size="13.0" />
-            </font>
-        </Label>
-        <Text fill="#36454f" layoutX="297.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
-            <font>
-                <Font name="System Bold" size="13.0" />
-            </font>
-        </Text>
-        <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
-        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
-            <font>
-                <Font name="System Bold" size="13.0" />
-            </font>
-        </Text>
-        <Text fill="#ffddb0" layoutX="278.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
-            <font>
-                <Font name="System Bold" size="24.0" />
-            </font>
-        </Text>
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.project.visa_management_portal.galib.visaOfficer.ApplicationReviewController" prefWidth="900" prefHeight="600">
 
-        
+    <!-- Menu -->
+    <MenuBar layoutX="0" layoutY="0" prefWidth="900">
+        <menus>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="Logout" />
+                </items>
+            </Menu>
+            <Menu text="View">
+                <items>
+                    <MenuItem text="Refresh" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
 
+    <!-- Search & Filters -->
+    <Label text="Search:" layoutX="14" layoutY="40"/>
+    <TextField layoutX="70" layoutY="36" prefWidth="220"/>
 
+    <Label text="Status:" layoutX="310" layoutY="40"/>
+    <ComboBox layoutX="360" layoutY="36" prefWidth="150"/>
 
+    <Button text="Refresh" layoutX="530" layoutY="34"/>
+    <Button text="Open" layoutX="600" layoutY="34"/>
 
+    <!-- Applications Table -->
+    <TableView layoutX="14" layoutY="80" prefWidth="540" prefHeight="500">
+        <columns>
+            <TableColumn text="App ID" prefWidth="80"/>
+            <TableColumn text="Name" prefWidth="160"/>
+            <TableColumn text="Visa Type" prefWidth="120"/>
+            <TableColumn text="Submitted" prefWidth="100"/>
+            <TableColumn text="Status" prefWidth="80"/>
+        </columns>
+    </TableView>
 
-        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
-        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name" underline="true">
-            <font>
-                <Font name="System Bold" size="24.0" />
-            </font>
-        </Text>
-    </children>
+    <!-- Detail Pane -->
+    <Label text="Application Detail" layoutX="570" layoutY="80"/>
+    <TextArea layoutX="570" layoutY="110" prefWidth="314" prefHeight="420" wrapText="true"/>
+
 </AnchorPane>

@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.project.visa_management_portal.galib.visaOfficer.PaymentVerificationController" prefWidth="900" prefHeight="400">
+
+    <Label text="Payment Records" layoutX="14" layoutY="14"/>
+    <TableView layoutX="14" layoutY="40" prefWidth="540" prefHeight="330">
+        <columns>
+            <TableColumn text="Payment ID" prefWidth="120"/>
+            <TableColumn text="Amount" prefWidth="120"/>
+            <TableColumn text="Date" prefWidth="120"/>
+            <TableColumn text="Status" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <Label text="Receipt ID:" layoutX="580" layoutY="60"/>
+    <TextField layoutX="660" layoutY="56" prefWidth="220"/>
+
+    <Button text="View Receipt" layoutX="580" layoutY="100"/>
+    <Button text="Mark Verified" layoutX="680" layoutY="100"/>
+    <Button text="Flag Payment" layoutX="800" layoutY="100"/>
+
+    <Label text="Flag Reason:" layoutX="580" layoutY="150"/>
+    <TextArea layoutX="580" layoutY="170" prefWidth="300" prefHeight="150"/>
 
 </AnchorPane>

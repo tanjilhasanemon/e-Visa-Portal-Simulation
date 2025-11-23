@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.project.visa_management_portal.galib.issuer.generateSimpleEVisaFileController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.project.visa_management_portal.galib.issuer.GenerateEVisaController" prefWidth="700" prefHeight="360">
+
+    <Label text="Generate e-Visa" layoutX="14" layoutY="14"/>
+
+    <Label text="File name:" layoutX="14" layoutY="44"/>
+    <TextField layoutX="90" layoutY="40" prefWidth="420"/>
+
+    <Button text="Generate PDF" layoutX="520" layoutY="38"/>
+    <Button text="Save QR (PNG)" layoutX="620" layoutY="38"/>
+
+    <Label text="Preview / Output" layoutX="14" layoutY="80"/>
+    <TextArea layoutX="14" layoutY="110" prefWidth="660" prefHeight="200"/>
 
 </AnchorPane>

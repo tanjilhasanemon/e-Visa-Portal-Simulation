@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.project.visa_management_portal.galib.issuer.viewissuedVisaHistoryController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.project.visa_management_portal.galib.issuer.ViewIssuedHistoryController" prefWidth="900" prefHeight="600">
+
+    <Label text="Issued Visa History" layoutX="14" layoutY="14"/>
+
+    <Button text="Load CSV" layoutX="760" layoutY="10"/>
+    <TextField layoutX="580" layoutY="10" prefWidth="160" promptText="Search Visa ID"/>
+
+    <TableView layoutX="14" layoutY="44" prefWidth="872" prefHeight="540">
+        <columns>
+            <TableColumn text="Visa ID" prefWidth="160"/>
+            <TableColumn text="App ID" prefWidth="160"/>
+            <TableColumn text="Issued At" prefWidth="200"/>
+            <TableColumn text="Status" prefWidth="120"/>
+            <TableColumn text="PDF Path" prefWidth="200"/>
+        </columns>
+    </TableView>
 
 </AnchorPane>
