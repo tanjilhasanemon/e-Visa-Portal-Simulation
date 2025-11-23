@@ -21,10 +21,11 @@
         <Label layoutX="40.0" layoutY="180.0" text="Contact:" textFill="white" />
         <TextField fx:id="clientContactTextField" layoutX="160.0" layoutY="176.0" prefWidth="520.0" />
 
-        <Button layoutX="160.0" layoutY="230.0" onAction="#createClientProfileOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Create" />
-        <Button layoutX="320.0" layoutY="230.0" onAction="#backToDashboardOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+        <Button layoutX="340.0" layoutY="243.0" onAction="#createClientProfileOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Create" />
+        <Button layoutX="520.0" layoutY="243.0" onAction="#backToDashboardOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
 
         <Label fx:id="lblClientMsg" layoutX="40.0" layoutY="270.0" textFill="red" />
         <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Agent - Client" />
+      <Button layoutX="160.0" layoutY="243.0" onAction="#validateClientProfileOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Validate" />
     </children>
 </AnchorPane>

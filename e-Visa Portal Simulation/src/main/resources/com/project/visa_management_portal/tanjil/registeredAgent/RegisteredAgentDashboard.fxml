@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="520.0" prefWidth="720.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.applicant.controller.AgentDashboardController">
+<AnchorPane prefHeight="520.0" prefWidth="720.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.AgentDashboardController">
 
     <Label layoutX="200.0" layoutY="20.0" style="-fx-text-fill: white; -fx-font-size: 22px;" text="Registered Agent Dashboard" />
 
@@ -12,16 +12,15 @@
     <Button layoutX="390.0" layoutY="90.0" onAction="#applyVisaForClientOnAction" prefHeight="40.0" prefWidth="220.0" text="Apply Visa for Client" />
 
     <Button layoutX="90.0" layoutY="150.0" onAction="#viewClientListOnAction" prefHeight="40.0" prefWidth="220.0" text="View Client List" />
-    <Button layoutX="390.0" layoutY="150.0" onAction="#updateClientInfoOnAction" prefHeight="40.0" prefWidth="220.0" text="Update Client Info" />
 
     <Button layoutX="90.0" layoutY="210.0" onAction="#uploadClientDocumentsOnAction" prefHeight="40.0" prefWidth="220.0" text="Upload Client Documents" />
-    <Button layoutX="390.0" layoutY="210.0" onAction="#clientTravelHistoryOnAction" prefHeight="40.0" prefWidth="220.0" text="Add / View Client Travel History" />
+    <Button layoutX="390.0" layoutY="150.0" onAction="#clientTravelHistoryOnAction" prefHeight="40.0" prefWidth="220.0" text="Add / View Client Travel History" />
 
     <Button layoutX="90.0" layoutY="270.0" onAction="#checkApllicationStatusOnAction" prefHeight="40.0" prefWidth="220.0" text="Check Application Status" />
-    <Button layoutX="390.0" layoutY="270.0" onAction="#manageClientPaymentsOnAction" prefHeight="40.0" prefWidth="220.0" text="Manage Client Payments" />
+    <Button layoutX="390.0" layoutY="210.0" onAction="#manageClientPaymentsOnAction" prefHeight="40.0" prefWidth="220.0" text="Manage Client Payments" />
 
     <Button layoutX="90.0" layoutY="330.0" onAction="#downloadsOnAction" prefHeight="40.0" prefWidth="220.0" text="Downloads (Receipts / e-Visa)" />
-    <Button layoutX="390.0" layoutY="330.0" onAction="#contactSupportOnAction" prefHeight="40.0" prefWidth="220.0" text="Contact Support" />
+    <Button layoutX="390.0" layoutY="270.0" onAction="#contactSupportOnAction" prefHeight="40.0" prefWidth="220.0" text="Contact Support" />
 
     <Button layoutX="255.0" layoutY="400.0" onAction="#signOutOnAction" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" text="Sign Out" />
 

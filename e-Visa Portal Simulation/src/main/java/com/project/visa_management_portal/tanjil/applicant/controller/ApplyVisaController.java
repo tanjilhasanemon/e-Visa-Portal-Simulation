@@ -44,11 +44,15 @@ public class ApplyVisaController
     public void submitOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void validateApplicationOnAction(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void validateOnAction(ActionEvent actionEvent) {
     }
 }

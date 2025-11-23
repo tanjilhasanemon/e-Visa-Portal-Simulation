@@ -1,7 +1,10 @@
 package com.project.visa_management_portal.tanjil.applicant.controller;
 
+import com.project.visa_management_portal.SceneSwitch;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
+
+import java.io.IOException;
 
 public class ApplicantDashboardController
 {
@@ -13,7 +16,8 @@ public class ApplicantDashboardController
     }
 
     @Deprecated
-    public void onHelpFeedback(ActionEvent actionEvent) {
+    public void onHelpFeedback(ActionEvent actionEvent) throws IOException {
+        SceneSwitch.switchTo("/com/project/visa_management_portal/tanjil/applicant/Applicant_Feedback.fxml",actionEvent);
     }
 
     @Deprecated

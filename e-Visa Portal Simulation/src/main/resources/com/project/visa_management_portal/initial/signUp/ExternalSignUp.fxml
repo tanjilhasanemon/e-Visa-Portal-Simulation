@@ -7,9 +7,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2C3E50;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.project.visa_management_portal.initial.signUp.ExternalSignUpController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.signUp.ExternalSignUpController">
 
-    <Label layoutX="230.0" layoutY="40.0" style="-fx-text-fill: white; -fx-font-size: 18px;" text="External User Sign Up" />
+    <Label layoutX="204.0" layoutY="41.0" style="-fx-text-fill: white; -fx-font-size: 18px;" text="External User Sign Up" />
 
     <ComboBox fx:id="userTypeComboBox" layoutX="200.0" layoutY="90.0" prefWidth="200.0" promptText="Select User Type (Applicant/Agent)" />
     <TextField fx:id="fullNameTextField" layoutX="200.0" layoutY="140.0" prefWidth="200.0" promptText="Full Name" />

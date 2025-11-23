@@ -19,6 +19,8 @@ public class TravelHistoryController
     private DatePicker toDatePicker;
     @javafx.fxml.FXML
     private TableColumn countryColumnView;
+    @javafx.fxml.FXML
+    private TextField applicantIDTextFIels;
 
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {

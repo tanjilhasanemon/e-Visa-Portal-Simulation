@@ -44,11 +44,10 @@
     </RadioButton>
     <RadioButton fx:id="femaleRadioButton" layoutX="270.0" layoutY="378.0" text="Female" textFill="white" toggleGroup="$genderGroup" />
 
-    <Button layoutX="200.0" layoutY="430.0" onAction="#validateApplicationOnAction" prefHeight="37.0" prefWidth="150.0" style="-fx-background-color: #00a1ec;" text="Validate Application" />
+    <Button layoutX="347.0" layoutY="430.0" onAction="#submitOnAction" prefHeight="37.0" prefWidth="130.0" style="-fx-background-color: #00a1ec;" text="Submit" />
 
-    <Button layoutX="370.0" layoutY="430.0" onAction="#submitOnAction" prefHeight="37.0" prefWidth="130.0" style="-fx-background-color: #00a1ec;" text="Submit" />
-
-    <Button layoutX="520.0" layoutY="430.0" onAction="#backToDashboardOnAction" prefHeight="37.0" prefWidth="130.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+    <Button layoutX="517.0" layoutY="430.0" onAction="#backToDashboardOnAction" prefHeight="37.0" prefWidth="130.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
 
     <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Applicant Module" />
+   <Button layoutX="175.0" layoutY="430.0" onAction="#validateOnAction" prefHeight="37.0" prefWidth="130.0" style="-fx-background-color: #00a1ec;" text="Validate" />
 </AnchorPane>

@@ -7,11 +7,11 @@ import javafx.scene.control.TextField;
 public class PayFeeController
 {
     @javafx.fxml.FXML
-    private Label lblPayMsg;
-    @javafx.fxml.FXML
     private TextField requiredAmountTextField;
     @javafx.fxml.FXML
     private TextField enterAmountTextField;
+    @javafx.fxml.FXML
+    private TextField applicationIDTextField;
 
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
@@ -39,5 +39,9 @@ public class PayFeeController
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void loadInfoOnAction(ActionEvent actionEvent) {
     }
 }
