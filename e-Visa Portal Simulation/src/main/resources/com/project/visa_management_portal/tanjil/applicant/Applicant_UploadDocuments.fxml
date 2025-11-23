@@ -14,18 +14,20 @@
         </font>
     </Label>
 
-    <Label layoutX="40.0" layoutY="80.0" text="Passport File:" textFill="white" />
-    <TextField fx:id="passportPathTextField" layoutX="180.0" layoutY="76.0" prefWidth="380.0" />
-    <Button layoutX="570.0" layoutY="76.0" onAction="#choosePassportPathOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Choose" />
+    <Label layoutX="35.0" layoutY="179.0" text="Passport File:" textFill="white" />
+    <TextField fx:id="passportPathTextField" layoutX="175.0" layoutY="175.0" prefWidth="380.0" />
+    <Button layoutX="565.0" layoutY="175.0" onAction="#choosePassportPathOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Choose" />
 
-    <Label layoutX="40.0" layoutY="130.0" text="Photo File:" textFill="white" />
-    <TextField fx:id="photoPathTextField" layoutX="180.0" layoutY="126.0" prefWidth="380.0" />
-    <Button layoutX="570.0" layoutY="126.0" onAction="#choosePhotoPathOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Choose" />
+    <Label layoutX="35.0" layoutY="229.0" text="Photo File:" textFill="white" />
+    <TextField fx:id="photoPathTextField" layoutX="175.0" layoutY="225.0" prefWidth="380.0" />
+    <Button layoutX="565.0" layoutY="225.0" onAction="#choosePhotoPathOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Choose" />
 
-    <CheckBox fx:id="confirmCheckBox" layoutX="40.0" layoutY="180.0" text="I confirm files are correct" textFill="white" />
+    <CheckBox fx:id="confirmCheckBox" layoutX="35.0" layoutY="279.0" text="I confirm files are correct" textFill="white" />
 
-    <Button layoutX="40.0" layoutY="220.0" onAction="#validateOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Validate" />
-    <Button layoutX="180.0" layoutY="220.0" onAction="#attachOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Attach" />
-    <Button layoutX="320.0" layoutY="220.0" onAction="#backToDashboardOnAction" prefWidth="180.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+    <Button layoutX="35.0" layoutY="319.0" onAction="#validateOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Validate" />
+    <Button layoutX="175.0" layoutY="319.0" onAction="#attachOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Attach" />
+    <Button layoutX="315.0" layoutY="319.0" onAction="#backToDashboardOnAction" prefWidth="180.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
     <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Document Upload" />
+   <Label layoutX="35.0" layoutY="97.0" text="Applicant ID:" textFill="white" />
+   <TextField fx:id="applicantIDTextField" layoutX="175.0" layoutY="93.0" />
 </AnchorPane>

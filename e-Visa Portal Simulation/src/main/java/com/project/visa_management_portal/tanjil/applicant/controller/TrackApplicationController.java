@@ -3,6 +3,7 @@ package com.project.visa_management_portal.tanjil.applicant.controller;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 public class TrackApplicationController
 {
@@ -15,6 +16,8 @@ public class TrackApplicationController
     private TableColumn applicationIdTableColumn;
     @javafx.fxml.FXML
     private TableView trackApplicationsTableView;
+    @javafx.fxml.FXML
+    private TextField applicantIDTextFIeld;
 
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
@@ -34,5 +37,9 @@ public class TrackApplicationController
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void loadOnAction(ActionEvent actionEvent) {
     }
 }

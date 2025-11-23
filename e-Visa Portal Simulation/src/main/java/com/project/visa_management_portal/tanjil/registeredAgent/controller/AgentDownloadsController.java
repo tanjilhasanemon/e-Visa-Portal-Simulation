@@ -3,6 +3,7 @@ package com.project.visa_management_portal.tanjil.registeredAgent.controller;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 public class AgentDownloadsController
 {
@@ -15,6 +16,8 @@ public class AgentDownloadsController
     private TableColumn nameTableColumn;
     @javafx.fxml.FXML
     private TableColumn typeTableColumn;
+    @javafx.fxml.FXML
+    private TextField applicationIDTextField;
 
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
@@ -34,5 +37,9 @@ public class AgentDownloadsController
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void loadOnAction(ActionEvent actionEvent) {
     }
 }

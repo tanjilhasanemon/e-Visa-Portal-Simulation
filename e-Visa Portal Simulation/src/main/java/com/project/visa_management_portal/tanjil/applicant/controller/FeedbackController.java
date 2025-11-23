@@ -11,6 +11,8 @@ public class FeedbackController
     private TextField subjectTextField;
     @javafx.fxml.FXML
     private TextArea messageTextArea;
+    @javafx.fxml.FXML
+    private TextField applicantIDTextField;
 
     @Deprecated
     public void handleBack(ActionEvent actionEvent) {
@@ -32,7 +34,7 @@ public class FeedbackController
     public void submitOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void validateOnAction(ActionEvent actionEvent) {
     }
 

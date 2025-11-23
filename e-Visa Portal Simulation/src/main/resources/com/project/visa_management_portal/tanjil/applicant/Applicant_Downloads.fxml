@@ -4,26 +4,29 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.applicant.controller.DownloadsController">
+<AnchorPane prefHeight="596.0" prefWidth="700.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.applicant.controller.DownloadsController">
     <Label layoutX="260.0" layoutY="20.0" text="Downloads" textFill="#00a1ec" underline="true">
         <font>
             <Font name="System Bold" size="26.0" />
         </font>
     </Label>
 
-    <TableView fx:id="filesTableView" layoutX="20.0" layoutY="70.0" prefHeight="320.0" prefWidth="660.0">
+    <TableView fx:id="filesTableView" layoutX="19.0" layoutY="177.0" prefHeight="320.0" prefWidth="660.0">
         <columns>
             <TableColumn fx:id="fileNameTableColumn" prefWidth="360.0" text="File Name" />
-            <TableColumn fx:id="typeTableColumn" prefWidth="160.0" text="Type" />
-            <TableColumn fx:id="downloadTableColumn" prefWidth="140.0" text="Download" />
+            <TableColumn fx:id="typeTableColumn" prefWidth="299.20001220703125" text="Type" />
         </columns>
     </TableView>
 
-    <Button layoutX="20.0" layoutY="410.0" onAction="#fileDownloadOnAction" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Download Selected" />
+    <Button layoutX="19.0" layoutY="517.0" onAction="#fileDownloadOnAction" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Download " />
 
-    <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Downloads" />
-    <Button layoutX="205.0" layoutY="410.0" onAction="#backToDashboardOnAction" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+    <Label alignment="CENTER" layoutX="-1.0" layoutY="576.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Downloads" />
+    <Button layoutX="204.0" layoutY="517.0" onAction="#backToDashboardOnAction" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+   <TextField fx:id="applicantIDTextField" layoutX="204.0" layoutY="87.0" />
+   <Label layoutX="99.0" layoutY="91.0" text="Applicant ID:" textFill="WHITE" />
+   <Button layoutX="391.0" layoutY="84.0" onAction="#loadOnAction" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Load" />
 </AnchorPane>

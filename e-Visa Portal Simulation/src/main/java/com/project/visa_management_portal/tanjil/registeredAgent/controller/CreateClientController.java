@@ -34,4 +34,8 @@ public class CreateClientController
     @javafx.fxml.FXML
     public void initialize() {
     }
+
+    @javafx.fxml.FXML
+    public void validateClientProfileOnAction(ActionEvent actionEvent) {
+    }
 }
