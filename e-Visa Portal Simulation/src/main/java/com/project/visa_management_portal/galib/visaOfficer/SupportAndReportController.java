@@ -1,8 +1,7 @@
 package com.project.visa_management_portal.galib.visaOfficer;
 
-public class RenewalCancellationController
+public class SupportAndReportController
 {
-
     @javafx.fxml.FXML
     public void initialize() {
     }}

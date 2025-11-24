@@ -22,6 +22,7 @@ public class InternalLoginController
 
     @javafx.fxml.FXML
     public void initialize() {
+        userTypeComboBox.getItems().addAll("Visa Officer", "Issuer", "Operation Manager", "Policy Manager", "Finance Clerk", "Support Agent");
     }
 
     @javafx.fxml.FXML

@@ -1,6 +1,6 @@
 package com.project.visa_management_portal.galib.issuer;
 
-public class markApplicationAsIssuedController
+public class ViewIssuedVisaHistoryController
 {
     @javafx.fxml.FXML
     public void initialize() {
