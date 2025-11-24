@@ -1,21 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.project.visa_management_portal.galib.visaOfficer.VisaDecisionController" prefWidth="700" prefHeight="400">
+<AnchorPane prefHeight="400" prefWidth="700" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.galib.visaOfficer.VisaDecisionController">
 
-    <Label text="Decision for Application" layoutX="14" layoutY="14"/>
-    <Label text="Decision:" layoutX="14" layoutY="44"/>
-    <RadioButton text="Approve" layoutX="80" layoutY="44"/>
-    <RadioButton text="Reject" layoutX="160" layoutY="44"/>
-    <RadioButton text="Recommend Approve" layoutX="230" layoutY="44"/>
+    <children>
+        <Label layoutY="573.0" prefHeight="25.0" prefWidth="874.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Text fill="#36454f" layoutX="297.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
+        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Text fill="#ffddb0" layoutX="278.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Text>
+    <Label layoutX="399.0" layoutY="65.0" text="Decision:" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+    <RadioButton layoutX="111.0" layoutY="120.0" text="Approve" textFill="WHITE" />
+    <RadioButton layoutX="111.0" layoutY="157.0" text="Reject" textFill="WHITE" />
+    <RadioButton layoutX="110.0" layoutY="197.0" prefWidth="194.0" text="Recommend Approve" textFill="WHITE" />
+    <TextArea layoutX="110.0" layoutY="236.0" prefHeight="183.0" prefWidth="660" promptText="Reason / Notes:" />
 
-    <Label text="Reason / Notes:" layoutX="14" layoutY="80"/>
-    <TextArea layoutX="14" layoutY="100" prefWidth="660" prefHeight="220"/>
+    <Button layoutX="279.0" layoutY="478.0" prefHeight="26.0" prefWidth="322.0" text="Save Decision" />
+    <Button layoutX="110.0" layoutY="429.0" prefHeight="26.0" prefWidth="660.0" text="Generate e-Visa (if allowed)" />
 
-    <Button text="Save Decision" layoutX="580" layoutY="330"/>
-    <Button text="Generate e-Visa (if allowed)" layoutX="460" layoutY="330"/>
+        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
+        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visa Dicision" underline="true">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Text>
+    </children>
 
 </AnchorPane>
