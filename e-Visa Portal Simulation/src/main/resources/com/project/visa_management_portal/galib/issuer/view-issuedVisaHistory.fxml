@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.project.visa_management_portal.galib.issuer.ViewIssuedHistoryController" prefWidth="900" prefHeight="600">
+            fx:controller="com.project.visa_management_portal.galib.issuer.ViewIssuedVisaHistoryController" prefWidth="900" prefHeight="600">
 
     <Label text="Issued Visa History" layoutX="14" layoutY="14"/>
 

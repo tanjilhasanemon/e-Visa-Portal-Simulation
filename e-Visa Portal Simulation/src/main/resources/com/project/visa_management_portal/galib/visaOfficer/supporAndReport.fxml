@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.project.visa_management_portal.galib.visaOfficer.SupportReportController" prefWidth="900" prefHeight="600">
+            fx:controller="com.project.visa_management_portal.galib.visaOfficer.SupportAndReportController" prefWidth="900" prefHeight="600">
 
     <Label text="Support Messages" layoutX="14" layoutY="14"/>
     <TableView layoutX="14" layoutY="44" prefWidth="540" prefHeight="520">
