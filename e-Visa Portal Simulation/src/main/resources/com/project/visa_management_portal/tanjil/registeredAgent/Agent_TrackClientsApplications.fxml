@@ -14,7 +14,7 @@
             <font><Font name="System Bold" size="26.0" /></font>
         </Label>
 
-        <TextField fx:id="filterClientOrStatusTextField" layoutX="20.0" layoutY="70.0" prefWidth="500.0" promptText="Filter by client or status" />
+        <TextField fx:id="filterClientOrStatusTextField" layoutX="20.0" layoutY="70.0" prefWidth="500.0" promptText="Filter by Applicant ID" />
         <Button layoutX="540.0" layoutY="70.0" onAction="#applyFilterOnAction" prefWidth="140.0" style="-fx-background-color: #00a1ec;" text="Apply Filter" />
 
         <TableView fx:id="clientApplicantionsTableView" layoutX="20.0" layoutY="110.0" prefHeight="300.0" prefWidth="660.0">
@@ -24,9 +24,7 @@
                 <TableColumn fx:id="statusTableColumn" prefWidth="220.0" text="Status" />
             </columns>
         </TableView>
-
-        <Button layoutX="20.0" layoutY="420.0" onAction="#viewDetailsOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="View Details" />
-        <Button layoutX="200.0" layoutY="420.0" onAction="#backToDashboardOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+        <Button layoutX="20.0" layoutY="424.0" onAction="#backToDashboardOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
 
         <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Agent - Track" />
     </children>

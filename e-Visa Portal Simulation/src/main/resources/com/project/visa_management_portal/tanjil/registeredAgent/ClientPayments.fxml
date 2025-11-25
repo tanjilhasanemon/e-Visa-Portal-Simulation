@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="441.0" prefWidth="675.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.ClientPaymentsController">
+
+
+    <Label layoutX="20.0" layoutY="14.0" style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;" text="Client Payments">
+        <font>
+            <Font size="22.0" />
+        </font>
+    </Label>
+
+    <Label layoutX="20.0" layoutY="70.0" text="Search (client or application):" textFill="white" />
+    <TextField fx:id="clientSearchTextField" layoutX="220.0" layoutY="66.0" prefHeight="26.0" prefWidth="222.0" promptText="Type client name or application ID" />
+    <Button fx:id="searchBtn" layoutX="490.0" layoutY="66.0" onAction="#searchOnAction" prefWidth="80.0" text="Search" />
+
+    <Label layoutX="69.0" layoutY="244.0" text="Enter Amount:" textFill="white" />
+    <TextField fx:id="amountTextField" layoutX="219.0" layoutY="240.0" prefWidth="140.0" promptText="e.g., 100.00" />
+
+    <Button fx:id="payBtn" layoutX="416.0" layoutY="240.0" onAction="#payOnAction" prefWidth="100.0" style="-fx-background-color: #70AD47; -fx-text-fill: white;" text="Pay" />
+
+    <!-- Back / Sign Out -->
+    <Button fx:id="backBtn" layoutX="219.0" layoutY="325.0" onAction="#backToDashBoardOnAction" prefWidth="160.0" text="Back to Dashboard" />
+   <Label layoutX="80.0" layoutY="145.0" text="Payable Amount :" textFill="white" />
+   <Label layoutX="219.0" layoutY="145.0" prefHeight="26.0" prefWidth="167.0" text="Payable Amount" textFill="WHITE" />
+
+</AnchorPane>

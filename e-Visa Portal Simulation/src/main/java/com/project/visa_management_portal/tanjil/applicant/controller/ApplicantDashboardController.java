@@ -1,8 +1,12 @@
 package com.project.visa_management_portal.tanjil.applicant.controller;
 
-import com.project.visa_management_portal.SceneSwitch;
+
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -15,76 +19,93 @@ public class ApplicantDashboardController
     public void initialize() {
     }
 
-    @Deprecated
-    public void onHelpFeedback(ActionEvent actionEvent) throws IOException {
-        SceneSwitch.switchTo("/com/project/visa_management_portal/tanjil/applicant/Applicant_Feedback.fxml",actionEvent);
-    }
-
-    @Deprecated
-    public void onUploadDocuments(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void onDownloads(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void onViewVisaInfo(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void onTrackApplication(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void onApplyForVisa(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void onTravelHistory(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void onSignOut(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void onPayFee(ActionEvent actionEvent) {
+    @javafx.fxml.FXML
+    public void uploadDocumentsOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_UploadDocuments.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Upload Document.");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void uploadDocumentsOnAction(ActionEvent actionEvent) {
+    public void helpAndFeedbackOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Feedback.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Help & Feedback");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void helpAndFeedbackOnAction(ActionEvent actionEvent) {
+    public void downloadsOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Downloads.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Download Receipts");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void downloadsOnAction(ActionEvent actionEvent) {
+    public void payFeeOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_PayFee.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Payment");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void payFeeOnAction(ActionEvent actionEvent) {
+    public void travelHistoryOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_TravelHistory.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Travel History");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void travelHistoryOnAction(ActionEvent actionEvent) {
+    public void viewVisaInfoOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_ViewVisaInfo.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Visa Info!");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void viewVisaInfoOnAction(ActionEvent actionEvent) {
+    public void trackApplicationOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_TrackApplication.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Application Track.");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void trackApplicationOnAction(ActionEvent actionEvent) {
+    public void applyForVIsaOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_ApplyVisa.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Application For Visa!");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void applyForVIsaOnAction(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void signOutOnAction(ActionEvent actionEvent) {
+    public void signOutOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/initial/mainDashboard/MainDashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Main Dashboard");
+        stage.setScene(scene);
+        stage.show();
     }
 }
