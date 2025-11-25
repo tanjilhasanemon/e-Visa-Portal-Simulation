@@ -1,30 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.project.visa_management_portal.galib.issuer.ViewReadyForIssuingController" prefWidth="900" prefHeight="600">
+<AnchorPane prefHeight="600" prefWidth="900" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.galib.issuer.ViewReadyForIssuingController">
 
-    <Label text="Ready for Issuance" layoutX="14" layoutY="14"/>
+    <children>
+        <Label layoutY="573.0" prefHeight="26.0" prefWidth="900.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Text fill="#36454f" layoutX="297.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
+        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Text fill="#ffddb0" layoutX="278.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Text>
 
-    <Label text="Search:" layoutX="14" layoutY="44"/>
-    <TextField layoutX="70" layoutY="40" prefWidth="240"/>
+    <Label layoutX="14" layoutY="14" />
+    <TextField layoutX="30.0" layoutY="102.0" prefHeight="26.0" prefWidth="206.0" promptText="Search" />
+    <ComboBox layoutX="330.0" layoutY="102.0" prefWidth="160" promptText="Visa Type" />
 
-    <Label text="Visa Type:" layoutX="330" layoutY="44"/>
-    <ComboBox layoutX="400" layoutY="40" prefWidth="160"/>
+    <Button layoutX="504.0" layoutY="102.0" prefHeight="26.0" prefWidth="160.0" text="Filter" />
+    <Button layoutX="761.0" layoutY="101.0" prefHeight="26.0" prefWidth="110.0" text="Open" />
 
-    <Button text="Filter" layoutX="580" layoutY="38"/>
-    <Button text="Open" layoutX="650" layoutY="38"/>
-
-    <TableView layoutX="14" layoutY="80" prefWidth="872" prefHeight="500">
+    <TableView layoutX="30.0" layoutY="146.0" prefHeight="368.0" prefWidth="842.0">
         <columns>
-            <TableColumn text="App ID" prefWidth="120"/>
-            <TableColumn text="Name" prefWidth="240"/>
-            <TableColumn text="Visa Type" prefWidth="200"/>
-            <TableColumn text="Decision By" prefWidth="160"/>
-            <TableColumn text="Decision Date" prefWidth="120"/>
+            <TableColumn prefWidth="120" text="App ID" />
+            <TableColumn prefWidth="240" text="Name" />
+            <TableColumn prefWidth="200" text="Visa Type" />
+            <TableColumn prefWidth="160" text="Decision By" />
+            <TableColumn prefWidth="120" text="Decision Date" />
         </columns>
     </TableView>
+        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
+        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ready For Issuing" underline="true">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Text>
+    </children>
 
 </AnchorPane>
