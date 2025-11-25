@@ -1,8 +1,7 @@
 module com.project.visa_management_portal {
     requires javafx.controls;
     requires javafx.fxml;
-
-
+    requires javafx.graphics;
 
 
     opens com.project.visa_management_portal to javafx.fxml;
@@ -28,8 +27,8 @@ module com.project.visa_management_portal {
     opens com.project.visa_management_portal.tanjil.applicant.controller to javafx.fxml;
     exports com.project.visa_management_portal.tanjil.applicant.controller;
 
-
-
+    opens com.project.visa_management_portal.tanjil.registeredAgent.controller to javafx.fxml;
+    exports com.project.visa_management_portal.tanjil.registeredAgent.controller;
 
 
 

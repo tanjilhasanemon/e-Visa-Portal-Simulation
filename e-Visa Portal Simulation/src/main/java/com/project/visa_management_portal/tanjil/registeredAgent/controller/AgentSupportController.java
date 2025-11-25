@@ -4,30 +4,24 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class TrackClientsController
+public class AgentSupportController
 {
+    @javafx.fxml.FXML
+    private Label lblSupportMsg;
+    @javafx.fxml.FXML
+    private TextField clientIdTextField;
+    @javafx.fxml.FXML
+    private TextField subjectTextField;
+    @javafx.fxml.FXML
+    private TextArea messageTextArea;
 
-    @javafx.fxml.FXML
-    private TableColumn statusTableColumn;
-    @javafx.fxml.FXML
-    private TableView clientApplicantionsTableView;
-    @javafx.fxml.FXML
-    private TableColumn clientTableColumn;
-    @javafx.fxml.FXML
-    private TableColumn applicationIdTableColumn;
-    @javafx.fxml.FXML
-    private TextField filterClientOrStatusTextField;
-
-    @javafx.fxml.FXML
-    public void applyFilterOnAction(ActionEvent actionEvent) {
-    }
 
     @javafx.fxml.FXML
     public void backToDashboardOnAction(ActionEvent actionEvent) throws IOException {
@@ -39,8 +33,8 @@ public class TrackClientsController
         stage.show();
     }
 
-    @Deprecated
-    public void viewDetailsOnAction(ActionEvent actionEvent) {
+    @javafx.fxml.FXML
+    public void submitOnAction(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

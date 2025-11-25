@@ -1,9 +1,15 @@
 package com.project.visa_management_portal.tanjil.registeredAgent.controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class PrepareSubmitController
 {
@@ -20,20 +26,14 @@ public class PrepareSubmitController
     @javafx.fxml.FXML
     private TextField nationalityTextField;
 
-    @Deprecated
-    public void handleBack(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void handleSubmit(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void handleValidate(ActionEvent actionEvent) {
-    }
-
     @javafx.fxml.FXML
-    public void backToDashboardOnAction(ActionEvent actionEvent) {
+    public void backToDashboardOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/RegisteredAgentDashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Registered Agent Dashboard");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
