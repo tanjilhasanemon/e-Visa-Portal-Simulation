@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.operationManager.controller.OperationManagerDashboardController">
+    <children>
+        <Label layoutY="573.0" prefHeight="25.0" prefWidth="874.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Text fill="#36454f" layoutX="297.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
+        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+
+
+        <MenuBar fx:id="menuBar" layoutX="15.333333333333334" layoutY="59.0" prefHeight="25.0" prefWidth="841.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="59.0">
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <MenuItem fx:id="miExit" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu text="View">
+                    <items>
+                        <MenuItem fx:id="miRefresh" text="Refresh" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+        <Label fx:id="lblTitle" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="36.0" />
+
+        <Button fx:id="btnNewUnassigned" layoutX="17.0" layoutY="130.0" text="New/Unassigned" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="130.0" />
+        <Button fx:id="btnDecisions" layoutX="141.0" layoutY="130.0" text="Decisions" AnchorPane.leftAnchor="141.0" AnchorPane.topAnchor="130.0" />
+        <Button fx:id="btnBacklog" layoutX="261.0" layoutY="130.0" text="Backlog" AnchorPane.leftAnchor="261.0" AnchorPane.topAnchor="130.0" />
+        <Button fx:id="btnTargets" layoutX="361.0" layoutY="130.0" text="Targets" AnchorPane.leftAnchor="361.0" AnchorPane.topAnchor="130.0" />
+        <Button fx:id="btnReports" layoutX="461.0" layoutY="130.0" text="Reports" AnchorPane.leftAnchor="461.0" AnchorPane.topAnchor="130.0" />
+        <Button fx:id="btnNotices" layoutX="561.0" layoutY="130.0" text="Notices" AnchorPane.leftAnchor="561.0" AnchorPane.topAnchor="130.0" />
+
+        <ComboBox fx:id="cmbQuickFilter" layoutX="17.0" layoutY="170.0" prefWidth="200.0" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="170.0" />
+        <TextField fx:id="txtSearch" layoutX="231.0" layoutY="170.0" prefWidth="220.0" promptText="Search..." AnchorPane.leftAnchor="231.0" AnchorPane.topAnchor="170.0" />
+        <Button fx:id="btnApply" layoutX="461.0" layoutY="170.0" text="Apply" AnchorPane.leftAnchor="461.0" AnchorPane.topAnchor="170.0" />
+
+        <TableView fx:id="tblDashboardSummary" layoutX="17.0" layoutY="210.0" prefHeight="362.0" prefWidth="842.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="210.0">
+            <columns>
+                <TableColumn fx:id="colName" text="Name" />
+                <TableColumn fx:id="colValue" text="Value" />
+            </columns>
+        </TableView>
+        <Text fill="#ffddb0" layoutX="241.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operation Manager Dashboard" underline="true">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Text>
+    </children>
+    <!-- FileChooser and Alert (dialogs used by this view): FileChooser fx:id="fileChooser", Alert fx:id="alert" -->
+</AnchorPane>

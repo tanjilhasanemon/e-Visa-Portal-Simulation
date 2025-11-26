@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.policyManager.controller.PolicyLogController">
+    <children>
+        <Label fx:id="lblTitle" text="Policy Log" AnchorPane.topAnchor="16.0" AnchorPane.leftAnchor="16.0"/>
+
+        <TextField fx:id="txtFilter" promptText="Filter / Search" AnchorPane.topAnchor="56.0" AnchorPane.leftAnchor="16.0" prefWidth="240.0"/>
+        <ComboBox fx:id="cmbChangeType" AnchorPane.topAnchor="56.0" AnchorPane.leftAnchor="270.0" prefWidth="160.0"/>
+        <Button fx:id="btnApplyFilter" text="Apply Filter" AnchorPane.topAnchor="56.0" AnchorPane.leftAnchor="440.0"/>
+
+        <TableView fx:id="tblPolicyLog" AnchorPane.topAnchor="96.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.bottomAnchor="16.0">
+            <columns>
+                <TableColumn fx:id="colTimestamp" text="Timestamp"/>
+                <TableColumn fx:id="colUser" text="User"/>
+                <TableColumn fx:id="colChangeSummary" text="ChangeSummary"/>
+            </columns>
+        </TableView>
+    </children>
+    <!-- FileChooser and Alert (dialogs used by this view): FileChooser fx:id="fileChooser", Alert fx:id="alert" -->
+</AnchorPane>
