@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Button?>
+<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.policyManager.controller.ApproveMajorChangesController">
+    <children>
+        <Label fx:id="lblTitle" text="Approve Major Changes" AnchorPane.topAnchor="16.0" AnchorPane.leftAnchor="16.0"/>
+
+        <TableView fx:id="tblRequests" AnchorPane.topAnchor="56.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.bottomAnchor="160.0">
+            <columns>
+                <TableColumn fx:id="colRequestID" text="RequestID"/>
+                <TableColumn fx:id="colSummary" text="Summary"/>
+                <TableColumn fx:id="colSubmittedBy" text="SubmittedBy"/>
+            </columns>
+        </TableView>
+
+        <TextArea fx:id="txtDecisionComment" promptText="Enter approve/reject comment" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" prefHeight="80.0"/>
+        <RadioButton fx:id="rbApprove" text="Approve" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0"/>
+        <RadioButton fx:id="rbReject" text="Reject" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="96.0"/>
+        <Button fx:id="btnSaveDecision" text="Save Decision" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="16.0"/>
+        <Button fx:id="btnOpenDetail" text="Open" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="120.0"/>
+    </children>
+    <!-- FileChooser and Alert (dialogs used by this view): FileChooser fx:id="fileChooser", Alert fx:id="alert" -->
+</AnchorPane>

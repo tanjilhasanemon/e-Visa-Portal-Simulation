@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.operationManager.controller.PublishNoticesController">
+    <children>
+        <Label fx:id="lblTitle" text="Publish Notice" AnchorPane.topAnchor="16.0" AnchorPane.leftAnchor="16.0"/>
+
+        <Label fx:id="lblNoticeTitle" text="Title" AnchorPane.topAnchor="56.0" AnchorPane.leftAnchor="16.0"/>
+        <TextField fx:id="txtTitle" AnchorPane.topAnchor="76.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0"/>
+
+        <Label fx:id="lblBody" text="Body" AnchorPane.topAnchor="116.0" AnchorPane.leftAnchor="16.0"/>
+        <TextArea fx:id="txtBody" AnchorPane.topAnchor="136.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.bottomAnchor="96.0"/>
+
+        <ComboBox fx:id="cmbAudience" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" prefWidth="240.0"/>
+        <Button fx:id="btnValidate" text="Validate" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="120.0"/>
+        <Button fx:id="btnPublish" text="Publish" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="16.0"/>
+    </children>
+    <!-- FileChooser and Alert (dialogs used by this view): FileChooser fx:id="fileChooser", Alert fx:id="alert" -->
+</AnchorPane>
