@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2C3E50;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.project.visa_management_portal.initial.internalLogIn.InternalLoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.internalLogIn.InternalLoginController">
 
     <Label layoutX="230.0" layoutY="50.0" style="-fx-text-fill: white; -fx-font-size: 18px;" text="Internal User Login" />
 

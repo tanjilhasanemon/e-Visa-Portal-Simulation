@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.SupportController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.AgentSupportController">
     <children>
         <Label layoutX="260.0" layoutY="20.0" text="Agent Support" textFill="#00a1ec" underline="true">
             <font><Font name="System Bold" size="26.0" /></font>
@@ -21,10 +21,8 @@
 
         <Label layoutX="20.0" layoutY="160.0" text="Message:" textFill="white" />
         <TextArea fx:id="messageTextArea" layoutX="20.0" layoutY="190.0" prefHeight="180.0" prefWidth="660.0" />
-
-        <Button layoutX="20.0" layoutY="390.0" onAction="#validateOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Validate" />
-        <Button layoutX="160.0" layoutY="390.0" onAction="#submitOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Submit" />
-        <Button layoutX="320.0" layoutY="390.0" onAction="#backToDashboardOnAction" prefWidth="180.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+        <Button layoutX="20.0" layoutY="403.0" onAction="#submitOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Submit" />
+        <Button layoutX="178.0" layoutY="403.0" onAction="#backToDashboardOnAction" prefWidth="180.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
 
         <Label fx:id="lblSupportMsg" layoutX="20.0" layoutY="430.0" textFill="red" />
         <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Agent Support" />
