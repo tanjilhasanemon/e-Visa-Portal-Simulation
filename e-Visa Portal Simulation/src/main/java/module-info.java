@@ -16,6 +16,7 @@ module com.project.visa_management_portal {
     opens com.project.visa_management_portal.initial.internalLogIn to javafx.fxml;
     exports com.project.visa_management_portal.initial.internalLogIn;
 
+
     opens com.project.visa_management_portal.initial.externalLogIn to javafx.fxml;
     exports com.project.visa_management_portal.initial.externalLogIn;
 
@@ -29,6 +30,24 @@ module com.project.visa_management_portal {
 
     opens com.project.visa_management_portal.tanjil.registeredAgent.controller to javafx.fxml;
     exports com.project.visa_management_portal.tanjil.registeredAgent.controller;
+
+
+
+
+    opens com.project.visa_management_portal.galib.issuer to javafx.fxml;
+    exports com.project.visa_management_portal.galib.issuer;
+
+    opens com.project.visa_management_portal.galib.visaOfficer to javafx.fxml;
+    exports com.project.visa_management_portal.galib.visaOfficer;
+
+
+
+
+    opens com.project.visa_management_portal.rifat.operationManager.controller to javafx.fxml;
+    exports com.project.visa_management_portal.rifat.operationManager.controller;
+
+    opens com.project.visa_management_portal.rifat.policyManager.controller to javafx.fxml;
+    exports com.project.visa_management_portal.rifat.policyManager.controller;
 
 
 
