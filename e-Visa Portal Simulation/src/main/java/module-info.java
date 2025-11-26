@@ -24,6 +24,10 @@ module com.project.visa_management_portal {
     opens com.project.visa_management_portal.initial.forgotPassword to javafx.fxml;
     exports com.project.visa_management_portal.initial.forgotPassword;
 
+
+
+
+
     opens com.project.visa_management_portal.tanjil.applicant.controller to javafx.fxml;
     exports com.project.visa_management_portal.tanjil.applicant.controller;
 
@@ -32,6 +36,11 @@ module com.project.visa_management_portal {
 
 
 
+//    opens com.project.visa_management_portal.rifat.operationManager.controller to javafx.fxml;
+//    exports com.project.visa_management_portal.rifat.operationManager.controller;
+//
+//    opens com.project.visa_management_portal.rifat.policyManager.controller to javafx.fxml;
+//    exports com.project.visa_management_portal.rifat.policyManager.controller;
 
 
 }
