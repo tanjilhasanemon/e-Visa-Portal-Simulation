@@ -6,17 +6,36 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.signUp.ExternalSignUpController">
+<AnchorPane prefHeight="520" prefWidth="700" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.signUp.ExternalSignUpController">
 
-    <Label layoutX="204.0" layoutY="41.0" style="-fx-text-fill: white; -fx-font-size: 18px;" text="External User Sign Up" />
+    <Label layoutX="260.0" layoutY="24.0" style="-fx-text-fill: white; -fx-font-size: 20px;" text="External User Sign Up">
+        <font><Font size="20" /></font>
+    </Label>
 
-    <ComboBox fx:id="userTypeComboBox" layoutX="200.0" layoutY="90.0" prefWidth="200.0" promptText="Select User Type (Applicant/Agent)" />
-    <TextField fx:id="fullNameTextField" layoutX="200.0" layoutY="140.0" prefWidth="200.0" promptText="Full Name" />
-    <TextField fx:id="emailTextField" layoutX="200.0" layoutY="190.0" prefWidth="200.0" promptText="Email" />
-    <PasswordField fx:id="externalUserPasswordField" layoutX="200.0" layoutY="240.0" prefWidth="200.0" promptText="Password" />
+    <!-- Role selection -->
+    <Label layoutX="120.0" layoutY="90.0" text="Register as:" textFill="white" />
+    <ComboBox fx:id="userTypeComboBox" layoutX="260.0" layoutY="86.0" prefWidth="280.0" promptText="Select Usertype (Applicant / Registered Agent)" />
 
-    <Button layoutX="200.0" layoutY="290.0" onAction="#signUpOnAction" prefWidth="90.0" text="Sign Up" />
-    <Button layoutX="310.0" layoutY="290.0" onAction="#backOnAction" prefWidth="90.0" text="Back" />
+    <!-- Common fields -->
+    <Label layoutX="120.0" layoutY="140.0" text="Full Name:" textFill="white" />
+    <TextField fx:id="nameTextField" layoutX="260.0" layoutY="136.0" prefWidth="280.0" />
+
+    <Label layoutX="120.0" layoutY="190.0" text="Email:" textFill="white" />
+    <TextField fx:id="emailTextField" layoutX="260.0" layoutY="186.0" prefWidth="280.0" />
+
+    <Label layoutX="120.0" layoutY="240.0" text="Password:" textFill="white" />
+    <PasswordField fx:id="passwordTextField" layoutX="260.0" layoutY="236.0" prefWidth="280.0" />
+
+    <!-- Registered Agent extra (initially hidden) -->
+    <Label fx:id="licenseLabel" layoutX="69.0" layoutY="322.0" managed="false" prefHeight="2.0" prefWidth="146.0" text="Agent License No.:" textFill="white" visible="false" />
+    <TextField fx:id="licenseField" layoutX="255.0" layoutY="310.0" managed="false" prefHeight="5.0" prefWidth="280.0" visible="false" />
+
+    <!-- Buttons -->
+    <Button layoutX="260.0" layoutY="387.0" onAction="#signUpOnAction" prefWidth="120.0" style="-fx-background-color:#ED7D31; -fx-text-fill:white;" text="Sign Up" />
+    <Button layoutX="420.0" layoutY="387.0" onAction="#backOnAction" prefWidth="120.0" text="Back" />
+
+    <Label fx:id="messageLabel" layoutX="120.0" layoutY="460.0" prefWidth="420.0" textFill="yellow" />
 
 </AnchorPane>

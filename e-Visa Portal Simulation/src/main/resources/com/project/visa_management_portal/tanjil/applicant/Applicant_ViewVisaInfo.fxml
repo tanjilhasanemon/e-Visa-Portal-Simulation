@@ -16,7 +16,7 @@
 
     <TextArea fx:id="visaInformationTextArea" editable="false" layoutX="20.0" layoutY="204.0" prefHeight="340.0" prefWidth="660.0" wrapText="true" />
 
-    <Button layoutX="20.0" layoutY="577.0" onAction="#backtomainOnAction" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: #3ab6f4;" text="Back to Main" />
+    <Button layoutX="20.0" layoutY="577.0" onAction="#backToMainOnAction" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: #3ab6f4;" text="Back to Main" />
     <Label alignment="CENTER" layoutY="635.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Public Info" />
    <Label layoutX="20.0" layoutY="90.0" text="Choose Visa Type:" textFill="WHITE" />
    <ComboBox fx:id="visaTypeComboBox" layoutX="131.0" layoutY="86.0" prefWidth="150.0" />
