@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class InternalLoginController
 {
@@ -23,11 +24,11 @@ public class InternalLoginController
     @javafx.fxml.FXML
     private PasswordField internalUserPasswordField;
     @javafx.fxml.FXML
-    private ComboBox <String> userTypeComboBox;
+    private ComboBox <String> internalUserTypeComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
-        userTypeComboBox.getItems().addAll("Visa Officer", "Issuer", "Operation Manager", "Policy Manager", "Finance Clerk", "Support Agent");
+        internalUserTypeComboBox.getItems().addAll("Visa Officer", "Issuer", "Operation Manager", "Policy Manager", "Finance Clerk", "Support Agent");
     }
 
     @javafx.fxml.FXML
@@ -41,10 +42,51 @@ public class InternalLoginController
     }
 
     @javafx.fxml.FXML
-    public void logInOnAction(ActionEvent actionEvent) {
-    }
+    public void logInOnAction(ActionEvent actionEvent) throws IOException {
+        if (Objects.equals(internalUserTypeComboBox.getValue(), "Issuer")){
 
-    @Deprecated
-    public void userTypeComboBox(ActionEvent actionEvent) {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/galib/issuer/issuer-Dashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Visa Officer Dashboard");
+            stage.setScene(scene);
+            stage.show();
+
+        }
+        if
+        (Objects.equals(internalUserTypeComboBox.getValue(), "Visa Officer")){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/galib/visaOfficer/VisaOfficerDashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Issuer Dashboard");
+            stage.setScene(scene);
+            stage.show();
+        }
+
+
+
+        //Rifat's Scene switch
+
+        if (Objects.equals(internalUserTypeComboBox.getValue(), "Operation Manager")){
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/operationManager/OperationManager_Dashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Operation Manager Dashboard");
+            stage.setScene(scene);
+            stage.show();
+
+        }
+
+        if (Objects.equals(internalUserTypeComboBox.getValue(), "Policy Manager")){
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/policyManager/policyManagerDashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Policy Manager Dashboard");
+            stage.setScene(scene);
+            stage.show();
+
+        }
     }
 }

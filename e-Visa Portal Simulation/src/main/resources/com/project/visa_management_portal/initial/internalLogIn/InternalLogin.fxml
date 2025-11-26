@@ -11,7 +11,7 @@
 
     <Label layoutX="230.0" layoutY="50.0" style="-fx-text-fill: white; -fx-font-size: 18px;" text="Internal User Login" />
 
-    <ComboBox fx:id="userTypeComboBox" layoutX="200.0" layoutY="100.0" prefWidth="200.0" promptText="Select User Type" />
+    <ComboBox fx:id="internalUserTypeComboBox" layoutX="200.0" layoutY="100.0" prefWidth="200.0" promptText="Select User Type" />
 
     <TextField fx:id="userNameTextField" layoutX="200.0" layoutY="150.0" prefWidth="200.0" promptText="User ID" />
     <PasswordField fx:id="internalUserPasswordField" layoutX="200.0" layoutY="200.0" prefWidth="200.0" promptText="Password" />

@@ -1,5 +1,9 @@
 package com.project.visa_management_portal.rifat.policyManager.controller;
 
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+
 public class InstructionUpdatesController
 {
     @javafx.fxml.FXML
