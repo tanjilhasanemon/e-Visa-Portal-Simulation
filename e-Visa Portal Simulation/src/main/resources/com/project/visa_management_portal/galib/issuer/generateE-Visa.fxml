@@ -38,6 +38,7 @@
     <Button layoutX="537.0" layoutY="75.0" prefHeight="26.0" prefWidth="143.0" text="Generate PDF" />
     <Button layoutX="690.0" layoutY="75.0" prefHeight="26.0" prefWidth="143.0" text="Save QR (PNG)" />
     <TextArea layoutX="44.0" layoutY="115.0" prefHeight="200" prefWidth="790.0" promptText="Preview / Output" />
+    <Button layoutX="319.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
 
         <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
         <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generate E-Visa" underline="true">

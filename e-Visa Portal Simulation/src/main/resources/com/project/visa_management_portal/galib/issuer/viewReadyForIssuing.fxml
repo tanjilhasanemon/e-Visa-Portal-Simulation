@@ -42,8 +42,10 @@
 
     <Button layoutX="504.0" layoutY="102.0" prefHeight="26.0" prefWidth="160.0" text="Filter" />
     <Button layoutX="761.0" layoutY="101.0" prefHeight="26.0" prefWidth="110.0" text="Open" />
+    <Button layoutX="319.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
 
-    <TableView layoutX="30.0" layoutY="146.0" prefHeight="368.0" prefWidth="842.0">
+
+        <TableView layoutX="30.0" layoutY="146.0" prefHeight="368.0" prefWidth="842.0">
         <columns>
             <TableColumn prefWidth="120" text="App ID" />
             <TableColumn prefWidth="240" text="Name" />

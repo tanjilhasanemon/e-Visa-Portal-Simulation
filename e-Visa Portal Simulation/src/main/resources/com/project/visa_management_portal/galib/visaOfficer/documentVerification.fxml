@@ -62,6 +62,7 @@
     <TextArea layoutX="455.0" layoutY="213.0" prefHeight="246.0" prefWidth="424" wrapText="true" />
 
     <Button layoutX="456.0" layoutY="475.0" prefHeight="26.0" prefWidth="424.0" text="Save" />
+    <Button layoutX="319.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
 
 
         <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
