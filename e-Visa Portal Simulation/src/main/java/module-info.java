@@ -59,7 +59,4 @@ module com.project.visa_management_portal {
     exports com.project.visa_management_portal.rifat.policyManager.controller;
 
 
-
-
-
 }
