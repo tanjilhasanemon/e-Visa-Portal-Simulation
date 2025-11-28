@@ -49,6 +49,7 @@
     <Button layoutX="561.0" layoutY="128.0" prefHeight="26.0" prefWidth="137.0" text="View Receipt" />
     <Button layoutX="722.0" layoutY="128.0" prefHeight="26.0" prefWidth="138.0" text="Mark Verified" />
     <Button layoutX="561.0" layoutY="183.0" prefHeight="26.0" prefWidth="300.0" text="Flag Payment" />
+    <Button layoutX="319.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
 
     <Label layoutX="561.0" layoutY="174.0" />
     <TextArea layoutX="561.0" layoutY="224.0" prefHeight="224.0" prefWidth="300" promptText="Flag Reason:" />

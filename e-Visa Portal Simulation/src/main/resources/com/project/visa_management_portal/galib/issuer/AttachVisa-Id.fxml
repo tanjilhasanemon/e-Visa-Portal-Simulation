@@ -36,6 +36,8 @@
 
         <Button layoutX="64.0" layoutY="171.0" prefHeight="26.0" prefWidth="163.0" text="Copy ID" />
         <Button layoutX="260.0" layoutY="171.0" prefHeight="26.0" prefWidth="163.0" text="Save" />
+        <Button layoutX="319.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
+
 
         <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="344.0" layoutY="41.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
         <Text fill="#ffddb0" layoutX="261.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attach Visa" underline="true">
