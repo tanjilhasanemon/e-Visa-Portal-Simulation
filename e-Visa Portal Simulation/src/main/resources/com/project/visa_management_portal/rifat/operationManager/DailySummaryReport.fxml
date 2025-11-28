@@ -1,26 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.AnchorPane?>
+
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
-<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.operationManager.controller.DailySummaryReportController">
+<?import javafx.scene.control.TableView?>
+<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.operationManager.controller.DailySummaryReportController">
     <children>
-        <Label fx:id="lblTitle" text="Daily Summary Report" AnchorPane.topAnchor="16.0" AnchorPane.leftAnchor="16.0"/>
+        <Label layoutY="573.0" prefHeight="25.0" prefWidth="874.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Text fill="#36454f" layoutX="297.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
+        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Text fill="#ffddb0" layoutX="278.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Text>
 
-        <TextField fx:id="txtDateFrom" promptText="From (YYYY-MM-DD)" AnchorPane.topAnchor="56.0" AnchorPane.leftAnchor="16.0" prefWidth="160.0"/>
-        <TextField fx:id="txtDateTo" promptText="To (YYYY-MM-DD)" AnchorPane.topAnchor="56.0" AnchorPane.leftAnchor="190.0" prefWidth="160.0"/>
-        <ComboBox fx:id="cmbPreset" AnchorPane.topAnchor="56.0" AnchorPane.leftAnchor="370.0" prefWidth="160.0"/>
-        <Button fx:id="btnGenerate" text="Generate" AnchorPane.topAnchor="56.0" AnchorPane.leftAnchor="540.0"/>
+        <!-- Enter your fxml code here -->
+        <Label fx:id="lblTitle" text="Daily Summary Report" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
 
-        <TableView fx:id="tblReport" AnchorPane.topAnchor="100.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.bottomAnchor="16.0">
+        <TextField fx:id="txtDateFrom" prefWidth="160.0" promptText="From (YYYY-MM-DD)" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="56.0" />
+        <TextField fx:id="txtDateTo" prefWidth="160.0" promptText="To (YYYY-MM-DD)" AnchorPane.leftAnchor="190.0" AnchorPane.topAnchor="56.0" />
+        <ComboBox fx:id="cmbPreset" prefWidth="160.0" AnchorPane.leftAnchor="370.0" AnchorPane.topAnchor="56.0" />
+        <Button fx:id="btnGenerate" text="Generate" AnchorPane.leftAnchor="540.0" AnchorPane.topAnchor="56.0" />
+
+        <TableView fx:id="tblReport" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="100.0">
             <columns>
-                <TableColumn fx:id="colMetric" text="Metric"/>
-                <TableColumn fx:id="colValue" text="Value"/>
+                <TableColumn fx:id="colMetric" text="Metric" />
+                <TableColumn fx:id="colValue" text="Value" />
             </columns>
         </TableView>
+        <Button fx:id="btnBackToDashBoard" layoutX="728.0" layoutY="12.0" mnemonicParsing="false" onAction="#backToDashboardOnActionButton" prefHeight="25.0" prefWidth="131.0" text="Back to Dashboard" />
+
+
+
+        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
+        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name" underline="true">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Text>
     </children>
-    <!-- FileChooser and Alert (dialogs used by this view): FileChooser fx:id="fileChooser", Alert fx:id="alert" -->
 </AnchorPane>
+

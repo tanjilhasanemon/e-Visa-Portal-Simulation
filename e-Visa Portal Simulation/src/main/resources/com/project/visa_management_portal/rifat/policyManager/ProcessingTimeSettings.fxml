@@ -1,23 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Button?>
-<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.policyManager.controller.ProcessingTimeSettingsController">
-    <children>
-        <Label fx:id="lblTitle" text="Processing Time Settings" AnchorPane.topAnchor="16.0" AnchorPane.leftAnchor="16.0"/>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-        <TableView fx:id="tblProcessingTimes" AnchorPane.topAnchor="56.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.bottomAnchor="80.0">
+<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.policyManager.controller.ProcessingTimeSettingsController">
+    <children>
+        <Label layoutY="573.0" prefHeight="25.0" prefWidth="874.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Text fill="#36454f" layoutX="297.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
+        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Text fill="#ffddb0" layoutX="278.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Text>
+
+        <!-- Enter your fxml code here -->
+        <Label fx:id="lblTitle" text="Processing Time Settings" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
+
+        <TableView fx:id="tblProcessingTimes" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="56.0">
             <columns>
-                <TableColumn fx:id="colVisaType" text="VisaType"/>
-                <TableColumn fx:id="colProcessingDays" text="ProcessingDays"/>
+                <TableColumn fx:id="colVisaType" text="VisaType" />
+                <TableColumn fx:id="colProcessingDays" prefWidth="113.0" text="ProcessingDays" />
             </columns>
         </TableView>
 
-        <TextField fx:id="txtEditDays" promptText="Enter days" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" prefWidth="120.0"/>
-        <Button fx:id="btnSave" text="Save" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="150.0"/>
+        <TextField fx:id="txtEditDays" prefWidth="120.0" promptText="Enter days" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" />
+        <Button fx:id="btnSave" text="Save" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="150.0" />
+        <Button fx:id="btnBackToDashBoard" layoutX="736.0" layoutY="12.0" mnemonicParsing="false" onAction="#backToDashboardOnActionButton" prefHeight="25.0" prefWidth="131.0" text="Back to Dashboard" />
+
+
+
+        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
+        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name" underline="true">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Text>
     </children>
-    <!-- FileChooser and Alert (dialogs used by this view): FileChooser fx:id="fileChooser", Alert fx:id="alert" -->
 </AnchorPane>
