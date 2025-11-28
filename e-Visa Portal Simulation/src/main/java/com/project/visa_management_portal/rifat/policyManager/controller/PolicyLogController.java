@@ -29,6 +29,8 @@ public class PolicyLogController
     private Label lblTitle;
     @javafx.fxml.FXML
     private Button btnBackToDashBoard;
+    @javafx.fxml.FXML
+    private Button btn_Refresh;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -42,5 +44,9 @@ public class PolicyLogController
         stage.setTitle("Policy Manager Dashboard");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void refreshOnActionButton(ActionEvent actionEvent) {
     }
 }

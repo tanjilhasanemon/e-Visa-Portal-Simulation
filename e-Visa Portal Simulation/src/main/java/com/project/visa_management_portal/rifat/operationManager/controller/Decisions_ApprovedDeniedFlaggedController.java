@@ -12,11 +12,7 @@ import java.io.IOException;
 public class Decisions_ApprovedDeniedFlaggedController
 {
     @javafx.fxml.FXML
-    private TextArea txtFlagDetails;
-    @javafx.fxml.FXML
     private TableColumn colDecisionDate;
-    @javafx.fxml.FXML
-    private Button btnFilter;
     @javafx.fxml.FXML
     private TableColumn colType;
     @javafx.fxml.FXML
@@ -24,17 +20,25 @@ public class Decisions_ApprovedDeniedFlaggedController
     @javafx.fxml.FXML
     private TableColumn colAppID;
     @javafx.fxml.FXML
-    private TextField txtSearch;
-    @javafx.fxml.FXML
     private Label lblTitle;
     @javafx.fxml.FXML
     private TableColumn colOfficer;
     @javafx.fxml.FXML
     private TableView tblDecisions;
     @javafx.fxml.FXML
-    private Button btnOpenDetail;
-    @javafx.fxml.FXML
     private Button btnBackToDashBoard;
+    @javafx.fxml.FXML
+    private TextField txtSearch_ID;
+    @javafx.fxml.FXML
+    private Button btnOpenFlaggedDetail;
+    @javafx.fxml.FXML
+    private TextArea txtFieldFlagDetails;
+    @javafx.fxml.FXML
+    private Button btnApprovedDeniedFlaggedFilter1;
+    @javafx.fxml.FXML
+    private Button btnSearch_ID;
+    @javafx.fxml.FXML
+    private TableColumn colStatus;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -48,5 +52,17 @@ public class Decisions_ApprovedDeniedFlaggedController
         stage.setTitle("Operation Manager Dashboard");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void idSearchOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void filterApproveDeniedFlaggedOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void openFlaggedDetails(ActionEvent actionEvent) {
     }
 }

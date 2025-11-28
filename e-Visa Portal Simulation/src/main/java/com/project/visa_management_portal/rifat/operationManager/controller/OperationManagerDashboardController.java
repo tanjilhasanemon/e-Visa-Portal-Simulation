@@ -16,19 +16,19 @@ public class OperationManagerDashboardController {
     @javafx.fxml.FXML
     private Button btnSignOut;
     @javafx.fxml.FXML
-    private Button btnNotices1;
-    @javafx.fxml.FXML
     private Button btnNewUnassigned;
     @javafx.fxml.FXML
     private Button btnReports;
     @javafx.fxml.FXML
-    private Button btnBacklog;
-    @javafx.fxml.FXML
-    private Button btnDecisions;
-    @javafx.fxml.FXML
     private Button btnNotices;
     @javafx.fxml.FXML
-    private Button btnTargets;
+    private Button btnSetTargets;
+    @javafx.fxml.FXML
+    private Button btnOverDueApplication;
+    @javafx.fxml.FXML
+    private Button btnFlaggedApplications;
+    @javafx.fxml.FXML
+    private Button btnResubmittedApplicationStatus;
 
 
     private void showAlert(String title, String message) {
@@ -56,19 +56,6 @@ public class OperationManagerDashboardController {
         }
     }
 
-    @javafx.fxml.FXML
-    public void decisionsOnActionButton(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/operationManager/Decisions_ApprovedDeniedFlagged.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Overdue Applications");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            showAlert("Scene error", "Unable to open Upload Document Dashboard.");
-        }
-    }
 
     @javafx.fxml.FXML
     public void noticeOnActionButton(ActionEvent actionEvent) {
@@ -98,33 +85,6 @@ public class OperationManagerDashboardController {
         }
     }
 
-    @javafx.fxml.FXML
-    public void backlogOnActionButton(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/operationManager/Backlog_OverdueApplications.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Overdue Applications");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            showAlert("Scene error", "Unable to open Upload Document Dashboard.");
-        }
-    }
-
-    @javafx.fxml.FXML
-    public void targetOnActionButton(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/operationManager/Targets_ResubmitFlagged.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Assigning Targets");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            showAlert("Scene error", "Unable to open Upload Document Dashboard.");
-        }
-    }
 
     @javafx.fxml.FXML
     public void signOutOnActionButton(ActionEvent actionEvent) {
@@ -140,4 +100,60 @@ public class OperationManagerDashboardController {
         }
     }
 
+
+    @javafx.fxml.FXML
+    public void overdueApplicationsOnActionButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/operationManager/Backlog_OverdueApplications.fxml"));
+            Scene scene = new Scene(loader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Overdue Applications");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            showAlert("Scene error", "Unable to open Upload Document Dashboard.");
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void flaggedApplicationOnActionButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/operationManager/Decisions_ApprovedDeniedFlagged.fxml"));
+            Scene scene = new Scene(loader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Overdue Applications");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            showAlert("Scene error", "Unable to open Upload Document Dashboard.");
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void SetTargetOnActionButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/operationManager/Targets_ResubmitFlagged.fxml"));
+            Scene scene = new Scene(loader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Assigning Targets");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            showAlert("Scene error", "Unable to open Upload Document Dashboard.");
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void resubmittedApplicationStatusOnActionButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/operationManager/ResubmittedApplicationsStatus.fxml"));
+            Scene scene = new Scene(loader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Resubmitted Applications to Visa Officers");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            showAlert("Scene error", "Unable to open Upload Document Dashboard.");
+        }
+    }
 }

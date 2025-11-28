@@ -25,7 +25,7 @@
                 <Font name="System Bold" size="13.0" />
             </font>
         </Text>
-        <Text fill="#ffddb0" layoutX="278.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
+        <Text fill="#ffddb0" layoutX="225.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
@@ -40,24 +40,24 @@
 
         <Label fx:id="lblTitle" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="36.0" />
 
-        <Button fx:id="btnViewPolicyLog" layoutX="682.0" layoutY="225.0" onAction="#viewPolicyLogOnActionButton" prefHeight="39.0" prefWidth="107.0" text="View Policy Log" AnchorPane.leftAnchor="682.0" AnchorPane.topAnchor="225.0" />
-        <Button fx:id="btnVisaRuleEditor" layoutX="25.0" layoutY="225.0" onAction="#visaRuleEiditorOnActionButton" prefHeight="39.0" prefWidth="107.0" text="Visa Rule Editor" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="225.0" />
-        <Button fx:id="btnProcessingTimeSetting" layoutX="197.0" layoutY="225.0" onAction="#processingTimeSettingOnActionButton" prefHeight="39.0" prefWidth="177.0" text="Processing Time settings" AnchorPane.leftAnchor="197.0" AnchorPane.topAnchor="225.0" />
-        <Button fx:id="btnRequirementChecklist" layoutX="439.0" layoutY="225.0" onAction="#requirementChecklistOnActionButton" prefHeight="39.0" prefWidth="145.0" text="Requirement Checklist " AnchorPane.leftAnchor="439.0" AnchorPane.topAnchor="225.0" />
-        <Button fx:id="btnPublish_InstructionUpdates" layoutX="101.0" layoutY="439.0" onAction="#publish_InstructionUpdatesOnActionButton" prefHeight="32.0" prefWidth="247.0" text="Publish Instruction Updates" AnchorPane.leftAnchor="101.0" AnchorPane.topAnchor="439.0" />
-        <Button fx:id="btnApproveMajorChanges" layoutX="565.0" layoutY="439.0" onAction="#approveMajorChangesOnActionButton" prefHeight="32.0" prefWidth="153.0" text="Approve Major changes " AnchorPane.leftAnchor="565.0" AnchorPane.topAnchor="439.0" />
+        <Button fx:id="btnViewPolicyLog" layoutX="497.0" layoutY="323.0" onAction="#viewPolicyLogOnActionButton" prefHeight="39.0" prefWidth="257.0" text="View Policy Log" AnchorPane.leftAnchor="497.0" AnchorPane.topAnchor="323.0" />
+        <Button fx:id="btnVisaRuleEditor" layoutX="97.0" layoutY="198.0" onAction="#visaRuleEditorOnActionButton" prefHeight="39.0" prefWidth="257.0" text="Visa Rule Editor" AnchorPane.leftAnchor="97.0" AnchorPane.topAnchor="198.0" />
+        <Button fx:id="btnProcessingTimeSetting" layoutX="97.0" layoutY="265.0" onAction="#processingTimeSettingOnActionButton" prefHeight="39.0" prefWidth="257.0" text="Processing Time settings" AnchorPane.leftAnchor="97.0" AnchorPane.topAnchor="265.0" />
+        <Button fx:id="btnRequirementChecklist" layoutX="97.0" layoutY="326.0" onAction="#requirementChecklistOnActionButton" prefHeight="39.0" prefWidth="257.0" text="Requirement Checklist " AnchorPane.leftAnchor="97.0" AnchorPane.topAnchor="326.0" />
+        <Button fx:id="btnPublish_InstructionUpdates" layoutX="497.0" layoutY="262.0" onAction="#publish_InstructionUpdatesOnActionButton" prefHeight="39.0" prefWidth="257.0" text="Publish Instruction Updates" AnchorPane.leftAnchor="497.0" AnchorPane.topAnchor="262.0" />
+        <Button fx:id="btnApproveMajorChanges" layoutX="497.0" layoutY="195.0" onAction="#approveMajorChangesOnActionButton" prefHeight="39.0" prefWidth="257.0" text="Approve Major changes " AnchorPane.leftAnchor="497.0" AnchorPane.topAnchor="195.0" />
         <Text fill="#ffddb0" layoutX="307.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
-        <Button fx:id="btnSignOut" layoutX="790.0" layoutY="71.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
-        <Button fx:id="btnNotices1" layoutX="705.0" layoutY="111.0" onAction="#noticeOnActionButton" prefHeight="32.0" prefWidth="153.0" text="Notice" />
+        <Button fx:id="btnSignOut" layoutX="787.0" layoutY="53.0" mnemonicParsing="false" onAction="#signOutOnActionButton" style="-fx-background-color: #c92020;" text="Sign Out" textFill="WHITE" />
+        <Button fx:id="btnNotices1" layoutX="708.0" layoutY="95.0" onAction="#noticeOnActionButton" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: #ffddb0;" text="Notice" />
 
 
 
-        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
-        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Policy Manager Dashboard" underline="true">
+        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="487.0" layoutY="36.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
+        <Text fill="#ffddb0" layoutX="404.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Policy Manager Dashboard" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>

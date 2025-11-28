@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -18,49 +17,39 @@
                 <Font name="System Bold" size="13.0" />
             </font>
         </Label>
-        <Text fill="#36454f" layoutX="297.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
+        <Text fill="#36454f" layoutX="378.0" layoutY="589.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Text>
-        <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
-        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
-            <font>
-                <Font name="System Bold" size="13.0" />
-            </font>
-        </Text>
-        <Text fill="#ffddb0" layoutX="280.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
+        <Text fill="#ffddb0" layoutX="225.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
-        <TextField fx:id="txtThresholdDays" prefWidth="160.0" promptText="Threshold days (e.g., 7)" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="56.0" />
-        <ComboBox fx:id="cmbPresets" prefWidth="140.0" AnchorPane.leftAnchor="190.0" AnchorPane.topAnchor="56.0" />
-        <Button fx:id="btnLoad" text="Load" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="56.0" />
+        <ComboBox fx:id="cmbPresets" layoutX="16.0" layoutY="56.0" prefWidth="140.0" promptText="Waiting Threshold" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="56.0" />
+        <Button fx:id="btnLoad" layoutX="173.0" layoutY="56.0" onAction="#loadOverdueApplicationsOnActionButton" text="Load" AnchorPane.leftAnchor="173.0" AnchorPane.topAnchor="56.0" />
 
         <TableView fx:id="tblBacklog" prefHeight="418.0" prefWidth="842.0" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="100.0">
             <columns>
-                <TableColumn fx:id="colAppID" text="AppID" />
-                <TableColumn fx:id="colSubmittedAt" prefWidth="81.33331298828125" text="SubmittedAt" />
-                <TableColumn fx:id="colDaysWaiting" prefWidth="78.66668701171875" text="DaysWaiting" />
-                <TableColumn fx:id="colPriority" text="Priority" />
-                <TableColumn fx:id="colAssignedOfficer" prefWidth="112.66668701171875" text="AssignedOfficer" />
+                <TableColumn fx:id="colAppID" prefWidth="144.0" text="AppID" />
+                <TableColumn fx:id="colSubmittedAt" prefWidth="188.0" text="SubmittedAt" />
+                <TableColumn fx:id="colDaysWaiting" prefWidth="194.0" text="DaysWaiting" />
+                <TableColumn fx:id="colAssignedOfficer" prefWidth="189.0" text="AssignedOfficer" />
+            <TableColumn fx:id="colStatus" prefWidth="126.0" text="Status" />
             </columns>
         </TableView>
-
-        <Button fx:id="btnEscalate" layoutX="16.0" layoutY="527.0" text="Escalate" AnchorPane.bottomAnchor="46.985786461830116" AnchorPane.leftAnchor="16.0" />
-        <Button fx:id="btnReassign" layoutX="110.0" layoutY="527.0" text="Reassign" AnchorPane.bottomAnchor="46.985786461830116" AnchorPane.leftAnchor="110.0" />
-        <Button fx:id="btnExport" layoutX="704.0" layoutY="527.0" text="Export" AnchorPane.bottomAnchor="46.985786461830116" AnchorPane.rightAnchor="120.0" />
-        <Button fx:id="btnNotify" layoutX="810.0" layoutY="527.0" text="Notify" AnchorPane.bottomAnchor="46.985786461830116" AnchorPane.rightAnchor="15.600000000000023" />
+        <Button fx:id="btnExport" layoutX="795.0" layoutY="528.0" onAction="#exportOverdueListOnActionBtn" prefHeight="25.0" prefWidth="118.0" text="Export" AnchorPane.bottomAnchor="45.0" AnchorPane.rightAnchor="29.0" />
         <Button fx:id="btnBackToDashBoard" layoutX="729.0" layoutY="12.0" mnemonicParsing="false" onAction="#backToDashboardOnActionButton" prefHeight="25.0" prefWidth="131.0" text="Back to Dashboard" />
 
 
 
-        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="542.0" layoutY="41.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
-        <Text fill="#ffddb0" layoutX="459.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Backlog" underline="true">
+        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="487.0" layoutY="41.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
+        <Text fill="#ffddb0" layoutX="404.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Overdue Applications" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
+      <Button fx:id="btnRefresh" layoutX="795.0" layoutY="63.0" mnemonicParsing="false" onAction="#refreshOnActionButton" text="Refresh" />
     </children>
 </AnchorPane>

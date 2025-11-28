@@ -1,30 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TextArea?>
-<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.policyManager.controller.VisaRuleEditorController">
+<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.policyManager.controller.VisaRuleEditorController">
     <children>
         <Label layoutY="573.0" prefHeight="25.0" prefWidth="874.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Label>
-        <Text fill="#36454f" layoutX="297.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
-            <font>
-                <Font name="System Bold" size="13.0" />
-            </font>
-        </Text>
-        <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
-        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
+        <Text fill="#36454f" layoutX="381.0" layoutY="589.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
@@ -36,41 +30,33 @@
         </Text>
 
         <!-- Enter your fxml code here -->
-        <Label fx:id="lblTitle" text="Visa Rule Editor" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
+        <Label fx:id="lblTitle" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
 
-        <TableView fx:id="tblRules" AnchorPane.bottomAnchor="220.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="56.0">
+        <TableView fx:id="tblRules" layoutY="86.0" prefHeight="292.0" prefWidth="842.0" AnchorPane.bottomAnchor="220.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="86.0">
             <columns>
-                <TableColumn fx:id="colRuleID" text="RuleID" />
-                <TableColumn fx:id="colName" text="Name" />
-                <TableColumn fx:id="colStatus" text="Status" />
+                <TableColumn fx:id="colRuleID" prefWidth="90.0" text="RuleID" />
+                <TableColumn fx:id="colName" prefWidth="264.0" text="Name" />
+                <TableColumn fx:id="colStatus" prefWidth="487.0" text="Status" />
             </columns>
         </TableView>
 
         <Label fx:id="lblRuleName" text="Rule Name" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="16.0" />
-        <TextField fx:id="txtRuleName" AnchorPane.bottomAnchor="136.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" />
+        <TextField fx:id="txtRuleName" alignment="CENTER" layoutX="19.0" layoutY="398.0" promptText="Rule Name" AnchorPane.bottomAnchor="176.58578646183014" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="13.0" />
 
         <Label fx:id="lblRuleBody" text="Rule Body / Conditions" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="16.0" />
-        <TextArea fx:id="txtRuleBody" prefHeight="80.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" />
+        <TextArea fx:id="txtRuleBody" layoutX="18.0" layoutY="440.0" prefHeight="80.0" promptText="Rule Body" AnchorPane.bottomAnchor="79.58578646183014" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="14.0" />
 
-        <Button fx:id="btnNewRule" text="New Rule" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="56.0" />
-        <Button fx:id="btnSaveRule" text="Save" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="16.0" />
+        <Button fx:id="btnNewRule" onAction="#newRuleAddOnActionButton" text="New Rule" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="56.0" />
+        <Button fx:id="btnSaveRule" layoutX="817.0" layoutY="538.0" onAction="#saveRuleOnActionButton" prefHeight="25.0" prefWidth="83.0" text="Save" AnchorPane.bottomAnchor="37.0" AnchorPane.rightAnchor="16.0" />
         <Button fx:id="btnBackToDashBoard" layoutX="728.0" layoutY="12.0" mnemonicParsing="false" onAction="#backToDashboardOnActionButton" prefHeight="25.0" prefWidth="131.0" text="Back to Dashboard" />
 
 
 
         <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
-        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name" underline="true">
+        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visa Rule Editor" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
     </children>
 </AnchorPane>
-
-
-
-
-
-
-
-

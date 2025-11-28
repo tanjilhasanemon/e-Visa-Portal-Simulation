@@ -49,4 +49,12 @@ public class VisaRuleEditorController
         stage.setScene(scene);
         stage.show();
     }
+
+    @javafx.fxml.FXML
+    public void saveRuleOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void newRuleAddOnActionButton(ActionEvent actionEvent) {
+    }
 }

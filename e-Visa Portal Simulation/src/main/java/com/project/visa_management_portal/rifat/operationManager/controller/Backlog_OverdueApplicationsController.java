@@ -27,21 +27,13 @@ public class Backlog_OverdueApplicationsController
     @javafx.fxml.FXML
     private TableColumn colDaysWaiting;
     @javafx.fxml.FXML
-    private TableColumn colPriority;
-    @javafx.fxml.FXML
-    private Button btnNotify;
-    @javafx.fxml.FXML
     private TableColumn colAssignedOfficer;
     @javafx.fxml.FXML
-    private TextField txtThresholdDays;
-    @javafx.fxml.FXML
-    private Label lblTitle;
-    @javafx.fxml.FXML
-    private Button btnEscalate;
-    @javafx.fxml.FXML
-    private Button btnReassign;
-    @javafx.fxml.FXML
     private Button btnBackToDashBoard;
+    @javafx.fxml.FXML
+    private Button btnRefresh;
+    @javafx.fxml.FXML
+    private TableColumn colStatus;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -55,5 +47,17 @@ public class Backlog_OverdueApplicationsController
         stage.setTitle("Operation Manager Dashboard");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void exportOverdueListOnActionBtn(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void loadOverdueApplicationsOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void refreshOnActionButton(ActionEvent actionEvent) {
     }
 }

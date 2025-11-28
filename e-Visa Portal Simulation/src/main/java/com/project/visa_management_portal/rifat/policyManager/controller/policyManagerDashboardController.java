@@ -146,7 +146,7 @@ public class policyManagerDashboardController
         }
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void visaRuleEditorOnActionButton(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/policyManager/VisaRuleEditor.fxml"));
