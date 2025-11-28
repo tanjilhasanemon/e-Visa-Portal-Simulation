@@ -66,8 +66,9 @@
 
     <Button layoutX="568.0" layoutY="189.0" prefWidth="150.0" text="Refresh" />
     <Button layoutX="731.0" layoutY="190.0" prefHeight="26.0" prefWidth="150.0" text="Open" />
+    <Button layoutX="319.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
 
-    <!-- Applications Table -->
+        <!-- Applications Table -->
     <TableView layoutX="14.0" layoutY="189.0" prefHeight="338.0" prefWidth="540">
         <columns>
             <TableColumn prefWidth="80" text="App ID" />

@@ -56,6 +56,7 @@
 
     <Button layoutX="575.0" layoutY="139.0" prefHeight="26.0" prefWidth="130.0" text="Refresh" />
     <Button layoutX="734.0" layoutY="138.0" prefHeight="26.0" prefWidth="129.0" text="Open" />
+    <Button layoutX="319.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
 
     <TableView layoutX="34.0" layoutY="187.0" prefHeight="331.0" prefWidth="829.0">
         <columns>

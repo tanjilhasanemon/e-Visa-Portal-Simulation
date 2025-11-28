@@ -13,10 +13,11 @@
 
     <ComboBox fx:id="internalUserTypeComboBox" layoutX="200.0" layoutY="100.0" prefWidth="200.0" promptText="Select User Type" />
 
-    <TextField fx:id="userNameTextField" layoutX="200.0" layoutY="150.0" prefWidth="200.0" promptText="User ID" />
+    <TextField fx:id="internalUserIdTextField" layoutX="200.0" layoutY="150.0" prefWidth="200.0" promptText="User ID" />
     <PasswordField fx:id="internalUserPasswordField" layoutX="200.0" layoutY="200.0" prefWidth="200.0" promptText="Password" />
 
     <Button layoutX="200.0" layoutY="250.0" onAction="#logInOnAction" prefWidth="90.0" text="Login" />
     <Button fx:id="backBtn" layoutX="310.0" layoutY="250.0" onAction="#backOnAction" prefWidth="90.0" text="Back" />
+   <Label fx:id="loginMessageLabel" layoutX="204.0" layoutY="328.0" prefHeight="18.0" prefWidth="200.0" textFill="WHITE" />
 
 </AnchorPane>

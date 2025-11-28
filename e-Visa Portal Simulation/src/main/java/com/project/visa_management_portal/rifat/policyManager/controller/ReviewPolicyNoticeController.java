@@ -9,28 +9,22 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ApproveMajorChangesController
+public class ReviewPolicyNoticeController
 {
     @javafx.fxml.FXML
-    private TableColumn colSubmittedBy;
+    private TableColumn colAffectedField;
     @javafx.fxml.FXML
-    private Button btnSaveDecision;
+    private TableView tblSimulationResults;
     @javafx.fxml.FXML
-    private TableView tblRequests;
+    private TextArea txtSummary;
     @javafx.fxml.FXML
-    private TableColumn colSummary;
+    private TableColumn colAppID;
     @javafx.fxml.FXML
-    private TextArea txtDecisionComment;
-    @javafx.fxml.FXML
-    private RadioButton rbReject;
+    private ComboBox cmbRuleSelector;
     @javafx.fxml.FXML
     private Label lblTitle;
     @javafx.fxml.FXML
-    private TableColumn colRequestID;
-    @javafx.fxml.FXML
-    private RadioButton rbApprove;
-    @javafx.fxml.FXML
-    private Button btnOpenDetail;
+    private Button btnSimulate;
     @javafx.fxml.FXML
     private Button btnBackToDashBoard;
 

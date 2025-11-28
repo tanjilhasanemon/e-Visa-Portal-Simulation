@@ -52,6 +52,8 @@
     <Button layoutX="552.0" layoutY="337.0" prefHeight="26.0" prefWidth="69.0" text="Approve" />
     <Button layoutX="633.0" layoutY="336.0" prefHeight="26.0" prefWidth="70.0" text="Reject" />
     <TextField layoutX="729.0" layoutY="336.0" prefWidth="140" promptText="Reference ID" />
+    <Button layoutX="319.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
+
 
         <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
         <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Renewal and Cancellation " underline="true">

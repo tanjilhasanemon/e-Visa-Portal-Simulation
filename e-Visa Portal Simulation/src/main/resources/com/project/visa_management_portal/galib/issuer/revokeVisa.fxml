@@ -37,6 +37,7 @@
     <TextArea layoutX="41.0" layoutY="105.0" prefHeight="180" prefWidth="794.0" promptText="Reason" />
 
     <Button layoutX="596.0" layoutY="300.0" prefHeight="26.0" prefWidth="240.0" text="Revoke" />
+    <Button layoutX="319.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
 
         <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
         <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Revoke Visa" underline="true">

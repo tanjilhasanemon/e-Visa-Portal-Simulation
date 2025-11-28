@@ -2,6 +2,8 @@ module com.project.visa_management_portal {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
+    //requires com.project.visa_management_portal;
+    //showing error that's why it's being commmented, commented by Galib
 
 
     opens com.project.visa_management_portal to javafx.fxml;
@@ -35,13 +37,6 @@ module com.project.visa_management_portal {
     opens com.project.visa_management_portal.tanjil.registeredAgent.controller to javafx.fxml;
     exports com.project.visa_management_portal.tanjil.registeredAgent.controller;
 
-
-
-//    opens com.project.visa_management_portal.rifat.operationManager.controller to javafx.fxml;
-//    exports com.project.visa_management_portal.rifat.operationManager.controller;
-//
-//    opens com.project.visa_management_portal.rifat.policyManager.controller to javafx.fxml;
-//    exports com.project.visa_management_portal.rifat.policyManager.controller;
 
     opens com.project.visa_management_portal.galib.issuer to javafx.fxml;
     exports com.project.visa_management_portal.galib.issuer;
