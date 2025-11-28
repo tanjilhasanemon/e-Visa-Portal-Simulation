@@ -53,4 +53,5 @@ module com.project.visa_management_portal {
     opens com.project.visa_management_portal.rifat.policyManager.controller to javafx.fxml;
     exports com.project.visa_management_portal.rifat.policyManager.controller;
 
+
 }
