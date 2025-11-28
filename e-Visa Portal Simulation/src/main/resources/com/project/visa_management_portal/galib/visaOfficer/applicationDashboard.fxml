@@ -28,7 +28,7 @@
         </font>
     </Text>
     <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
-    <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant Dashboard">
+    <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Application Dashboard">
         <font>
             <Font name="System Bold" size="13.0" />
         </font>
@@ -51,14 +51,14 @@
     </MenuBar>
 
     <Label layoutX="14.0" layoutY="106.0" />
-    <TextField layoutX="35.0" layoutY="137.0" prefHeight="26.0" prefWidth="238.0" promptText="Search:" />
+    <TextField layoutX="34.0" layoutY="139.0" prefHeight="26.0" prefWidth="238.0" promptText="Search:" />
     <ComboBox layoutX="297.0" layoutY="139.0" prefHeight="26.0" prefWidth="198.0" promptText="Filter" />
 
     <Button layoutX="575.0" layoutY="139.0" prefHeight="26.0" prefWidth="130.0" text="Refresh" />
     <Button layoutX="734.0" layoutY="138.0" prefHeight="26.0" prefWidth="129.0" text="Open" />
-    <Button layoutX="319.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
+    <Button layoutX="376.0" layoutY="534.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="150.0" text="Back To Main Dashboard" />
 
-    <TableView layoutX="34.0" layoutY="187.0" prefHeight="331.0" prefWidth="829.0">
+    <TableView layoutX="34.0" layoutY="187.0" prefHeight="328.0" prefWidth="830.0">
         <columns>
             <TableColumn prefWidth="126.39998817443848" text="ID" />
             <TableColumn prefWidth="224.0" text="Name" />
