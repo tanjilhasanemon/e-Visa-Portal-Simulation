@@ -28,13 +28,12 @@
     <TextField fx:id="countryTextField" layoutX="115.0" layoutY="463.0" prefWidth="200.0" />
     <Label layoutX="358.0" layoutY="458.0" text="From (YYYY-MM-DD):" textFill="white" />
     <Label layoutX="20.0" layoutY="529.0" text="To (YYYY-MM-DD):" textFill="white" />
-
-    <Button layoutX="373.0" layoutY="525.0" onAction="#validateOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Validate" />
-    <Button layoutX="550.0" layoutY="525.0" onAction="#saveOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Save" />
-    <Button layoutX="492.0" layoutY="595.0" onAction="#backToDashboardOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+    <Button layoutX="428.0" layoutY="534.0" onAction="#saveOnAction" prefHeight="26.0" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Save" />
+    <Button layoutX="428.0" layoutY="592.0" onAction="#backToDashboardOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
     <Label alignment="CENTER" layoutY="656.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Travel History" />
    <DatePicker fx:id="fromDatePicker" layoutX="484.0" layoutY="454.0" />
    <DatePicker fx:id="toDatePicker" layoutX="115.0" layoutY="525.0" />
    <Label layoutX="26.0" layoutY="101.0" text="Applicant ID:" textFill="white" />
-   <TextField fx:id="applicantIDTextFIels" layoutX="115.0" layoutY="96.0" prefHeight="26.0" prefWidth="148.0" />
+   <TextField fx:id="applicantIDTextFields" layoutX="115.0" layoutY="96.0" prefHeight="26.0" prefWidth="148.0" />
+   <Label fx:id="statusLabel" layoutX="275.0" layoutY="101.0" prefHeight="18.0" prefWidth="406.0" textFill="WHITE" wrapText="true" />
 </AnchorPane>

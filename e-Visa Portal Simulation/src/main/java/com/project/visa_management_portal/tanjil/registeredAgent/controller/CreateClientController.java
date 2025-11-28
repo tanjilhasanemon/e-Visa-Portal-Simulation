@@ -21,6 +21,13 @@ public class CreateClientController
     @javafx.fxml.FXML
     private TextField clientPassportNoTextField;
 
+
+    @javafx.fxml.FXML
+    public void initialize() {
+        if (lblClientMsg != null) lblClientMsg.setText("Enter client details and press Create.");
+    }
+
+
     @javafx.fxml.FXML
     public void backToDashboardOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/RegisteredAgentDashboard.fxml"));
@@ -33,11 +40,18 @@ public class CreateClientController
 
     @javafx.fxml.FXML
     public void createClientProfileOnAction(ActionEvent actionEvent) {
+
+        String name = (nameTextField.getText());
+        String passport = (clientPassportNoTextField.getText());
+        String contact = (clientContactTextField.getText());
+
+        // basic validation
+        if (name.isEmpty() || passport.isEmpty() || contact.isEmpty()) {
+            //set text "Validation error", "All fields are required.");
+            return;
+        }
     }
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
 
     @javafx.fxml.FXML
     public void validateClientProfileOnAction(ActionEvent actionEvent) {

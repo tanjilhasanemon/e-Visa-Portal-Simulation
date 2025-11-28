@@ -22,9 +22,7 @@
     <TextField fx:id="photoPathTextField" layoutX="175.0" layoutY="225.0" prefWidth="380.0" />
     <Button layoutX="565.0" layoutY="225.0" onAction="#choosePhotoPathOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Choose" />
 
-    <CheckBox fx:id="confirmCheckBox" layoutX="35.0" layoutY="279.0" text="I confirm files are correct" textFill="white" />
-
-    <Button layoutX="35.0" layoutY="319.0" onAction="#validateOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Validate" />
+    <CheckBox fx:id="confirmCheckBox" layoutX="175.0" layoutY="275.0" text="I confirm files are correct" textFill="white" />
     <Button layoutX="175.0" layoutY="319.0" onAction="#attachOnAction" prefWidth="120.0" style="-fx-background-color: #00a1ec;" text="Attach" />
     <Button layoutX="315.0" layoutY="319.0" onAction="#backToDashboardOnAction" prefWidth="180.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
     <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Document Upload" />
