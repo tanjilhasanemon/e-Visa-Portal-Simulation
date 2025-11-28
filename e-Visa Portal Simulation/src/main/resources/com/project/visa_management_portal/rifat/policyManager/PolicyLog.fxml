@@ -1,68 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.policyManager.controller.PolicyLogController">
+<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.policyManager.controller.PolicyLogController">
     <children>
         <Label layoutY="573.0" prefHeight="25.0" prefWidth="874.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Label>
-        <Text fill="#36454f" layoutX="297.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
+        <Text fill="#36454f" layoutX="381.0" layoutY="589.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Text>
-        <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
-        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
-            <font>
-                <Font name="System Bold" size="13.0" />
-            </font>
-        </Text>
-        <Text fill="#ffddb0" layoutX="278.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
+        <Text fill="#ffddb0" layoutX="289.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
 
         <!-- Enter your fxml code here -->
-        <Label fx:id="lblTitle" text="Policy Log" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
+        <Label fx:id="lblTitle" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
 
         <TextField fx:id="txtFilter" prefWidth="240.0" promptText="Filter / Search" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="56.0" />
-        <ComboBox fx:id="cmbChangeType" prefWidth="160.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="56.0" />
+        <ComboBox fx:id="cmbChangeType" prefWidth="160.0" promptText="Change Type" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="56.0" />
         <Button fx:id="btnApplyFilter" text="Apply Filter" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="56.0" />
 
-        <TableView fx:id="tblPolicyLog" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="96.0">
+        <TableView fx:id="tblPolicyLog" prefHeight="460.0" prefWidth="842.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="96.0">
             <columns>
-                <TableColumn fx:id="colTimestamp" text="Timestamp" />
-                <TableColumn fx:id="colUser" text="User" />
-                <TableColumn fx:id="colChangeSummary" text="ChangeSummary" />
+                <TableColumn fx:id="colTimestamp" prefWidth="95.0" text="Timestamp" />
+                <TableColumn fx:id="colUser" prefWidth="176.0" text="User" />
+                <TableColumn fx:id="colChangeSummary" prefWidth="570.0" text="ChangeSummary" />
             </columns>
         </TableView>
         <Button fx:id="btnBackToDashBoard" layoutX="734.0" layoutY="12.0" mnemonicParsing="false" onAction="#backToDashboardOnActionButton" prefHeight="25.0" prefWidth="131.0" text="Back to Dashboard" />
 
 
 
-        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
-        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name" underline="true">
+        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="551.0" layoutY="33.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
+        <Text fill="#ffddb0" layoutX="468.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Policy Log" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
+      <Button fx:id="btn_Refresh" layoutX="800.0" layoutY="56.0" mnemonicParsing="false" onAction="#refreshOnActionButton" text="Refresh" />
     </children>
 </AnchorPane>
-
-
-
-
-

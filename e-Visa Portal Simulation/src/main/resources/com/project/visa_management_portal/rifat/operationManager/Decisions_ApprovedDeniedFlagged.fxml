@@ -49,50 +49,47 @@
                 <Font name="System Bold" size="13.0" />
             </font>
         </Label>
-        <Text fill="#36454f" layoutX="297.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
+        <Text fill="#36454f" layoutX="378.0" layoutY="589.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Text>
-        <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
-        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
-            <font>
-                <Font name="System Bold" size="13.0" />
-            </font>
-        </Text>
-        <Text fill="#ffddb0" layoutX="278.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
+        <Text fill="#ffddb0" layoutX="142.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
 
         <!-- Enter your fxml code here -->
-        <Label fx:id="lblTitle" text="Decisions (Approved / Denied / Flagged)" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
+        <Label fx:id="lblTitle" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
 
-        <ComboBox fx:id="cmbStatusFilter" prefWidth="160.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="56.0" />
-        <TextField fx:id="txtSearch" prefWidth="260.0" promptText="Search..." AnchorPane.leftAnchor="190.0" AnchorPane.topAnchor="56.0" />
-        <Button fx:id="btnFilter" text="Search/Filter" AnchorPane.leftAnchor="470.0" AnchorPane.topAnchor="56.0" />
+        <ComboBox fx:id="cmbStatusFilter" layoutX="115.0" layoutY="56.0" prefWidth="160.0" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="56.0" />
+        <TextField fx:id="txtSearch_ID" layoutX="534.0" layoutY="56.0" prefWidth="260.0" promptText="Search..." AnchorPane.leftAnchor="534.0" AnchorPane.topAnchor="56.0" />
+        <Button fx:id="btnSearch_ID" layoutX="805.0" layoutY="56.0" onAction="#idSearchOnActionButton" text="Search" AnchorPane.leftAnchor="805.0" AnchorPane.topAnchor="56.0" />
 
         <TableView fx:id="tblDecisions" prefHeight="308.0" prefWidth="842.0" AnchorPane.bottomAnchor="189.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="100.0">
             <columns>
-                <TableColumn fx:id="colAppID" text="AppID" />
-                <TableColumn fx:id="colType" text="Type" />
-                <TableColumn fx:id="colDecisionDate" text="DecisionDate" />
-                <TableColumn fx:id="colOfficer" text="Officer" />
+                <TableColumn fx:id="colAppID" prefWidth="179.0" text="AppID" />
+                <TableColumn fx:id="colType" prefWidth="147.0" text="Type" />
+                <TableColumn fx:id="colDecisionDate" prefWidth="199.0" text="DecisionDate" />
+                <TableColumn fx:id="colOfficer" prefWidth="182.0" text="Officer" />
+            <TableColumn fx:id="colStatus" prefWidth="134.0" text="Status" />
             </columns>
         </TableView>
 
-        <TextArea fx:id="txtFlagDetails" editable="false" prefHeight="105.0" prefWidth="842.0" promptText="Flag reason / notes" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" />
-        <Button fx:id="btnOpenDetail" layoutX="778.0" layoutY="424.0" text="Open Detail" AnchorPane.bottomAnchor="149.98578646183012" AnchorPane.rightAnchor="17.199999999999932" />
+        <TextArea fx:id="txtFieldFlagDetails" editable="false" prefHeight="105.0" prefWidth="842.0" promptText="Flag reason / notes" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" />
+        <Button fx:id="btnOpenFlaggedDetail" layoutX="778.0" layoutY="424.0" onAction="#openFlaggedDetails" text="Open Detail" AnchorPane.bottomAnchor="149.98578646183012" AnchorPane.rightAnchor="17.199999999999932" />
         <Button fx:id="btnBackToDashBoard" layoutX="728.0" layoutY="12.0" mnemonicParsing="false" onAction="#backToDashboardOnActionButton" prefHeight="25.0" prefWidth="131.0" text="Back to Dashboard" />
 
 
 
-        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
-        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name" underline="true">
+        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="404.0" layoutY="41.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
+        <Text fill="#ffddb0" layoutX="321.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Approved / Denied / Flagged View" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
+      <Button fx:id="btnApprovedDeniedFlaggedFilter1" layoutX="283.0" layoutY="56.0" onAction="#filterApproveDeniedFlaggedOnActionButton" text="Filter" />
+      <Button layoutX="16.0" layoutY="56.0" mnemonicParsing="false" text="Refresh" />
     </children>
 </AnchorPane>

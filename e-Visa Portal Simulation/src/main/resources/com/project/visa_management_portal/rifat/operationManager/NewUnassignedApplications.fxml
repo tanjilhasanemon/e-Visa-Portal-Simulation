@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -18,29 +17,22 @@
                 <Font name="System Bold" size="13.0" />
             </font>
         </Label>
-        <Text fill="#36454f" layoutX="297.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
+        <Text fill="#36454f" layoutX="387.0" layoutY="592.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Text>
-        <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
-        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
-            <font>
-                <Font name="System Bold" size="13.0" />
-            </font>
-        </Text>
-        <Text fill="#ffddb0" layoutX="278.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
+        <Text fill="#ffddb0" layoutX="180.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
 
         <!-- Enter your fxml code here -->
-        <Label fx:id="lblTitle" text="New / Unassigned Applications" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
+        <Label fx:id="lblTitle" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
 
         <ComboBox fx:id="cmbVisaType" prefWidth="200.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="56.0" />
-        <Button fx:id="btnApplyFilter" text="Apply Filter" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="56.0" />
-        <TextField fx:id="txtSearch" prefWidth="260.0" promptText="Search AppID or Type" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="56.0" />
+        <Button fx:id="btnApplyFilterVisaType" onAction="#applyFilterVisaTypeOnActionButton" text="Apply Filter" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="56.0" />
 
         <TableView fx:id="tblNewUnassigned" prefHeight="421.0" prefWidth="842.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="100.0">
             <columns>
@@ -52,17 +44,18 @@
         </TableView>
 
         <ComboBox fx:id="cmbOfficer" layoutX="15.0" layoutY="539.0" prefWidth="240.0" AnchorPane.bottomAnchor="62.799999999999955" AnchorPane.leftAnchor="15.0" />
-        <Button fx:id="btnAssign" layoutX="269.0" layoutY="539.0" text="Assign" AnchorPane.bottomAnchor="62.799999999999955" AnchorPane.leftAnchor="269.0" />
-        <Button fx:id="btnConfirmAssign" layoutX="349.0" layoutY="539.0" text="Confirm Assign" AnchorPane.bottomAnchor="62.799999999999955" AnchorPane.leftAnchor="349.0" />
-        <Button fx:id="btnBackToDashBoard" layoutX="728.0" layoutY="12.0" mnemonicParsing="false" onAction="#backToDashboardOnActionButton" prefHeight="25.0" prefWidth="131.0" text="Back to Dashboard" />
+        <Button fx:id="btnAssign" layoutX="269.0" layoutY="539.0" onAction="#assignApplicationsToVIsaOfficerOnActionButton" text="Assign" AnchorPane.bottomAnchor="62.799999999999955" AnchorPane.leftAnchor="269.0" />
+        <Button fx:id="btnConfirmAssign" layoutX="349.0" layoutY="539.0" onAction="#confirmAssignOnActionButton" text="Confirm Assign" AnchorPane.bottomAnchor="62.799999999999955" AnchorPane.leftAnchor="349.0" />
+        <Button fx:id="btnBackToDashBoard" layoutX="729.0" layoutY="56.0" mnemonicParsing="false" onAction="#backToDashboardOnActionButton" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #c92020;" text="Back to Dashboard" textFill="WHITE" />
 
 
 
-        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
-        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name" underline="true">
+        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="442.0" layoutY="41.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
+        <Text fill="#ffddb0" layoutX="359.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New / Unassigned Applications" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
+      <Button fx:id="btnRefresh" layoutX="740.0" layoutY="513.0" mnemonicParsing="false" onAction="#refreshOnActionButton" prefHeight="25.0" prefWidth="97.0" text="Refresh" />
     </children>
 </AnchorPane>

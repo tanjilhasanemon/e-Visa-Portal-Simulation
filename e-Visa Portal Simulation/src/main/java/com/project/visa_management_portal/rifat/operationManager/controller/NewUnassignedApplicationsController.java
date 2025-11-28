@@ -16,13 +16,9 @@ public class NewUnassignedApplicationsController
     @javafx.fxml.FXML
     private Button btnAssign;
     @javafx.fxml.FXML
-    private Button btnApplyFilter;
-    @javafx.fxml.FXML
     private TableColumn colAppID;
     @javafx.fxml.FXML
     private ComboBox cmbOfficer;
-    @javafx.fxml.FXML
-    private TextField txtSearch;
     @javafx.fxml.FXML
     private ComboBox cmbVisaType;
     @javafx.fxml.FXML
@@ -37,9 +33,15 @@ public class NewUnassignedApplicationsController
     private TableColumn colStatus;
     @javafx.fxml.FXML
     private Button btnBackToDashBoard;
+    @javafx.fxml.FXML
+    private Button btnRefresh;
+    @javafx.fxml.FXML
+    private Button btnApplyFilterVisaType;
 
     @javafx.fxml.FXML
     public void initialize() {
+
+
     }
 
     @javafx.fxml.FXML
@@ -50,5 +52,30 @@ public class NewUnassignedApplicationsController
         stage.setTitle("Operation Manager Dashboard");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @Deprecated
+    public void refreshOnAction(ActionEvent actionEvent) {
+    }
+
+
+    @Deprecated
+    public void applyFilterOnActionBUtton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void assignApplicationsToVIsaOfficerOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void confirmAssignOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void applyFilterVisaTypeOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void refreshOnActionButton(ActionEvent actionEvent) {
     }
 }

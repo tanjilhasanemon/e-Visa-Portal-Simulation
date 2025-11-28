@@ -14,10 +14,6 @@ public class DailySummaryReportController
     @javafx.fxml.FXML
     private TextField txtDateTo;
     @javafx.fxml.FXML
-    private ComboBox cmbPreset;
-    @javafx.fxml.FXML
-    private TableView tblReport;
-    @javafx.fxml.FXML
     private TableColumn colMetric;
     @javafx.fxml.FXML
     private TextField txtDateFrom;
@@ -26,9 +22,15 @@ public class DailySummaryReportController
     @javafx.fxml.FXML
     private Button btnGenerate;
     @javafx.fxml.FXML
-    private TableColumn colValue;
-    @javafx.fxml.FXML
     private Button btnBackToDashBoard;
+    @javafx.fxml.FXML
+    private TableColumn colFlaggedCount;
+    @javafx.fxml.FXML
+    private TableView tblSummaryReport;
+    @javafx.fxml.FXML
+    private TableColumn colApproveCount;
+    @javafx.fxml.FXML
+    private TableColumn colRejectCount;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -42,5 +44,9 @@ public class DailySummaryReportController
         stage.setTitle("Operation Manager Dashboard");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void tbGenerateOnActionButton(ActionEvent actionEvent) {
     }
 }

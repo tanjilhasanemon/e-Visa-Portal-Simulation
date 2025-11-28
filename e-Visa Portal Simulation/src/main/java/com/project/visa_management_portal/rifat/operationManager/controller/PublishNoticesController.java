@@ -16,8 +16,6 @@ public class PublishNoticesController
     @javafx.fxml.FXML
     private Label lblBody;
     @javafx.fxml.FXML
-    private ComboBox cmbAudience;
-    @javafx.fxml.FXML
     private TextArea txtBody;
     @javafx.fxml.FXML
     private Label lblNoticeTitle;
@@ -29,6 +27,8 @@ public class PublishNoticesController
     private TextField txtTitle;
     @javafx.fxml.FXML
     private Button btnBackToDashBoard;
+    @javafx.fxml.FXML
+    private ComboBox cmb_User;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -42,5 +42,9 @@ public class PublishNoticesController
         stage.setTitle("Operation Manager Dashboard");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void validateOnActionBtn(ActionEvent actionEvent) {
     }
 }

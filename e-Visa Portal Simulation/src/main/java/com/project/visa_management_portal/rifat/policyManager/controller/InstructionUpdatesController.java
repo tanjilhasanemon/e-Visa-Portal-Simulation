@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
@@ -20,11 +21,15 @@ public class InstructionUpdatesController
     @javafx.fxml.FXML
     private Button btnEdit;
     @javafx.fxml.FXML
-    private Label lblTitle;
-    @javafx.fxml.FXML
     private Button btnPreview;
     @javafx.fxml.FXML
     private Button btnBackToDashBoard;
+    @javafx.fxml.FXML
+    private Button btn_Load_Instruction;
+    @javafx.fxml.FXML
+    private Button btn_Refresh;
+    @javafx.fxml.FXML
+    private ComboBox cmb_type_of_Instruction;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -38,5 +43,25 @@ public class InstructionUpdatesController
         stage.setTitle("Policy Manager Dashboard");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void saveOnActionBtn(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void editOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void refreshOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void previewOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void load_InstructionOnActionButton(ActionEvent actionEvent) {
     }
 }

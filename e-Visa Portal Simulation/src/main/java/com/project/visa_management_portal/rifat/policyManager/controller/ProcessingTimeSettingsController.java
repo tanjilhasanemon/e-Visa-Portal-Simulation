@@ -12,8 +12,6 @@ import java.io.IOException;
 public class ProcessingTimeSettingsController
 {
     @javafx.fxml.FXML
-    private TextField txtEditDays;
-    @javafx.fxml.FXML
     private TableView tblProcessingTimes;
     @javafx.fxml.FXML
     private Button btnSave;
@@ -25,6 +23,8 @@ public class ProcessingTimeSettingsController
     private TableColumn colVisaType;
     @javafx.fxml.FXML
     private Button btnBackToDashBoard;
+    @javafx.fxml.FXML
+    private TextField txt_SetProcessingDays;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -38,5 +38,9 @@ public class ProcessingTimeSettingsController
         stage.setTitle("Policy Manager Dashboard");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void saveOnActionBtn(ActionEvent actionEvent) {
     }
 }

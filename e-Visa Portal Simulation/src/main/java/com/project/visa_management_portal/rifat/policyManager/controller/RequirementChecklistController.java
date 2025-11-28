@@ -39,4 +39,8 @@ public class RequirementChecklistController
         stage.setScene(scene);
         stage.show();
     }
+
+    @javafx.fxml.FXML
+    public void saveOnActionButton(ActionEvent actionEvent) {
+    }
 }
