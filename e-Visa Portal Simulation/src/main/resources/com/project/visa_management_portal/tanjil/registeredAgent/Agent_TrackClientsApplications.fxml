@@ -8,24 +8,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.TrackClientsController">
-    <children>
-        <Label layoutX="200.0" layoutY="20.0" text="My Clients' Applications" textFill="#00a1ec" underline="true">
-            <font><Font name="System Bold" size="26.0" /></font>
-        </Label>
+<AnchorPane prefHeight="596.0" prefWidth="727.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.TrackClientsController">
+    <Label layoutX="200.0" layoutY="20.0" text="My Clients' Applications" textFill="#00a1ec" underline="true">
+        <font>
+            <Font name="System Bold" size="26.0" />
+        </font>
+    </Label>
 
-        <TextField fx:id="filterClientOrStatusTextField" layoutX="20.0" layoutY="70.0" prefWidth="500.0" promptText="Filter by Applicant ID" />
-        <Button layoutX="540.0" layoutY="70.0" onAction="#applyFilterOnAction" prefWidth="140.0" style="-fx-background-color: #00a1ec;" text="Apply Filter" />
+    <TextField fx:id="filterClientOrStatusTextField" layoutX="18.0" layoutY="156.0" prefWidth="500.0" promptText="Filter by Applicant ID" />
+    <Button layoutX="538.0" layoutY="156.0" onAction="#applyFilterOnAction" prefWidth="140.0" style="-fx-background-color: #00a1ec;" text="Apply Filter" />
 
-        <TableView fx:id="clientApplicantionsTableView" layoutX="20.0" layoutY="110.0" prefHeight="300.0" prefWidth="660.0">
-            <columns>
-                <TableColumn fx:id="applicationIdTableColumn" prefWidth="220.0" text="Application ID" />
-                <TableColumn fx:id="clientTableColumn" prefWidth="220.0" text="Client" />
-                <TableColumn fx:id="statusTableColumn" prefWidth="220.0" text="Status" />
-            </columns>
-        </TableView>
-        <Button layoutX="20.0" layoutY="424.0" onAction="#backToDashboardOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+    <TableView fx:id="clientApplicantionsTableView" layoutX="18.0" layoutY="196.0" prefHeight="300.0" prefWidth="660.0">
+        <columns>
+            <TableColumn fx:id="applicationIdTableColumn" prefWidth="220.0" text="Application ID" />
+            <TableColumn fx:id="statusTableColumn" prefWidth="220.0" text="Status" />
+         <TableColumn fx:id="actionTableColumn" prefWidth="219.20001220703125" text="Action" />
+        </columns>
+    </TableView>
+    <Button layoutX="18.0" layoutY="510.0" onAction="#backToDashboardOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
 
-        <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Agent - Track" />
-    </children>
+    <Label alignment="CENTER" layoutY="578.0" prefHeight="20.0" prefWidth="727.0" style="-fx-background-color: white;" text="eVisa Portal | Agent - Track" />
+    <Label fx:id="statusLabel" layoutX="18.0" layoutY="101.0" prefHeight="18.0" prefWidth="660.0" textFill="WHITE" />
 </AnchorPane>

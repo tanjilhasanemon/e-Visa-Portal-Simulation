@@ -1,5 +1,6 @@
 package com.project.visa_management_portal.tanjil.applicant.controller;
 
+import com.project.visa_management_portal.tanjil.applicant.modelClass.Feedback;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -21,6 +22,14 @@ public class FeedbackController
     private TextField applicantIDTextField;
 
 
+
+    @javafx.fxml.FXML
+    public void initialize() {
+
+
+    }
+
+
     @javafx.fxml.FXML
     public void backToDashboardOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Dashboard.fxml"));
@@ -33,13 +42,20 @@ public class FeedbackController
 
     @javafx.fxml.FXML
     public void submitOnAction(ActionEvent actionEvent) {
-    }
+        String applicantId = applicantIDTextField.getText();
+        String subject = subjectTextField.getText();
+        String message = messageTextArea.getText();
 
-    @Deprecated
-    public void validateOnAction(ActionEvent actionEvent) {
-    }
+        // Basic validation
+        if (applicantId.isBlank() || subject.isBlank() || message.isBlank()) {
+            //Statusss label
+            return;
+        }
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
+        // Create Feedback object
+        Feedback feedback = new Feedback(applicantId, subject, message);
+        }
+
+
+
 }

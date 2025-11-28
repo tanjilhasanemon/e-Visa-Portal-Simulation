@@ -27,4 +27,5 @@
    <TextField fx:id="applicationIDTextField" editable="false" layoutX="220.0" layoutY="126.0" prefWidth="120.0" />
    <Label layoutX="64.0" layoutY="130.0" text="Applicant ID:" textFill="white" />
    <Button layoutX="380.0" layoutY="126.0" onAction="#loadInfoOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Load Info" />
+   <Label fx:id="statusLabel" layoutX="220.0" layoutY="290.0" prefHeight="18.0" prefWidth="413.0" textFill="WHITE" />
 </AnchorPane>

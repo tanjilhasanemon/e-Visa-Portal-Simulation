@@ -1,12 +1,12 @@
 package com.project.visa_management_portal.tanjil.applicant.controller;
 
+import com.project.visa_management_portal.tanjil.DownloadReceipt;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,13 +15,26 @@ public class DownloadsController
 {
 
     @javafx.fxml.FXML
-    private TableColumn fileNameTableColumn;
+    private TableColumn <DownloadReceipt, String> fileNameTableColumn;
     @javafx.fxml.FXML
-    private TableColumn typeTableColumn;
+    private TableColumn <DownloadReceipt, String> typeTableColumn;
     @javafx.fxml.FXML
-    private TableView filesTableView;
+    private TableView <DownloadReceipt>  filesTableView;
     @javafx.fxml.FXML
     private TextField applicantIDTextField;
+    @javafx.fxml.FXML
+    private Label statusLabel;
+
+
+    @javafx.fxml.FXML
+    public void initialize() {
+
+        fileNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("fileName"));
+        typeTableColumn.setCellValueFactory(new PropertyValueFactory<>("fileType"));
+
+
+
+    }
 
     @javafx.fxml.FXML
     public void backToDashboardOnAction(ActionEvent actionEvent) throws IOException {
@@ -37,11 +50,14 @@ public class DownloadsController
     public void fileDownloadOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
 
     @javafx.fxml.FXML
     public void loadOnAction(ActionEvent actionEvent) {
+        String applicantId = (applicantIDTextField.getText());
+
+        if (applicantId.isEmpty()) {
+            statusLabel.setText( "Input required, Please enter your Applicant ID to load receipts.");
+        }
+
     }
 }

@@ -8,28 +8,28 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.AddTravelController">
-    <children>
-        <Label layoutX="220.0" layoutY="20.0" text="Add Travel History (Agent)" textFill="#00a1ec" underline="true">
-            <font><Font name="System Bold" size="26.0" /></font>
-        </Label>
+    <Label layoutX="220.0" layoutY="20.0" text="Add Travel History (Agent)" textFill="#00a1ec" underline="true">
+        <font>
+            <Font name="System Bold" size="26.0" />
+        </font>
+    </Label>
 
-        <Label layoutX="20.0" layoutY="80.0" text="Application ID:" textFill="white" />
-        <TextField fx:id="applicationIdTextField" layoutX="140.0" layoutY="76.0" prefWidth="200.0" />
+    <Label layoutX="20.0" layoutY="80.0" text="Application ID:" textFill="white" />
+    <TextField fx:id="applicationIdTextField" layoutX="140.0" layoutY="76.0" prefWidth="200.0" />
 
-        <Label layoutX="20.0" layoutY="130.0" text="Country:" textFill="white" />
-        <TextField fx:id="countryTextField" layoutX="140.0" layoutY="126.0" prefWidth="200.0" />
+    <Label layoutX="20.0" layoutY="130.0" text="Country:" textFill="white" />
+    <TextField fx:id="countryTextField" layoutX="140.0" layoutY="126.0" prefWidth="200.0" />
 
-        <Label layoutX="20.0" layoutY="180.0" text="From (YYYY-MM-DD):" textFill="white" />
+    <Label layoutX="20.0" layoutY="180.0" text="From (YYYY-MM-DD):" textFill="white" />
 
-        <Label layoutX="20.0" layoutY="220.0" text="To (YYYY-MM-DD):" textFill="white" />
+    <Label layoutX="20.0" layoutY="220.0" text="To (YYYY-MM-DD):" textFill="white" />
 
-        <Button layoutX="360.0" layoutY="176.0" onAction="#validateOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Validate" />
-        <Button layoutX="480.0" layoutY="176.0" onAction="#saveOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Save" />
-        <Button layoutX="20.0" layoutY="420.0" onAction="#backToDashboardOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+    <Button layoutX="360.0" layoutY="176.0" onAction="#validateOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Validate" />
+    <Button layoutX="480.0" layoutY="176.0" onAction="#saveOnAction" prefWidth="100.0" style="-fx-background-color: #00a1ec;" text="Save" />
+    <Button layoutX="20.0" layoutY="420.0" onAction="#backToDashboardOnAction" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
 
-        <Label fx:id="lblAgentTravelMsg" layoutX="20.0" layoutY="260.0" textFill="red" />
-        <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Agent - Travel" />
-      <DatePicker fx:id="fromDatePicker" layoutX="153.0" layoutY="176.0" />
-      <DatePicker fx:id="toDatePicker" layoutX="153.0" layoutY="216.0" />
-    </children>
+    <Label fx:id="statusLabel" layoutX="20.0" layoutY="260.0" prefHeight="18.0" prefWidth="608.0" textFill="WHITE" />
+    <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Agent - Travel" />
+    <DatePicker fx:id="fromDatePicker" layoutX="153.0" layoutY="176.0" />
+    <DatePicker fx:id="toDatePicker" layoutX="153.0" layoutY="216.0" />
 </AnchorPane>

@@ -1,5 +1,6 @@
 package com.project.visa_management_portal.tanjil.registeredAgent.controller;
 
+import com.project.visa_management_portal.tanjil.registeredAgent.modelClass.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -8,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,20 +19,26 @@ public class ClientListController
     @javafx.fxml.FXML
     private Label statusLabel;
     @javafx.fxml.FXML
-    private TableColumn clientPassportNoTableColumn;
+    private TableColumn <Client, String> clientPassportNoTableColumn;
     @javafx.fxml.FXML
-    private TableColumn clientNationalityTableColumn;
+    private TableColumn <Client, String>clientNationalityTableColumn;
     @javafx.fxml.FXML
-    private TableColumn clientActionTableColumn;
+    private TableColumn<Client, String> clientActionTableColumn;
     @javafx.fxml.FXML
-    private TableColumn clientEmailTableColumn;
+    private TableColumn <Client, String>clientEmailTableColumn;
     @javafx.fxml.FXML
-    private TableColumn clientNameTableColumn;
+    private TableColumn <Client, String>clientNameTableColumn;
     @javafx.fxml.FXML
-    private TableView clientTableView;
+    private TableView <Client>clientTableView;
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        clientPassportNoTableColumn.setCellValueFactory(new PropertyValueFactory<>("passportNO"));
+        clientNationalityTableColumn.setCellValueFactory(new PropertyValueFactory<>(""));
+        clientActionTableColumn.setCellValueFactory(new PropertyValueFactory<>(""));
+        clientEmailTableColumn.setCellValueFactory(new PropertyValueFactory<>("contact"));
+        clientNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
     }
 
     @javafx.fxml.FXML

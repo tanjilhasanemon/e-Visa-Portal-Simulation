@@ -1,13 +1,16 @@
 package com.project.visa_management_portal.tanjil.applicant.controller;
 
+import com.project.visa_management_portal.tanjil.TravelHistoryEntry;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class TravelHistoryController
 {
@@ -16,17 +19,33 @@ public class TravelHistoryController
     @javafx.fxml.FXML
     private DatePicker fromDatePicker;
     @javafx.fxml.FXML
-    private TableView travelHistoryTableView;
+    private TableView <String> travelHistoryTableView;
     @javafx.fxml.FXML
-    private TableColumn fromTableColumn;
+    private TableColumn <String, TravelHistoryEntry> fromTableColumn;
     @javafx.fxml.FXML
-    private TableColumn toTableColumn;
+    private TableColumn <String, TravelHistoryEntry> toTableColumn;
     @javafx.fxml.FXML
     private DatePicker toDatePicker;
     @javafx.fxml.FXML
-    private TableColumn countryColumnView;
+    private TableColumn <String, TravelHistoryEntry>countryColumnView;
     @javafx.fxml.FXML
-    private TextField applicantIDTextFIels;
+    private TextField applicantIDTextFields;
+    @javafx.fxml.FXML
+    private Label statusLabel;
+
+
+    @javafx.fxml.FXML
+    public void initialize() {
+        if (statusLabel != null) statusLabel.setText("Enter application ID.");
+        toDatePicker.setValue(LocalDate.of(2000, 1,1));
+        toDatePicker.setValue(LocalDate.of(2000, 1,1));
+        countryColumnView.setCellValueFactory(new PropertyValueFactory<>("country"));
+        fromTableColumn.setCellValueFactory(new PropertyValueFactory<>("fromDate"));
+        toTableColumn.setCellValueFactory(new PropertyValueFactory<>("toDate"));
+
+    }
+
+
 
     @javafx.fxml.FXML
     public void backToDashboardOnAction(ActionEvent actionEvent) throws IOException {
@@ -38,15 +57,37 @@ public class TravelHistoryController
         stage.show();
     }
 
-    @javafx.fxml.FXML
-    public void validateOnAction(ActionEvent actionEvent) {
-    }
+
 
     @javafx.fxml.FXML
     public void saveOnAction(ActionEvent actionEvent) {
+
+        String country = (countryTextField.getText());
+        LocalDate from = fromDatePicker.getValue();
+        LocalDate to = toDatePicker.getValue();
+        String applicantId = (applicantIDTextFields.getText());
+
+
+        if (countryTextField.getText().isEmpty() || fromDatePicker == null || toDatePicker == null ||applicantIDTextFields.getText().isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Validation", "Country, from date, to date and applicant ID are required.");
+            return;
+        }
+
+
+        if (!fromDatePicker.getValue().isBefore(toDatePicker.getValue())) {
+            return;
+        }
+        showAlert(Alert.AlertType.ERROR, "Validation", "To-date must be same or after From-date.");
+        return;
     }
 
-    @javafx.fxml.FXML
-    public void initialize() {
+    private void showAlert(Alert.AlertType type, String title, String msg) {
+        Alert a = new Alert(type);
+        a.setTitle(title);
+        a.setHeaderText(null);
+        a.setContentText(msg);
+        a.showAndWait();
     }
+
 }
+

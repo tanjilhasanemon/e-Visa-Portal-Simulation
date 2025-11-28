@@ -26,7 +26,8 @@
 
     <Label alignment="CENTER" layoutX="-1.0" layoutY="576.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Downloads" />
     <Button layoutX="204.0" layoutY="517.0" onAction="#backToDashboardOnAction" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
-   <TextField fx:id="applicantIDTextField" layoutX="204.0" layoutY="87.0" />
-   <Label layoutX="99.0" layoutY="91.0" text="Applicant ID:" textFill="WHITE" />
-   <Button layoutX="391.0" layoutY="84.0" onAction="#loadOnAction" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Load" />
+   <TextField fx:id="applicantIDTextField" layoutX="163.0" layoutY="137.0" />
+   <Label layoutX="58.0" layoutY="141.0" text="Applicant ID:" textFill="WHITE" />
+   <Button layoutX="350.0" layoutY="134.0" onAction="#loadOnAction" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: #00a1ec;" text="Load" />
+   <Label fx:id="statusLabel" layoutX="58.0" layoutY="84.0" prefHeight="18.0" prefWidth="550.0" textFill="WHITE" />
 </AnchorPane>

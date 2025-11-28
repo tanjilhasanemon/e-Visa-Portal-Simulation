@@ -23,6 +23,13 @@ public class AgentSupportController
     private TextArea messageTextArea;
 
 
+
+    @javafx.fxml.FXML
+    public void initialize() {
+        if (lblSupportMsg != null) lblSupportMsg.setText("Enter client ID, subject and message.");
+    }
+
+
     @javafx.fxml.FXML
     public void backToDashboardOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/RegisteredAgentDashboard.fxml"));
@@ -35,9 +42,16 @@ public class AgentSupportController
 
     @javafx.fxml.FXML
     public void submitOnAction(ActionEvent actionEvent) {
+        String clientId = (clientIdTextField.getText());
+        String subject = (subjectTextField.getText());
+        String message = (messageTextArea.getText());
+
+        // Basic validation
+        if (clientId.isEmpty() || subject.isEmpty() || message.isEmpty()) {
+            // show label "Validation error", "All fields are required (Client ID, Subject, Message)
+            return;
+        }
     }
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
+
 }
