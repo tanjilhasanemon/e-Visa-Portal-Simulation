@@ -1,6 +1,8 @@
 package com.project.visa_management_portal.initial.signUp;
 
 
+import com.project.visa_management_portal.AppendableObjectOutputStream;
+import com.project.visa_management_portal.ExternalUser;
 import com.project.visa_management_portal.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -32,12 +34,19 @@ public class ExternalSignUpController
     private TextField agentLicenseNoTextField;
 
 
-    private ArrayList <User> applicantList = new ArrayList<>();
-    private ArrayList<User> agentList = new ArrayList<>();
+   public ArrayList<ExternalUser> applicantList = new ArrayList<>();
+   public ArrayList<ExternalUser> agentList = new ArrayList<>();
 
 
     public void initialize() {
         userTypeComboBox.getItems().addAll("Applicant", "Registered Agent");
+
+        // enable/disable license input depending on selection from GPT
+        userTypeComboBox.setOnAction(e -> {
+            boolean isAgent = "Registered Agent".equals(userTypeComboBox.getValue());
+            agentLicenseNoTextField.setDisable(!isAgent);
+            if (!isAgent) agentLicenseNoTextField.clear();
+        });
     }
 
 
@@ -48,6 +57,7 @@ public class ExternalSignUpController
         String email = emailTextField.getText();
         String pass = passwordTextField.getText();
         String agentLicenseNO = agentLicenseNoTextField.getText();
+        String userId = String.valueOf(1000 + (int)(Math.random() * 9000));
 
         //Validation
         if (name.isEmpty() || email.isEmpty() || pass.isEmpty()) {
@@ -65,21 +75,72 @@ public class ExternalSignUpController
 
 
         if (Objects.equals(userTypeComboBox.getValue(), "Applicant")){
-            User newApplicants = new
-            newApplicants.signUpExternal(name,email,pass);
-            applicantList.add(newApplicants);
+            ExternalUser newApplicant = new ExternalUser(userType, name, email, pass, null);
+            newApplicant.signUpExternal(name, email, pass); // generates userId inside User class
+            applicantList.add(newApplicant);
 
+
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+            try{
+                File file = new File("Applicants.bin");
+                if(file.exists()){
+                    fos = new FileOutputStream(file, true);
+                    oos = new AppendableObjectOutputStream(fos);
+
+                }
+                else{
+                    fos = new FileOutputStream(file);
+                    oos = new ObjectOutputStream(fos);
+                    for (ExternalUser a:applicantList){
+                        oos.writeObject(a);
+                    }
+                }
+                oos.close();
+            } catch (Exception e) {
+                showAlert(Alert.AlertType.ERROR, "Sign up error", "An unexpected error occurred while signing up.");
+            }
 
         }
 
 
 
 
-        userList.add(newUser);
+        else if (Objects.equals(userTypeComboBox.getValue(), "Registered Agent") ) {
+            ExternalUser newAgent = new ExternalUser(userType, name, email, pass, agentLicenseNO);
+            newAgent.signUpExternal(name, email, pass);
+
+
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+            try {
+                File file = new File("Agents.bin");
+                if (file.exists()) {
+                    fos = new FileOutputStream(file, true);
+                    oos = new AppendableObjectOutputStream(fos);
+                } else {
+                    fos = new FileOutputStream(file);
+                    oos = new ObjectOutputStream(fos);
+                }
+                for (ExternalUser r: agentList) {
+                    oos.writeObject(r);
+                }
+                oos.close();
+            } catch (Exception e) {
+                showAlert(Alert.AlertType.ERROR, "Sign up error", "An unexpected error occurred while signing up.");
+            }
+
+        }
+
+
+
 
         showAlert(Alert.AlertType.INFORMATION, "Sign up successful", "Account created for " + name + ".");
 
         clearForm();
+
+
+        //Scene Switch to the External User Login Scene
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/initial/externalLogin/ExternalLogin.fxml"));
@@ -91,9 +152,6 @@ public class ExternalSignUpController
         } catch (IOException e) {
             showAlert(Alert.AlertType.ERROR, "Scene error", "Unable to open External Login scene.");
         }
-
-
-
 
     }
 
@@ -114,12 +172,6 @@ public class ExternalSignUpController
     }
 
 
-    private boolean isEmailRegistered(String email) {
-        for (User u : userList) {
-            if (u.getEmail() != null && u.getEmail().equalsIgnoreCase(email)) return true;
-        }
-        return false;
-    }
 
 
     private void showAlert(Alert.AlertType type, String title, String message) {
@@ -144,8 +196,16 @@ public class ExternalSignUpController
         if (statusLabel != null) statusLabel.setText("");
     }
 
-    public static ArrayList<User> getUserList() {
-        return userList;
-    }
 
+
+    private boolean isEmailRegistered(String email) {
+        if (email == null) return false;
+        for (ExternalUser u : applicantList) {
+            if (email.equals(u.getEmail())) return true;
+        }
+        for (ExternalUser u : agentList) {
+            if (email.equals(u.getEmail())) return true;
+        }
+        return false;
+    }
 }

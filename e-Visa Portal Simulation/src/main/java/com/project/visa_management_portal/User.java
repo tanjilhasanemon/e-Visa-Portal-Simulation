@@ -3,11 +3,9 @@ package com.project.visa_management_portal;
 import java.io.Serializable;
 import java.util.UUID;
 
-/**
- * Base abstract User class.
- * Provides a concrete signUpExternal that sets fields and returns generated userId.
- */
 public abstract class User implements Serializable {
+
+
     protected String userId;
     protected String name;
     protected String email;
@@ -23,7 +21,6 @@ public abstract class User implements Serializable {
     public User() {
     }
 
-    // --- getters / setters ---
     public String getUserId() { return userId; }
     public void setUserId(String userId) { this.userId = userId; }
 
@@ -45,17 +42,12 @@ public abstract class User implements Serializable {
                 '}';
     }
 
-    /**
-     * Populate this User instance with signup data and generate an id.
-     * Returns the generated userId.
-     * Note: real apps should hash passwords and persist to DB.
-     */
-    public String signUpExternal(String name, String email, String password) {
+
+    public void signUpExternal(String name, String email, String password) {
         this.userId = UUID.randomUUID().toString();
         this.name = name;
         this.email = email;
-        this.password = password; // for demo only: store plain; hash in real app
-        return this.userId;
+        this.password = password;
     }
 
     // abstract methods that subclasses must implement
