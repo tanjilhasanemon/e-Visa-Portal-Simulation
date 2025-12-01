@@ -21,9 +21,9 @@ public class ApplicantDashboardController
         statusLabel.setText("Welcome to Applicant Dashboard");
 
     }
-    private void showAlert(String title, String message) {
+    private void showAlert(String Title, String message) {
         Alert a = new Alert(Alert.AlertType.ERROR);
-        a.setTitle(title);
+        a.setTitle(Title);
         a.setHeaderText(null);
         a.setContentText(message);
         a.showAndWait();
