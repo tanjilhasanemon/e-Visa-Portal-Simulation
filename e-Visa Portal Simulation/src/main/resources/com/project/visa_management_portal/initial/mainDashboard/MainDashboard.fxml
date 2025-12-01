@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #2B2B2B;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.mainDashboard.MainDashboardController">
+<AnchorPane prefHeight="578.0" prefWidth="800.0" style="-fx-background-color: #2B2B2B;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.mainDashboard.MainDashboardController">
 
     <Label layoutX="222.0" layoutY="53.0" text="e-Visa Management Portal" textFill="white">
         <font>
@@ -33,6 +33,6 @@
 
     <Button layoutX="306.0" layoutY="406.0" onAction="#forgotPasswordOnAction" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: #A5A5A5; -fx-text-fill: white; -fx-font-weight: bold;" text="Forgot Password" />
 
-    <Label fx:id="messageLabel" layoutX="200.0" layoutY="450.0" prefWidth="400.0" textFill="yellow" />
+    <Label fx:id="statusLabel" layoutX="62.0" layoutY="501.0" prefHeight="18.0" prefWidth="667.0" textFill="RED" />
 
 </AnchorPane>

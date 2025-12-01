@@ -8,34 +8,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="520" prefWidth="700" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.signUp.ExternalSignUpController">
+<AnchorPane prefHeight="547.0" prefWidth="716.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.signUp.ExternalSignUpController">
 
-    <Label layoutX="260.0" layoutY="24.0" style="-fx-text-fill: white; -fx-font-size: 20px;" text="External User Sign Up">
+    <Label layoutX="260.0" layoutY="25.0" style="-fx-text-fill: white; -fx-font-size: 20px;" text="External User Sign Up">
         <font><Font size="20" /></font>
     </Label>
 
     <!-- Role selection -->
-    <Label layoutX="120.0" layoutY="90.0" text="Register as:" textFill="white" />
-    <ComboBox fx:id="userTypeComboBox" layoutX="260.0" layoutY="86.0" prefWidth="280.0" promptText="Select Usertype (Applicant / Registered Agent)" />
+    <Label layoutX="120.0" layoutY="91.0" text="Register as:" textFill="white" />
+    <ComboBox fx:id="userTypeComboBox" layoutX="260.0" layoutY="87.0" prefWidth="280.0" promptText="Select Usertype (Applicant / Registered Agent)" />
 
     <!-- Common fields -->
-    <Label layoutX="120.0" layoutY="140.0" text="Full Name:" textFill="white" />
-    <TextField fx:id="nameTextField" layoutX="260.0" layoutY="136.0" prefWidth="280.0" />
+    <Label layoutX="120.0" layoutY="141.0" text="Name:" textFill="white" />
+    <TextField fx:id="nameTextField" layoutX="260.0" layoutY="137.0" prefWidth="280.0" />
 
-    <Label layoutX="120.0" layoutY="190.0" text="Email:" textFill="white" />
-    <TextField fx:id="emailTextField" layoutX="260.0" layoutY="186.0" prefWidth="280.0" />
+    <Label layoutX="120.0" layoutY="191.0" text="Email:" textFill="white" />
+    <TextField fx:id="emailTextField" layoutX="260.0" layoutY="187.0" prefWidth="280.0" />
 
-    <Label layoutX="120.0" layoutY="240.0" text="Password:" textFill="white" />
-    <PasswordField fx:id="passwordTextField" layoutX="260.0" layoutY="236.0" prefWidth="280.0" />
-
-    <!-- Registered Agent extra (initially hidden) -->
-    <Label fx:id="licenseLabel" layoutX="69.0" layoutY="322.0" managed="false" prefHeight="2.0" prefWidth="146.0" text="Agent License No.:" textFill="white" visible="false" />
-    <TextField fx:id="licenseField" layoutX="255.0" layoutY="310.0" managed="false" prefHeight="5.0" prefWidth="280.0" visible="false" />
+    <Label layoutX="120.0" layoutY="241.0" text="Password:" textFill="white" />
+    <PasswordField fx:id="passwordTextField" layoutX="260.0" layoutY="237.0" prefWidth="280.0" />
 
     <!-- Buttons -->
-    <Button layoutX="260.0" layoutY="387.0" onAction="#signUpOnAction" prefWidth="120.0" style="-fx-background-color:#ED7D31; -fx-text-fill:white;" text="Sign Up" />
-    <Button layoutX="420.0" layoutY="387.0" onAction="#backOnAction" prefWidth="120.0" text="Back" />
+    <Button layoutX="260.0" layoutY="393.0" onAction="#signUpOnAction" prefWidth="120.0" style="-fx-background-color:#ED7D31; -fx-text-fill:white;" text="Sign Up" />
+    <Button layoutX="420.0" layoutY="393.0" onAction="#backOnAction" prefWidth="120.0" text="Back" />
 
-    <Label fx:id="messageLabel" layoutX="120.0" layoutY="460.0" prefWidth="420.0" textFill="yellow" />
+    <Label fx:id="statusLabel" layoutX="76.0" layoutY="450.0" prefHeight="30.0" prefWidth="570.0" style="-fx-border-color: Black; -fx-background-color: white;" textFill="RED">
+      <font>
+         <Font size="13.0" />
+      </font></Label>
+   <Label layoutX="99.0" layoutY="295.0" prefHeight="54.0" prefWidth="146.0" text="Agent License No: &#10;(Only for agent)" textFill="WHITE" />
+   <TextField fx:id="agentLicenseNoTextField" layoutX="260.0" layoutY="295.0" prefHeight="26.0" prefWidth="280.0" />
+   <Label alignment="CENTER" layoutY="527.0" prefHeight="20.0" prefWidth="716.0" style="-fx-background-color: white;" text="External User SignUP" />
 
 </AnchorPane>
