@@ -1,8 +1,5 @@
 package com.project.visa_management_portal.initial.externalLogIn;
-import com.project.visa_management_portal.User;
-import com.project.visa_management_portal.initial.signUp.ExternalSignUpController;
-import com.project.visa_management_portal.tanjil.applicant.modelClass.Applicant;
-import com.project.visa_management_portal.tanjil.registeredAgent.modelClass.RegisteredAgent;
+import com.project.visa_management_portal.ExternalUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,8 +8,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ExternalLoginController {
 
@@ -32,6 +33,130 @@ public class ExternalLoginController {
         userTypeComboBox.getSelectionModel().selectFirst();
     }
 
+
+
+    @FXML
+    public void logInOnAction(ActionEvent actionEvent) {
+        String role = userTypeComboBox.getValue();
+        String email = (emailTextField.getText());
+        String password = passwordField.getText();
+
+
+        if (role == null || role.isEmpty()) {
+            showAlert("Validation", "Please select a user type.");
+            return;
+        }
+        if (email.isEmpty() || password.isEmpty()) {
+            showAlert("Validation", "Please enter both email and password.");
+            return;
+        }
+
+
+        if (role.equals("Applicant")){
+            ArrayList <ExternalUser> getApplicants = new ArrayList<>();
+            
+            FileInputStream fis = null;
+            ObjectInputStream ois = null;
+            try{
+                File f = new File("Applicants.bin");
+                if(f.exists()){
+                    fis = new FileInputStream(f);
+                }
+                else{
+                    showAlert("File Error.", "Error to reading file.");
+                }
+                if(fis!=null)ois = new ObjectInputStream(fis);
+
+                while (true){
+                    assert ois != null;
+                    getApplicants.add((ExternalUser) ois.readObject());
+                }
+            } catch (Exception e) {
+                
+                try {
+                    assert ois != null;
+                    ois.close();
+                } catch (IOException _) {
+
+                }
+            }
+
+            for(ExternalUser A : getApplicants){
+                String eml = emailTextField.getText();
+                String pass = passwordField.getText();
+                if (Objects.equals(eml, A.getEmail()) && Objects.equals(pass, A.getPassword())){
+                    try {FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Dashboard.fxml"));
+                            Scene scene = new Scene(loader.load());
+                            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                            stage.setTitle("Applicant Dashboard");
+                            stage.setScene(scene);
+                            stage.show();
+                        } catch (IOException _) {
+                        showAlert("Scene error", "Unable to open Dashboard.");
+                    }
+
+                }
+                else{
+                    showAlert("Login Failed", "User not Found");
+                }
+            }
+        } else {
+                ArrayList<ExternalUser> getAgents = new ArrayList<>();
+
+                FileInputStream fis = null;
+                ObjectInputStream ois = null;
+                try {
+                    File f = new File("Agents.bin");
+                    if (f.exists()) {
+                        fis = new FileInputStream(f);
+                    } else {
+                        showAlert("File Error.", "Error to reading file.");
+                    }
+                    if (fis != null) ois = new ObjectInputStream(fis);
+
+                    while (true) {
+                        assert ois != null;
+                        getAgents.add((ExternalUser) ois.readObject());
+                    }
+                } catch (Exception e) {
+
+                    try {
+                        assert ois != null;
+                        ois.close();
+                    } catch (IOException _) {
+
+                    }
+                }
+
+                for (ExternalUser r : getAgents) {
+                    String eml = emailTextField.getText();
+                    String pass = passwordField.getText();
+                    if (Objects.equals(eml, r.getEmail()) && Objects.equals(pass, r.getPassword())) {
+                        try {
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/RegisteredAgentDashboard.fxml"));
+                            Scene scene = new Scene(loader.load());
+                            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                            stage.setTitle("Registered Agent Dashboard");
+                            stage.setScene(scene);
+                            stage.show();
+                        } catch (IOException _) {
+                            showAlert("Scene error", "Unable to open Dashboard.");
+                        }
+
+                    } else {
+                        showAlert("Login Failed", "User not Found");
+                    }
+                }
+
+            }
+        }
+
+
+
+
+
+
+
     @javafx.fxml.FXML
     public void backOnAction(ActionEvent actionEvent){
         try {
@@ -46,66 +171,8 @@ public class ExternalLoginController {
         }
     }
 
-    @FXML
-    public void logInOnAction(ActionEvent actionEvent) {
-        String role = userTypeComboBox.getValue();
-        String email = (emailTextField.getText());
-        String password = passwordField.getText();
 
 
-
-        if (role == null || role.isEmpty()) {
-            showAlert("Validation", "Please select a user type.");
-            return;
-        }
-        if (email.isEmpty() || password.isEmpty()) {
-            showAlert("Validation", "Please enter both email and password.");
-            return;
-        }
-
-        ArrayList<User> users = ExternalSignUpController.getUserList(); // in-memory list
-        User matched = null;
-
-        for (User u : users) {
-            if (u.getEmail() == null) continue;
-            if (!u.getEmail().equalsIgnoreCase(email)) continue;
-
-            // check role and password (assumes User.getPassword() is public)
-            boolean roleOk = (role.equals("Applicant") && u instanceof Applicant)
-                    || (role.equals("Registered Agent") && u instanceof RegisteredAgent);
-            if (!roleOk) continue;
-
-            // simple password compare
-            if (u.getPassword() != null && u.getPassword().equals(password)) {
-                matched = u;
-                break;
-            }
-    }
-        if (matched == null) {
-            showAlert("Login failed", "Invalid credentials or wrong user type.");
-            return;
-        }
-        try {
-            if (matched instanceof Applicant) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Dashboard.fxml"));
-                Scene scene = new Scene(loader.load());
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                stage.setTitle("Applicant Dashboard");
-                stage.setScene(scene);
-                stage.show();
-            } else {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/RegisteredAgentDashboard.fxml"));
-                Scene scene = new Scene(loader.load());
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                stage.setTitle("Registered Agent Dashboard");
-                stage.setScene(scene);
-                stage.show();
-            }
-        } catch (IOException e) {
-
-            showAlert("Scene error", "Unable to open Dashboard.");
-        }
-    }
 
     private void showAlert(String title, String message) {
         Alert a = new Alert(Alert.AlertType.ERROR);
