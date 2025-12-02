@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public class VisaOfficerDashboardControlller
 {
+
     @javafx.fxml.FXML
     public void initialize() {
     }
@@ -92,6 +93,21 @@ public class VisaOfficerDashboardControlller
         stage.setTitle("Renewal And Cancellation Dashboard");
         stage.setScene(scene);
         stage.show();
+    }
+
+
+    @javafx.fxml.FXML
+    public void generateFileOnAction(ActionEvent actionEvent){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/galib/visaOfficer/fileGeneratorrr.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Generate File");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @javafx.fxml.FXML

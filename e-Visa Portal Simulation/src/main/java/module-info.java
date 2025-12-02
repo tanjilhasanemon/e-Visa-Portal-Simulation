@@ -3,6 +3,8 @@ module com.project.visa_management_portal {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.desktop;
+    requires org.jetbrains.annotations;
+    //requires com.project.visa_management_portal;
     //requires com.project.visa_management_portal;
     //showing error that's why it's being commmented, commented by Galib
 
