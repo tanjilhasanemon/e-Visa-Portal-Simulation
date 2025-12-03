@@ -16,7 +16,7 @@
     <Button layoutX="90.0" layoutY="210.0" onAction="#uploadClientDocumentsOnAction" prefHeight="40.0" prefWidth="220.0" text="Upload Client Documents" />
     <Button layoutX="390.0" layoutY="150.0" onAction="#clientTravelHistoryOnAction" prefHeight="40.0" prefWidth="220.0" text="Add / View Client Travel History" />
 
-    <Button layoutX="90.0" layoutY="270.0" onAction="#checkAplicationStatusOnAction" prefHeight="40.0" prefWidth="220.0" text="Check Application Status" />
+    <Button layoutX="90.0" layoutY="270.0" onAction="#checkAplicationStatusOnAction" prefHeight="40.0" prefWidth="220.0" text="Check Client Application Status" />
     <Button layoutX="390.0" layoutY="210.0" onAction="#manageClientPaymentsOnAction" prefHeight="40.0" prefWidth="220.0" text="Manage Client Payments" />
 
     <Button layoutX="90.0" layoutY="330.0" onAction="#downloadsOnAction" prefHeight="40.0" prefWidth="220.0" text="Downloads (Receipts / e-Visa)" />

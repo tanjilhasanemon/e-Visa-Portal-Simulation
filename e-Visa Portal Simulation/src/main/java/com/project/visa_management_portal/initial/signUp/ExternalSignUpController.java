@@ -1,9 +1,6 @@
 package com.project.visa_management_portal.initial.signUp;
-
-
 import com.project.visa_management_portal.AppendableObjectOutputStream;
 import com.project.visa_management_portal.ExternalUser;
-import com.project.visa_management_portal.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,10 +8,12 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Objects;
+
+
+
 
 public class ExternalSignUpController
 {
@@ -76,26 +75,27 @@ public class ExternalSignUpController
 
         if (Objects.equals(userTypeComboBox.getValue(), "Applicant")){
             ExternalUser newApplicant = new ExternalUser(userType, name, email, pass, null);
-            newApplicant.signUpExternal(name, email, pass); // generates userId inside User class
+            newApplicant.signUpExternal(name, email, pass);
             applicantList.add(newApplicant);
 
 
+            File file = new File("Applicants.bin");
             FileOutputStream fos = null;
             ObjectOutputStream oos = null;
+
             try{
-                File file = new File("Applicants.bin");
                 if(file.exists()){
                     fos = new FileOutputStream(file, true);
                     oos = new AppendableObjectOutputStream(fos);
-
                 }
-                else{
+                else {
                     fos = new FileOutputStream(file);
                     oos = new ObjectOutputStream(fos);
-                    for (ExternalUser a:applicantList){
-                        oos.writeObject(a);
-                    }
                 }
+                for (ExternalUser app : applicantList){
+                    oos.writeObject(app);
+                }
+
                 oos.close();
             } catch (Exception e) {
                 showAlert(Alert.AlertType.ERROR, "Sign up error", "An unexpected error occurred while signing up.");
@@ -109,12 +109,14 @@ public class ExternalSignUpController
         else if (Objects.equals(userTypeComboBox.getValue(), "Registered Agent") ) {
             ExternalUser newAgent = new ExternalUser(userType, name, email, pass, agentLicenseNO);
             newAgent.signUpExternal(name, email, pass);
+            agentList.add(newAgent);
 
 
+            File file = new File("Agents.bin");
             FileOutputStream fos = null;
             ObjectOutputStream oos = null;
             try {
-                File file = new File("Agents.bin");
+
                 if (file.exists()) {
                     fos = new FileOutputStream(file, true);
                     oos = new AppendableObjectOutputStream(fos);
@@ -122,8 +124,8 @@ public class ExternalSignUpController
                     fos = new FileOutputStream(file);
                     oos = new ObjectOutputStream(fos);
                 }
-                for (ExternalUser r: agentList) {
-                    oos.writeObject(r);
+                for (ExternalUser ag: agentList) {
+                    oos.writeObject(ag);
                 }
                 oos.close();
             } catch (Exception e) {
@@ -131,9 +133,6 @@ public class ExternalSignUpController
             }
 
         }
-
-
-
 
         showAlert(Alert.AlertType.INFORMATION, "Sign up successful", "Account created for " + name + ".");
 
@@ -175,7 +174,6 @@ public class ExternalSignUpController
 
 
     private void showAlert(Alert.AlertType type, String title, String message) {
-        // update messageLabel too (small status line)
         statusLabel.setText(message);
 
         Alert alert = new Alert(type);

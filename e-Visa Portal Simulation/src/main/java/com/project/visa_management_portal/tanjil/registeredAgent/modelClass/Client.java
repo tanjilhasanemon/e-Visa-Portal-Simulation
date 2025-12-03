@@ -1,6 +1,10 @@
 package com.project.visa_management_portal.tanjil.registeredAgent.modelClass;
 
-public class Client {
+import java.io.Serializable;
+import java.util.Random;
+
+
+public class Client implements Serializable {
     private String clientId;      // auto-generated
     private String name;
     private String passportNo;
@@ -47,7 +51,9 @@ public class Client {
     }
 
     private String generateClientId() {
-        return "";
+        Random random = new Random();
+        int randomNumber = random.nextInt(1000);
+        return "C" + String.format("%03d", randomNumber);
     }
 
     @Override

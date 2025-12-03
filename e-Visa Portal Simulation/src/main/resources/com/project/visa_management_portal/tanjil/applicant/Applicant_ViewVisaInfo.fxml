@@ -14,7 +14,10 @@
         </font>
     </Label>
 
-    <TextArea fx:id="visaInformationTextArea" editable="false" layoutX="20.0" layoutY="204.0" prefHeight="340.0" prefWidth="660.0" wrapText="true" />
+    <TextArea fx:id="visaInformationTextArea" editable="false" layoutX="20.0" layoutY="204.0" prefHeight="340.0" prefWidth="660.0" wrapText="true">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font></TextArea>
 
     <Button layoutX="20.0" layoutY="577.0" onAction="#backToMainOnAction" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: #3ab6f4;" text="Back to Main" />
     <Label alignment="CENTER" layoutY="635.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Public Info" />

@@ -23,8 +23,7 @@ public class ViewVisaInfoController {
 
     @FXML
     public void initialize() {
-        visaTypeComboBox.getItems().clear();
-        visaTypeComboBox.getItems().addAll(model.getAvailableVisaTypes());
+        visaTypeComboBox.getItems().addAll("Tourist Visa","Business Visa","Student Visa","Work Visa","Transit Visa");
     }
 
     @FXML

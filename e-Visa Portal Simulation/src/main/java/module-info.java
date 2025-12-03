@@ -6,7 +6,11 @@ module com.project.visa_management_portal {
     requires org.jetbrains.annotations;
     //requires com.project.visa_management_portal;
     //requires com.project.visa_management_portal;
-    //showing error that's why it's being commmented, commented by Galib
+    //requires com.project.visa_management_portal;
+    // requires com.project.visa_management_portal;
+//    requires com.project.visa_management_portal;
+//    requires com.project.visa_management_portal;
+    //showing error that's why it's being commented, commented by Galib
 
 
     opens com.project.visa_management_portal to javafx.fxml;
@@ -27,6 +31,9 @@ module com.project.visa_management_portal {
 
 
 
+
+
+
     opens com.project.visa_management_portal.initial.forgotPassword to javafx.fxml;
     exports com.project.visa_management_portal.initial.forgotPassword;
 
@@ -36,6 +43,8 @@ module com.project.visa_management_portal {
 
     opens com.project.visa_management_portal.tanjil.applicant.controller to javafx.fxml;
     exports com.project.visa_management_portal.tanjil.applicant.controller;
+    exports com.project.visa_management_portal.tanjil;
+    exports com.project.visa_management_portal.tanjil.registeredAgent.modelClass;
 
     opens com.project.visa_management_portal.tanjil.registeredAgent.controller to javafx.fxml;
     exports com.project.visa_management_portal.tanjil.registeredAgent.controller;
