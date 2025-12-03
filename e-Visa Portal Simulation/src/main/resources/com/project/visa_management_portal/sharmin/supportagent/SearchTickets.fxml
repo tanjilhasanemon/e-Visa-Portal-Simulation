@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.supportagent.controller.SearchTicketsController">
+   <children>
+      <Label fx:id="NameTextfield" layoutX="43.0" layoutY="25.0" text="Name" />
+      <Label fx:id="TicketIDTextfield" layoutX="43.0" layoutY="65.0" text="TicketID" />
+      <Label fx:id="DateDatepicker" layoutX="315.0" layoutY="25.0" text="Date" />
+      <TextField layoutX="100.0" layoutY="21.0" />
+      <TextField layoutX="101.0" layoutY="61.0" />
+      <DatePicker layoutX="361.0" layoutY="21.0" />
+      <Button layoutX="45.0" layoutY="106.0" mnemonicParsing="false" onAction="#SearchButtonOnAction" text="Search" />
+      <TableView fx:id="ResulttableTableview" layoutX="45.0" layoutY="144.0" prefHeight="142.0" prefWidth="503.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Label layoutX="43.0" layoutY="319.0" text="Label" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.financeclerk.controller.FinanceDashboardcontroller">
+   <children>
+      <Label fx:id="totalPaymentsLabel" layoutX="63.0" layoutY="38.0" text="TotalPayments" />
+      <Label fx:id="pendingVerificationsLabel" layoutX="66.0" layoutY="75.0" prefHeight="17.0" prefWidth="111.0" text="PendingVerifications" />
+      <Label fx:id="refundsProcessedLabel" layoutX="65.0" layoutY="101.0" prefHeight="17.0" prefWidth="120.0" text="RefundsProcessed" />
+      <Button layoutX="57.0" layoutY="150.0" mnemonicParsing="false" onAction="#verifypaymentButtonOnAction" text="VerifyPayment" />
+      <Button layoutX="62.0" layoutY="200.0" mnemonicParsing="false" onAction="#issuerefundButtonOnAction" text="IssueRefund" />
+      <Button layoutX="63.0" layoutY="244.0" mnemonicParsing="false" onAction="#reportsButtonOnAction" text="Reports" />
+      <Button layoutX="57.0" layoutY="291.0" mnemonicParsing="false" onAction="#exportdataButtonOnAction" text="ExportData" />
+      <Button layoutX="484.0" layoutY="330.0" mnemonicParsing="false" onAction="#signoutButtonOnAction" text="sign out" />
+   </children>
+</AnchorPane>

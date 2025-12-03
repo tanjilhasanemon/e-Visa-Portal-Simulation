@@ -33,8 +33,8 @@ public class InternalLoginController {
             {"Issuer", "2500444", "44issuer44"},
             {"Operation Manager", "2500555", "55operation55"},
             {"Policy Manager", "2500666", "66policy66"},
-            {"Finance Clerk", "2500777", "77finance77"},      // normalized role text
-            {"Support Agent", "2500888", "88support88"}
+            {"Finance Clerk", "2210233", "bithe2001"},      // normalized role text
+            {"Support Agent", "2210233", "bithe2001"}
     };
 
     @javafx.fxml.FXML
