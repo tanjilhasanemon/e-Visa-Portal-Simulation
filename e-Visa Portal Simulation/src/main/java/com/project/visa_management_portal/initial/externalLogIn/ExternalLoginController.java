@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,7 +16,7 @@ import java.util.Objects;
 
 public class ExternalLoginController {
 
-    @javafx.fxml.FXML
+    @FXML
     private ComboBox <String> userTypeComboBox;
     @FXML
     private TextField emailTextField;
@@ -26,17 +25,16 @@ public class ExternalLoginController {
     @FXML
     private Label statusLabel;
 
-    @javafx.fxml.FXML
+    @FXML
     public void initialize() {
         userTypeComboBox.getItems().clear();
         userTypeComboBox.getItems().addAll("Applicant", "Registered Agent");
-        userTypeComboBox.getSelectionModel().selectFirst();
     }
 
 
 
     @FXML
-    public void logInOnAction(ActionEvent actionEvent) {
+    public ExternalUser logInOnAction(ActionEvent actionEvent) {
         String role = userTypeComboBox.getValue();
         String email = (emailTextField.getText());
         String password = passwordField.getText();
@@ -44,21 +42,25 @@ public class ExternalLoginController {
 
         if (role == null || role.isEmpty()) {
             showAlert("Validation", "Please select a user type.");
-            return;
+
         }
         if (email.isEmpty() || password.isEmpty()) {
             showAlert("Validation", "Please enter both email and password.");
-            return;
         }
 
+        //Initial User
+        ExternalUser targetUser = null;
 
-        if (role.equals("Applicant")){
+
+
+        if (Objects.equals(role, "Applicant")){
             ArrayList <ExternalUser> getApplicants = new ArrayList<>();
             
             FileInputStream fis = null;
             ObjectInputStream ois = null;
+            File f = new File("Applicants.bin");
+
             try{
-                File f = new File("Applicants.bin");
                 if(f.exists()){
                     fis = new FileInputStream(f);
                 }
@@ -68,70 +70,80 @@ public class ExternalLoginController {
                 if(fis!=null)ois = new ObjectInputStream(fis);
 
                 while (true){
-                    assert ois != null;
-                    getApplicants.add((ExternalUser) ois.readObject());
+                    getApplicants.add((ExternalUser)ois.readObject());
                 }
             } catch (Exception e) {
-                
                 try {
-                    assert ois != null;
                     ois.close();
                 } catch (IOException _) {
-
                 }
             }
 
-            for(ExternalUser A : getApplicants){
+            boolean userFound = false;
+            for(ExternalUser a : getApplicants) {
                 String eml = emailTextField.getText();
                 String pass = passwordField.getText();
-                if (Objects.equals(eml, A.getEmail()) && Objects.equals(pass, A.getPassword())){
-                    try {FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Dashboard.fxml"));
-                            Scene scene = new Scene(loader.load());
-                            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                            stage.setTitle("Applicant Dashboard");
-                            stage.setScene(scene);
-                            stage.show();
-                        } catch (IOException _) {
+
+                if (Objects.equals(eml, a.getEmail()) && Objects.equals(pass, a.getPassword())) {
+                    targetUser = a;
+                    userFound = true;
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Dashboard.fxml"));
+                        Scene scene = new Scene(loader.load());
+                        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                        stage.setTitle("Applicant Dashboard");
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException _) {
                         showAlert("Scene error", "Unable to open Dashboard.");
                     }
-
+                    break;}
                 }
-                else{
-                    showAlert("Login Failed", "User not Found");
-                }
+            if (!userFound) {
+                showAlert("Login Failed", "User not Found");
             }
-        } else {
+        }
+
+
+
+        else if (Objects.equals(role, "Registered Agent")) {
                 ArrayList<ExternalUser> getAgents = new ArrayList<>();
 
                 FileInputStream fis = null;
                 ObjectInputStream ois = null;
+                File f = new File("Agents.bin");
+
+
                 try {
-                    File f = new File("Agents.bin");
                     if (f.exists()) {
                         fis = new FileInputStream(f);
                     } else {
                         showAlert("File Error.", "Error to reading file.");
+                        return null;
                     }
                     if (fis != null) ois = new ObjectInputStream(fis);
 
                     while (true) {
-                        assert ois != null;
-                        getAgents.add((ExternalUser) ois.readObject());
+                            getAgents.add((ExternalUser) ois.readObject());
                     }
                 } catch (Exception e) {
-
                     try {
                         assert ois != null;
                         ois.close();
                     } catch (IOException _) {
-
+                        //
                     }
                 }
 
+
+                boolean userFound = false;
                 for (ExternalUser r : getAgents) {
                     String eml = emailTextField.getText();
                     String pass = passwordField.getText();
+
                     if (Objects.equals(eml, r.getEmail()) && Objects.equals(pass, r.getPassword())) {
+                        targetUser = r;
+                        userFound = true;
                         try {
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/RegisteredAgentDashboard.fxml"));
                             Scene scene = new Scene(loader.load());
@@ -142,22 +154,21 @@ public class ExternalLoginController {
                         } catch (IOException _) {
                             showAlert("Scene error", "Unable to open Dashboard.");
                         }
-
-                    } else {
-                        showAlert("Login Failed", "User not Found");
+                        break;
                     }
+                    }
+            if(!userFound) {
+                showAlert("Login Failed", "User not Found");
                 }
-
             }
-        }
+
+
+        return targetUser;
+    }
 
 
 
-
-
-
-
-    @javafx.fxml.FXML
+    @FXML
     public void backOnAction(ActionEvent actionEvent){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/initial/mainDashboard/MainDashboard.fxml"));
