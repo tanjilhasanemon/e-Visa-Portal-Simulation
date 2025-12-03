@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.financeclerk.controller.PendingPaymentsController">
+   <children>
+      <TableView fx:id="PendingpaymentslistTableView" layoutX="27.0" layoutY="42.0" prefHeight="176.0" prefWidth="557.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Label layoutX="37.0" layoutY="317.0" text="message" />
+      <Button layoutX="35.0" layoutY="252.0" mnemonicParsing="false" onAction="#VerifyButtonOnAction" text="Verify" />
+      <Button layoutX="344.0" layoutY="252.0" mnemonicParsing="false" onAction="#RejectButtonOnAction" text="Reject" />
+   </children>
+</AnchorPane>

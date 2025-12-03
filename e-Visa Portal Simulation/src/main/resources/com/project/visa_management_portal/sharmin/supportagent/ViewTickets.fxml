@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.supportagent.controller.ViewTicketsController">
+   <children>
+      <TableView fx:id="TicketsTableview" layoutX="29.0" layoutY="43.0" prefHeight="200.0" prefWidth="565.0">
+        <columns>
+          <TableColumn fx:id="TicketIDTablecolumn" prefWidth="127.33331298828125" text="TicketID" />
+          <TableColumn fx:id="UserNameTablecolumn" prefWidth="102.00003051757812" text="UserName" />
+            <TableColumn fx:id="IssueTypeTableColumn" prefWidth="108.66668701171875" text="IssueType" />
+            <TableColumn fx:id="statusTablecolumn" prefWidth="99.33331298828125" text="Status" />
+            <TableColumn fx:id="DateTablecolumn" prefWidth="128.6666259765625" text="Date" />
+        </columns>
+      </TableView>
+      <Label layoutX="66.0" layoutY="286.0" text="message" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.supportagent.controller.SupportDashboardController">
+   <children>
+      <Label layoutX="66.0" layoutY="36.0" text="TotalTickets" />
+      <Label layoutX="66.0" layoutY="78.0" text="Pending" />
+      <Label layoutX="286.0" layoutY="36.0" text="Resolved" />
+      <Button layoutX="42.0" layoutY="141.0" mnemonicParsing="false" onAction="#ViewTicketsButtonOnAction" text="ViewTickets" />
+      <Button layoutX="54.0" layoutY="218.0" mnemonicParsing="false" onAction="#RespondButtonOnAction" text="Respond" />
+      <Button layoutX="369.0" layoutY="129.0" mnemonicParsing="false" onAction="#EscalateButtonOnAction" text="Escalate" />
+      <Button layoutX="369.0" layoutY="206.0" mnemonicParsing="false" onAction="#ReportsButtonOnAction" text="Reports" />
+   </children>
+</AnchorPane>
