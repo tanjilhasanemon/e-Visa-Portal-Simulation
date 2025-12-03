@@ -6,34 +6,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #36454F;"
-            xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.CreateClientController">
+<AnchorPane prefHeight="501.0" prefWidth="699.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.CreateClientController">
     <Label layoutX="220.0" layoutY="20.0" text="Create Client Profile" textFill="#00a1ec" underline="true">
         <font>
-            <Font name="System Bold" size="26.0"/>
+            <Font name="System Bold" size="26.0" />
         </font>
     </Label>
 
-    <Label layoutX="40.0" layoutY="80.0" text="Name:" textFill="white"/>
-    <TextField fx:id="nameTextField" layoutX="160.0" layoutY="76.0" prefWidth="520.0"/>
+    <Label layoutX="40.0" layoutY="80.0" text="Name:" textFill="white" />
+    <TextField fx:id="nameTextField" layoutX="160.0" layoutY="76.0" prefHeight="26.0" prefWidth="434.0" />
 
-    <Label layoutX="40.0" layoutY="130.0" text="Passport No:" textFill="white"/>
-    <TextField fx:id="clientPassportNoTextField" layoutX="160.0" layoutY="126.0" prefWidth="240.0"/>
+    <Label layoutX="40.0" layoutY="130.0" text="Passport No:" textFill="white" />
+    <TextField fx:id="clientPassportNoTextField" layoutX="160.0" layoutY="126.0" prefWidth="240.0" />
 
-    <Label layoutX="40.0" layoutY="180.0" text="Contact:" textFill="white"/>
-    <TextField fx:id="clientContactTextField" layoutX="160.0" layoutY="176.0" prefWidth="520.0"/>
+    <Label layoutX="40.0" layoutY="180.0" text="Contact:" textFill="white" />
+    <TextField fx:id="clientContactTextField" layoutX="160.0" layoutY="176.0" prefHeight="26.0" prefWidth="433.0" />
 
-    <Button layoutX="200.0" layoutY="243.0" onAction="#createClientProfileOnAction" prefWidth="120.0"
-            style="-fx-background-color: #00a1ec;" text="Create"/>
-    <Button layoutX="520.0" layoutY="243.0" onAction="#backToDashboardOnAction" prefWidth="160.0"
-            style="-fx-background-color: #00a1ec;" text="Back to Dashboard"/>
+    <Button layoutX="160.0" layoutY="279.0" onAction="#createClientProfileOnAction" prefHeight="38.0" prefWidth="194.0" style="-fx-background-color: #00a1ec;" text="Create" />
+    <Button layoutX="400.0" layoutY="279.0" onAction="#backToDashboardOnAction" prefHeight="38.0" prefWidth="183.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
 
-    <Label fx:id="lblClientMsg" layoutX="40.0" layoutY="270.0" textFill="red"/>
-    <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;"
-           text="eVisa Portal | Agent - Client"/>
-    <Button layoutX="62.0" layoutY="243.0" onAction="#validateClientProfileOnAction" prefWidth="120.0"
-            style="-fx-background-color: #00a1ec;" text="Validate"/>
-    <Button layoutX="340.0" layoutY="243.0" onAction="#viewClientListOnAction" prefWidth="160.0"
-            style="-fx-background-color: #00a1ec;" text="View Client List"/>
+    <Label fx:id="lblClientMsg" layoutX="40.0" layoutY="270.0" textFill="red" />
+    <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Agent - Client" />
 </AnchorPane>

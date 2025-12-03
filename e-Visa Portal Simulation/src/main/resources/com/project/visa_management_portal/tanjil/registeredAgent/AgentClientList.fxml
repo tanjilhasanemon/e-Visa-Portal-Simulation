@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.ClientListController">
+<AnchorPane prefHeight="652.0" prefWidth="900.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.ClientListController">
 
 
     <Label layoutX="20.0" layoutY="14.0" style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;" text="My Clients">
@@ -20,22 +20,14 @@
 
     <TableView fx:id="clientTableView" layoutX="20.0" layoutY="80.0" prefHeight="420.0" prefWidth="860.0">
         <columns>
-            <TableColumn fx:id="clientNameTableColumn" prefWidth="220.0" text="Client Name" />
-            <TableColumn fx:id="clientEmailTableColumn" prefWidth="240.0" text="Email" />
-            <TableColumn fx:id="clientPassportNoTableColumn" prefWidth="150.0" text="Passport No." />
-            <TableColumn fx:id="clientNationalityTableColumn" prefWidth="120.0" text="Nationality" />
-            <TableColumn fx:id="clientActionTableColumn" prefWidth="120.0" text="Actions" />
+         <TableColumn fx:id="clientIDTableColumn" prefWidth="168.79998207092285" text="Client ID" />
+            <TableColumn fx:id="clientNameTableColumn" prefWidth="271.20001220703125" text="Client Name" />
+         <TableColumn fx:id="passportNoTableColumn" prefWidth="193.60000610351562" text="Passport No" />
+            <TableColumn fx:id="EmailTableColumn" prefWidth="227.2000732421875" text="Email" />
         </columns>
     </TableView>
 
-
-    <Button layoutX="20.0" layoutY="520.0" onAction="#addClientOnAction" prefHeight="36.0" prefWidth="110.0" style="-fx-background-color: #70AD47; -fx-text-fill: white;" text="Add Client" />
-
-    <Button layoutX="640.0" layoutY="520.0" onAction="#backToDashboardOnAction" prefHeight="36.0" prefWidth="120.0" text="Back to Dashboard" />
-
-    <Button layoutX="770.0" layoutY="520.0" onAction="#signOutOnAction" prefHeight="36.0" prefWidth="110.0" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" text="Sign Out" />
-
-
-    <Label fx:id="statusLabel" layoutX="20.0" layoutY="560.0" prefWidth="860.0" textFill="lightgray" wrapText="true" />
+    <Button layoutX="760.0" layoutY="587.0" onAction="#backToDashboardOnAction" prefHeight="36.0" prefWidth="120.0" text="Back to Dashboard" />
+   <Button layoutX="20.0" layoutY="542.0" onAction="#loadClientsOnAction" prefHeight="36.0" prefWidth="120.0" text="Load Clients" />
 
 </AnchorPane>
