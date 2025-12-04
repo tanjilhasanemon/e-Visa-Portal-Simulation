@@ -78,10 +78,18 @@ module com.project.visa_management_portal {
     exports com.project.visa_management_portal.rifat.policyManager.controller;
 
 
-    opens com.project.visa_management_portal.sharmin.supportAgent.controller to javafx.fxml;
-    exports com.project.visa_management_portal.sharmin.supportAgent.controller;
-    opens com.project.visa_management_portal.sharmin.financeClerk.controller to javafx.fxml;
-    exports com.project.visa_management_portal.sharmin.financeClerk.controller;
+    opens com.project.visa_management_portal.sharmin.supportagent.controller to javafx.fxml;
+    exports com.project.visa_management_portal.sharmin.supportagent.controller;
+
+    opens com.project.visa_management_portal.sharmin.financeclerk.controller to javafx.fxml;
+    exports com.project.visa_management_portal.sharmin.financeclerk.controller;
+
+
+
+    //opens com.project.visa_management_portal.sharmin.supportAgent.controller to javafx.fxml;
+    //exports com.project.visa_management_portal.sharmin.supportAgent.controller;
+    //opens com.project.visa_management_portal.sharmin.financeClerk.controller to javafx.fxml;
+    //exports com.project.visa_management_portal.sharmin.financeClerk.controller;
 
 
 
