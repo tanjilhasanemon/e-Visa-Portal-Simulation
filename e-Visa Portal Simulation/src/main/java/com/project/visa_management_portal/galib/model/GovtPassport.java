@@ -19,6 +19,11 @@ public class GovtPassport implements Serializable {
     public GovtPassport() {
 
     }
+
+    public GovtPassport(String passportNO) {
+        PassportNO = passportNO;
+    }
+
     public GovtPassport(String passportNO, String issuingCountry, String firstName, LocalDate dateOfBirth, String gender, LocalDate expireDate) {
         PassportNO = passportNO;
         IssuingCountry = issuingCountry;

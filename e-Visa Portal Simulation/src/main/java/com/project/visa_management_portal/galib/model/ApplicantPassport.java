@@ -2,7 +2,7 @@ package com.project.visa_management_portal.galib.model;
 
 import java.time.LocalDate;
 
-public class ApplicantPassport {
+public class ApplicantPassport{
     public String passportNo;
     public String issuingCountry;
     public String firstName;
@@ -66,5 +66,17 @@ public class ApplicantPassport {
 
     public void setExpireDate(LocalDate expireDate) {
         this.expireDate = expireDate;
+    }
+
+    @Override
+    public String toString() {
+        return "ApplicantPassport{" +
+                "passportNo='" + passportNo + '\'' +
+                ", issuingCountry='" + issuingCountry + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", gender='" + gender + '\'' +
+                ", expireDate=" + expireDate +
+                '}';
     }
 }

@@ -118,10 +118,10 @@ public class InternalLoginController {
                 fxmlPath = "/com/project/visa_management_portal/rifat/policyManager/policyManagerDashboard.fxml";
                 break;
             case "Finance Clerk":
-                fxmlPath = "/com/project/visa_management_portal/finance/FinanceDashboard.fxml";
+                fxmlPath = "/com/project/visa_management_portal/sharmin/financeClerk/finacedashboard.fxml";
                 break;
             case "Support Agent":
-                fxmlPath = "/com/project/visa_management_portal/support/SupportDashboard.fxml";
+                fxmlPath = "/com/project/visa_management_portal/sharmin/supportAgent/SupportDashboard.fxml";
                 break;
             default:
                 showAlert("Config error", "No dashboard configured for role: " + role);
