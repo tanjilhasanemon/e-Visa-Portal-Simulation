@@ -83,7 +83,8 @@ module com.project.visa_management_portal {
 
     opens com.project.visa_management_portal.sharmin.financeclerk.controller to javafx.fxml;
     exports com.project.visa_management_portal.sharmin.financeclerk.controller;
-
+    opens com.project.visa_management_portal.sharmin.financeclerk.modelclass to javafx.fxml,javafx.base;
+    opens com.project.visa_management_portal.sharmin.supportagent.modelclass to javafx.fxml,javafx.base;
 
 
     //opens com.project.visa_management_portal.sharmin.supportAgent.controller to javafx.fxml;
