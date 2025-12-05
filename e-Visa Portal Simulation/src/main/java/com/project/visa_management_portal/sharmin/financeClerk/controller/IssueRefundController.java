@@ -55,6 +55,7 @@ public class IssueRefundController
 
     @javafx.fxml.FXML
     public void issueRefundButtonOnAction(ActionEvent actionEvent) {
+        IssueRefund selected = RefundsTableView.getSelectionModel().getSelectedItem();
 
     }
 
