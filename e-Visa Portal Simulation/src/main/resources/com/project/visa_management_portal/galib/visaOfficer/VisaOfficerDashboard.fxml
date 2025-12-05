@@ -45,7 +45,8 @@
         <Button layoutX="545.0" layoutY="127.0" mnemonicParsing="false" onAction="#supportAndReportOnAction" prefHeight="26.0" prefWidth="276.0" text="Support AndReport" />
         <Button layoutX="93.0" layoutY="309.0" mnemonicParsing="false" onAction="#travelHistoryOnAction" prefHeight="26.0" prefWidth="276.0" text="Travel History" />
         <Button layoutX="93.0" layoutY="406.0" mnemonicParsing="false" onAction="#visaDecisionOnAction" prefHeight="26.0" prefWidth="276.0" text="Visa Decision" />
-        <Button layoutX="319.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
+        <Button layoutX="545.0" layoutY="489.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="276.0" text="Back To Main Dashboard" />
+      <Button layoutX="93.0" layoutY="489.0" mnemonicParsing="false" onAction="#generateFileOnAction" prefHeight="26.0" prefWidth="276.0" text="Generate File" />
 
     </children>
 </AnchorPane>

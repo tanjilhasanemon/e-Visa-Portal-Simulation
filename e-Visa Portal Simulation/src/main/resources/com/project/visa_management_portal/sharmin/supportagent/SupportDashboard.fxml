@@ -4,15 +4,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.supportagent.controller.SupportDashboardController">
    <children>
-      <Label layoutX="66.0" layoutY="36.0" text="TotalTickets" />
-      <Label layoutX="66.0" layoutY="78.0" text="Pending" />
-      <Label layoutX="286.0" layoutY="36.0" text="Resolved" />
-      <Button layoutX="42.0" layoutY="141.0" mnemonicParsing="false" onAction="#ViewTicketsButtonOnAction" text="ViewTickets" />
-      <Button layoutX="54.0" layoutY="218.0" mnemonicParsing="false" onAction="#RespondButtonOnAction" text="Respond" />
-      <Button layoutX="369.0" layoutY="129.0" mnemonicParsing="false" onAction="#EscalateButtonOnAction" text="Escalate" />
-      <Button layoutX="369.0" layoutY="206.0" mnemonicParsing="false" onAction="#ReportsButtonOnAction" text="Reports" />
+      <Label layoutX="182.0" layoutY="8.0" prefHeight="45.0" prefWidth="239.0" text="support agent dashboard" />
+      <Button layoutX="54.0" layoutY="76.0" mnemonicParsing="false" onAction="#viewTicketsButtonOnAction" prefHeight="25.0" prefWidth="156.0" text="View Tickets" />
+      <Button layoutX="54.0" layoutY="180.0" mnemonicParsing="false" onAction="#generateSupportReportButtonOnAction" prefHeight="25.0" prefWidth="156.0" text=" GenerateSupportReport" />
+      <Button layoutX="378.0" layoutY="129.0" mnemonicParsing="false" onAction="#escalateTicketsButtonOnAction" prefHeight="25.0" prefWidth="163.0" text="Escalate Tickets" />
+      <Button layoutX="376.0" layoutY="180.0" mnemonicParsing="false" onAction="#closeTicketButtonOnAction" prefHeight="25.0" prefWidth="156.0" text="CloseTicket" />
+      <Button layoutX="54.0" layoutY="129.0" mnemonicParsing="false" onAction="#searchTicketsButtonOnAction" prefHeight="25.0" prefWidth="156.0" text="Search Tickets" />
+      <Button layoutX="376.0" layoutY="76.0" mnemonicParsing="false" onAction="#sendFeedbackButtonOnAction" prefHeight="25.0" prefWidth="163.0" text="Send Feedback" />
+      <Button layoutX="54.0" layoutY="229.0" mnemonicParsing="false" onAction="#respondTicketButtonOnAction" prefHeight="25.0" prefWidth="156.0" text="Respond Ticket" />
+      <Button layoutX="467.0" layoutY="340.0" mnemonicParsing="false" onAction="#signoutButtonOnAction" text="sign out" />
    </children>
 </AnchorPane>

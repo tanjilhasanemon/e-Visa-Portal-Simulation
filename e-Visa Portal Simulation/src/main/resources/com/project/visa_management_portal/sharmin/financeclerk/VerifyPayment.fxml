@@ -7,16 +7,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="paymentTableView" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.financeclerk.controller.VerifyPaymentController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.financeclerk.controller.VerifyPaymentController">
    <children>
       <TextField fx:id="applicantidTextfield" layoutX="121.0" layoutY="45.0" />
       <Label layoutX="49.0" layoutY="49.0" text="applicant id" />
       <Button layoutX="54.0" layoutY="119.0" mnemonicParsing="false" onAction="#searchButtonOnAction" text="search" />
       <Button layoutX="229.0" layoutY="119.0" mnemonicParsing="false" onAction="#MarkVerifiedButtonOnAction" text="Mark Verified" />
-      <TableView layoutX="59.0" layoutY="174.0" prefHeight="163.0" prefWidth="480.0">
+      <TableView fx:id="paymentTableView" layoutX="59.0" layoutY="174.0" prefHeight="163.0" prefWidth="480.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="ApplicantIDTablecolumn" prefWidth="93.33331298828125" text="Applicant ID" />
+          <TableColumn fx:id="NameTablecolumn" prefWidth="109.33334350585938" text="Name" />
+            <TableColumn fx:id="AmountTablecolumn" prefWidth="100.6666259765625" text="Amount" />
+            <TableColumn fx:id="StatusTablecolumn" prefWidth="80.6666259765625" text="Status" />
+            <TableColumn fx:id="DateTablecolumn" prefWidth="96.666748046875" text="Date  " />
         </columns>
       </TableView>
       <Label layoutX="107.0" layoutY="354.0" text="massage" />

@@ -1,17 +1,14 @@
 package com.project.visa_management_portal.sharmin.financeclerk.modelclass;
 
 public class ReportIssue {
-    private String subject;
-    private String message;
-    private String status;
+    private String subject,issueType;
 
     public ReportIssue() {
     }
 
-    public ReportIssue(String subject, String message, String status) {
+    public ReportIssue(String subject, String issueType) {
         this.subject = subject;
-        this.message = message;
-        this.status = status;
+        this.issueType = issueType;
     }
 
     public String getSubject() {
@@ -22,28 +19,19 @@ public class ReportIssue {
         this.subject = subject;
     }
 
-    public String getMessage() {
-        return message;
+    public String getIssueType() {
+        return issueType;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public void setIssueType(String issueType) {
+        this.issueType = issueType;
     }
 
     @Override
     public String toString() {
         return "ReportIssue{" +
                 "subject='" + subject + '\'' +
-                ", message='" + message + '\'' +
-                ", status='" + status + '\'' +
+                ", issueType='" + issueType + '\'' +
                 '}';
     }
 }

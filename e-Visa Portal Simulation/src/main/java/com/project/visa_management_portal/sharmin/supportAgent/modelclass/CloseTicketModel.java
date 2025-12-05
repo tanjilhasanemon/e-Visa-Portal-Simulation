@@ -2,14 +2,12 @@ package com.project.visa_management_portal.sharmin.supportagent.modelclass;
 
 public class CloseTicketModel {
     private int ticketId;
-    private String status;
 
     public CloseTicketModel() {
     }
 
-    public CloseTicketModel(int ticketId, String status) {
+    public CloseTicketModel(int ticketId) {
         this.ticketId = ticketId;
-        this.status = status;
     }
 
     public int getTicketId() {
@@ -20,19 +18,10 @@ public class CloseTicketModel {
         this.ticketId = ticketId;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     @Override
     public String toString() {
         return "CloseTicketModel{" +
                 "ticketId=" + ticketId +
-                ", status='" + status + '\'' +
                 '}';
     }
 }

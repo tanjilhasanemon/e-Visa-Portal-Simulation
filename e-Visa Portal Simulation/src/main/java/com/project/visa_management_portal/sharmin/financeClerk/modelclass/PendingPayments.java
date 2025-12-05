@@ -1,27 +1,33 @@
 package com.project.visa_management_portal.sharmin.financeclerk.modelclass;
 
+import java.time.LocalDate;
+
 public class PendingPayments {
-    private int paymentId;
+    private int transactionId;
     private String applicantName;
-    private double amount;
+    private int amount;
     private String status;
+    private String paymentMethod;
+    private LocalDate paymentDate;
 
     public PendingPayments() {
     }
 
-    public PendingPayments(int paymentId, String applicantName, double amount, String status) {
-        this.paymentId = paymentId;
+    public PendingPayments(int transactionId, String applicantName, int amount, String status, String paymentMethod, LocalDate paymentDate) {
+        this.transactionId = transactionId;
         this.applicantName = applicantName;
         this.amount = amount;
         this.status = status;
+        this.paymentMethod = paymentMethod;
+        this.paymentDate = paymentDate;
     }
 
-    public int getPaymentId() {
-        return paymentId;
+    public int getTransactionId() {
+        return transactionId;
     }
 
-    public void setPaymentId(int paymentId) {
-        this.paymentId = paymentId;
+    public void setTransactionId(int transactionId) {
+        this.transactionId = transactionId;
     }
 
     public String getApplicantName() {
@@ -32,11 +38,11 @@ public class PendingPayments {
         this.applicantName = applicantName;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
@@ -48,13 +54,31 @@ public class PendingPayments {
         this.status = status;
     }
 
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public LocalDate getPaymentDate() {
+        return paymentDate;
+    }
+
+    public void setPaymentDate(LocalDate paymentDate) {
+        this.paymentDate = paymentDate;
+    }
+
     @Override
     public String toString() {
         return "PendingPayments{" +
-                "paymentId=" + paymentId +
+                "transactionId=" + transactionId +
                 ", applicantName='" + applicantName + '\'' +
                 ", amount=" + amount +
                 ", status='" + status + '\'' +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                ", paymentDate=" + paymentDate +
                 '}';
     }
 }

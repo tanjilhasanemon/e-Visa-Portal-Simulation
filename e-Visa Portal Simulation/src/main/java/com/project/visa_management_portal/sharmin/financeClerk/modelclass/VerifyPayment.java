@@ -1,49 +1,73 @@
 package com.project.visa_management_portal.sharmin.financeclerk.modelclass;
 
+import java.time.LocalDate;
+
 public class VerifyPayment {
-    private int applicantId;
-    private String paymentStatus;
-    private double amount;
+    private Integer applicantID;
+    private String name;
+    private Double amount;
+    private String status;
+    private LocalDate date;
 
     public VerifyPayment() {
     }
 
-    public VerifyPayment(int applicantId, String paymentStatus, double amount) {
-        this.applicantId = applicantId;
-        this.paymentStatus = paymentStatus;
+    public VerifyPayment(Integer applicantID, String name, Double amount, String status, LocalDate date) {
+        this.applicantID = applicantID;
+        this.name = name;
         this.amount = amount;
+        this.status = status;
+        this.date = date;
     }
 
-    public int getApplicantId() {
-        return applicantId;
+    public Integer getApplicantID() {
+        return applicantID;
     }
 
-    public void setApplicantId(int applicantId) {
-        this.applicantId = applicantId;
+    public void setApplicantID(Integer applicantID) {
+        this.applicantID = applicantID;
     }
 
-    public String getPaymentStatus() {
-        return paymentStatus;
+    public String getName() {
+        return name;
     }
 
-    public void setPaymentStatus(String paymentStatus) {
-        this.paymentStatus = paymentStatus;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public double getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     @Override
     public String toString() {
         return "VerifyPayment{" +
-                "applicantId=" + applicantId +
-                ", paymentStatus='" + paymentStatus + '\'' +
+                "applicantID=" + applicantID +
+                ", name='" + name + '\'' +
                 ", amount=" + amount +
+                ", status='" + status + '\'' +
+                ", date=" + date +
                 '}';
     }
 }
