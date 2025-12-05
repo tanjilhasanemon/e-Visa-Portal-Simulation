@@ -3,16 +3,16 @@ package com.project.visa_management_portal.sharmin.financeclerk.modelclass;
 import java.time.LocalDate;
 
 public class VerifyPayment {
-    private Integer applicantID;
+    private int applicantID;
     private String name;
-    private Double amount;
+    private int amount;
     private String status;
     private LocalDate date;
 
     public VerifyPayment() {
     }
 
-    public VerifyPayment(Integer applicantID, String name, Double amount, String status, LocalDate date) {
+    public VerifyPayment(int applicantID, String name, int amount, String status, LocalDate date) {
         this.applicantID = applicantID;
         this.name = name;
         this.amount = amount;
@@ -20,11 +20,11 @@ public class VerifyPayment {
         this.date = date;
     }
 
-    public Integer getApplicantID() {
+    public int getApplicantID() {
         return applicantID;
     }
 
-    public void setApplicantID(Integer applicantID) {
+    public void setApplicantID(int applicantID) {
         this.applicantID = applicantID;
     }
 
@@ -36,11 +36,11 @@ public class VerifyPayment {
         this.name = name;
     }
 
-    public Double getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
