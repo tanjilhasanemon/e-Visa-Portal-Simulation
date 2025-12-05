@@ -5,6 +5,9 @@ module com.project.visa_management_portal {
     requires java.desktop;
     //requires com.project.visa_management_portal;
     //requires com.project.visa_management_portal;
+    //requires com.project.visa_management_portal;
+    //requires com.project.visa_management_portal;
+    //requires com.project.visa_management_portal;
     // requires com.project.visa_management_portal;
 //    requires com.project.visa_management_portal;
 //    requires com.project.visa_management_portal;
@@ -65,12 +68,12 @@ module com.project.visa_management_portal {
 
 
 
-    opens com.project.visa_management_portal.sharmin.supportagent.controller to javafx.fxml;
-
-    exports com.project.visa_management_portal.sharmin.supportagent.controller;
-
-    opens com.project.visa_management_portal.sharmin.financeclerk.controller to javafx.fxml;
-    exports com.project.visa_management_portal.sharmin.financeclerk.controller;
+//    opens com.project.visa_management_portal.sharmin.supportagent.controller to javafx.fxml;
+//
+//    exports com.project.visa_management_portal.sharmin.supportagent.controller;
+//
+//    opens com.project.visa_management_portal.sharmin.financeclerk.controller to javafx.fxml;
+//    exports com.project.visa_management_portal.sharmin.financeclerk.controller;
 
 
 }

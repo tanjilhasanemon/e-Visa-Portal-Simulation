@@ -1,7 +1,6 @@
 package com.project.visa_management_portal.tanjil.applicant.controller;
 
 import com.project.visa_management_portal.AppendableObjectOutputStream;
-
 import com.project.visa_management_portal.tanjil.VisaApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +28,7 @@ public class ApplyVisaController
     @javafx.fxml.FXML
     private ToggleGroup genderGroup;
     @javafx.fxml.FXML
-    private ComboBox <String> visaTypeComboBox;
+    private ComboBox<String> visaTypeComboBox;
     @javafx.fxml.FXML
     private RadioButton maleRadioButton;
     @javafx.fxml.FXML
@@ -37,20 +36,13 @@ public class ApplyVisaController
     @javafx.fxml.FXML
     private TextField nationalityTextField;
     @javafx.fxml.FXML
-    private Label statusLabel;
-    @javafx.fxml.FXML
     private TextField contactEmailTextField;
-
-
 
     public ArrayList<VisaApplication> applications;
 
-
     @javafx.fxml.FXML
     public void initialize() {
-
         applications = new ArrayList<>();
-
         visaTypeComboBox.getItems().addAll("Tourist Visa", "Business Visa", "Student Visa", "Work Visa", "Transit Visa");
     }
 
@@ -58,19 +50,18 @@ public class ApplyVisaController
     public void submitOnAction(ActionEvent actionEvent) {
         // Validation
         if (fullNameTextField.getText().isEmpty() || passportNoTextField.getText().isEmpty() ||
-            nationalityTextField.getText().isEmpty()|| motherLangTextField.getText().isEmpty() ||
-            visaTypeComboBox.getValue() == null || purposeOfVisitTextArea.getText().isEmpty() ||
-            contactEmailTextField.getText().isEmpty()) {
-            showAlert("Incomplete Form", "Please fill all fields");
+                nationalityTextField.getText().isEmpty() || motherLangTextField.getText().isEmpty() ||
+                visaTypeComboBox.getValue() == null || purposeOfVisitTextArea.getText().isEmpty() ||
+                contactEmailTextField.getText().isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "Incomplete Form", "Please fill all fields");
             return;
         }
 
         RadioButton selectedGender = (RadioButton) genderGroup.getSelectedToggle();
         if (selectedGender == null) {
-            showAlert("Validation Error", "Please select a gender.");
+            showAlert(Alert.AlertType.WARNING, "Gender Not Selected", "Please select your gender");
             return;
         }
-
 
         String fullName = fullNameTextField.getText();
         String passportNo = passportNoTextField.getText();
@@ -81,36 +72,33 @@ public class ApplyVisaController
         String purposeOfVisit = purposeOfVisitTextArea.getText();
         String applicantEmail = contactEmailTextField.getText();
 
-
         VisaApplication application = new VisaApplication(fullName, passportNo, nationality,
                 motherLanguage, visaType, gender, purposeOfVisit, applicantEmail);
 
         applications.add(application);
 
-        File file = new File("VisaApplications.bin");
+        File file = new File("ApplicantVisaApplications.bin");
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
 
-        try{
-            if(file.exists()){
+        try {
+            if (file.exists()) {
                 fos = new FileOutputStream(file, true);
                 oos = new AppendableObjectOutputStream(fos);
-            }
-            else {
+            } else {
                 fos = new FileOutputStream(file);
                 oos = new ObjectOutputStream(fos);
             }
-            for (VisaApplication app : applications){
+            for (VisaApplication app : applications) {
                 oos.writeObject(app);
             }
             oos.close();
 
-            showAlert("Success", "Your application has been submitted successfully.");
-            statusLabel.setText("Application ID: " + application.getApplicationId() + " | Status: ");
+            showAlert(Alert.AlertType.INFORMATION, "Success", "Visa application submitted successfully.");
             clearForm();
 
         } catch (Exception e) {
-            showAlert("Error", "An error occurred while submitting your application.");
+            showAlert(Alert.AlertType.ERROR, "File Error", "An error occurred while saving the visa application.");
         }
     }
 
@@ -123,20 +111,18 @@ public class ApplyVisaController
             stage.setTitle("Applicant Dashboard");
             stage.setScene(scene);
             stage.show();
-        }catch (IOException e){
-            showAlert("Scene error", "Unable to open Applicant Dashboard.");
+        } catch (IOException e) {
+            showAlert(Alert.AlertType.ERROR, "Navigation Error", "Unable to load the dashboard.");
         }
     }
 
-
-    private void showAlert(String title, String message) {
-        Alert a = new Alert(Alert.AlertType.ERROR);
+    private void showAlert(Alert.AlertType type, String title, String msg) {
+        Alert a = new Alert(type);
         a.setTitle(title);
         a.setHeaderText(null);
-        a.setContentText(message);
+        a.setContentText(msg);
         a.showAndWait();
     }
-
 
     private void clearForm() {
         fullNameTextField.clear();

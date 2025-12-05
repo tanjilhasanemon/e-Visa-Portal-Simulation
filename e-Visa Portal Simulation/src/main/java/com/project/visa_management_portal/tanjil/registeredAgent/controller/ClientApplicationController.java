@@ -41,7 +41,7 @@ public class ClientApplicationController
     private RadioButton maleRadioButton;
 
 
-    public ArrayList<VisaApplication> clientApplications;
+    ArrayList<VisaApplication> clientApplications;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -50,7 +50,7 @@ public class ClientApplicationController
         clientApplications = new ArrayList<>();
 
 
-        // Dummy data
+        //Dummy data
 //        clientApplications.add(new VisaApplication("C001", "John Smith", "P123456789", "USA", "English", "Business Visa", "Male", "cr@visathing.com", "john.smith@gmail.com"));
 //        clientApplications.add(new VisaApplication("C002", "Maria Garcia", "P987654321", "Spain", "Spanish", "Tourist Visa", "Female", "cr@visathing.com", "maria.garcia@gmail.com"));
 //        clientApplications.add(new VisaApplication("C003", "Ahmed Khan", "P456789123", "Pakistan", "Urdu", "Student Visa", "Male", "cr@visathing.com", "ahmed.khan@gmail.com"));
@@ -81,14 +81,12 @@ public class ClientApplicationController
                 passportNoTextField.getText().isEmpty() || nationalityTextField.getText().isEmpty() ||
                 motherLanguageTextField.getText().isEmpty() || visaTypeComboBox.getValue() == null ||
                 agentEmailTextField.getText().isEmpty() || clientEmailTextfield.getText().isEmpty()) {
-            showAlert("Incomplete Form", "Please fill all fields");
-            return;
+            showAlert("Incomplete Form", Alert.AlertType.WARNING, "Please fill all fields");
         }
 
         RadioButton selectedGender = (RadioButton) gender.getSelectedToggle();
         if (selectedGender == null) {
-            showAlert("Gender Required", "Please select a gender");
-            return;
+            showAlert("Gender Not Selected", Alert.AlertType.WARNING, "Please select the gender");
         }
 
         String clientId = clientIdTextField.getText();
@@ -107,6 +105,7 @@ public class ClientApplicationController
                 agentEmail, clientEmail);
 
         clientApplications.add(application);
+
         File file = new File("ClientApplications.bin");
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
@@ -124,33 +123,37 @@ public class ClientApplicationController
             }
             oos.close();
 
-            showAlert("Success", "Your application has been submitted successfully.");
+            showAlert("Success", Alert.AlertType.INFORMATION, "Client application submitted successfully.");
+
             clearFields();
 
         } catch (Exception e) {
-            showAlert("Error", "An error occurred while submitting your application.");
+            showAlert("File Error", Alert.AlertType.ERROR, "An error occurred while submitting the client application.");
         }
     }
 
 
     @javafx.fxml.FXML
     public void backToDashboardOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/RegisteredAgentDashboard.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Registered Agent Dashboard");
-        stage.setScene(scene);
-        stage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/RegisteredAgentDashboard.fxml"));
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e){
+            showAlert("Navigation Error", Alert.AlertType.ERROR, "Unable to load the dashboard.");
+        }
     }
 
 
 
-    private void showAlert(String title, String message) {
-        Alert a = new Alert(Alert.AlertType.ERROR);
-        a.setTitle(title);
-        a.setHeaderText(null);
-        a.setContentText(message);
-        a.showAndWait();
+    private void showAlert(String title, Alert.AlertType alertType, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 

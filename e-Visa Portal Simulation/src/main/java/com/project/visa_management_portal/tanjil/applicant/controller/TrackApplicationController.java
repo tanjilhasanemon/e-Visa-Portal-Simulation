@@ -1,8 +1,7 @@
 package com.project.visa_management_portal.tanjil.applicant.controller;
 
-import com.project.visa_management_portal.tanjil.ApplicationStatus;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.project.visa_management_portal.tanjil.VisaApplication;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,74 +10,127 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+
 
 public class TrackApplicationController
 {
 
     @javafx.fxml.FXML
-    private TableColumn <ApplicationStatus, String> statusTableColumn;
+    private TableColumn <VisaApplication, String> statusTableColumn;
     @javafx.fxml.FXML
-    private TableColumn <ApplicationStatus, String> actionTableColumn;
+    private TableColumn <VisaApplication, String> actionTableColumn;
     @javafx.fxml.FXML
-    private TableColumn <ApplicationStatus, String> applicationIdTableColumn;
+    private TableColumn <VisaApplication, String> applicationIdTableColumn;
     @javafx.fxml.FXML
-    private TableView <ApplicationStatus> trackApplicationsTableView;
+    private TableView <VisaApplication> trackApplicationsTableView;
     @javafx.fxml.FXML
     private TextField applicantIDTextFIeld;
-    @javafx.fxml.FXML
-    private Label statusLabel;
 
-
-    //private list
-
+    ArrayList<VisaApplication> visaApplications;
 
     @javafx.fxml.FXML
     public void initialize() {
-        if (statusLabel != null) statusLabel.setText("Enter application ID.");
+
+        visaApplications = new ArrayList<>();
+
         statusTableColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        actionTableColumn.setCellValueFactory(new PropertyValueFactory<>("remark"));
+        actionTableColumn.setCellValueFactory(new PropertyValueFactory<>("requiredAction"));
         applicationIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("applicationId"));
-
-
-
     }
-
-
-    @javafx.fxml.FXML
-    public void backToDashboardOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Dashboard.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Applicant Dashboard");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @javafx.fxml.FXML
-    public void viewDetailsOnAction(ActionEvent actionEvent) {
-    }
-
 
 
     @javafx.fxml.FXML
     public void loadOnAction(ActionEvent actionEvent) {
 
-
-        String applicantId = (applicantIDTextFIeld.getText());
-        if (applicantId.isEmpty()) {
-            showAlert(Alert.AlertType.WARNING, "Input required", "Please enter Applicant ID to load applications.");
-            return;
+        String applicationId = (applicantIDTextFIeld.getText());
+        if (applicationId.isEmpty()) {
+            showAlert( "Input required", Alert.AlertType.WARNING,"Please enter Applicant ID to load applications.");
         }
 
+        ArrayList <VisaApplication> filteredApplications = new ArrayList<>();
+
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        File file = new File("ApplicantVisaApplications.bin");
+
+        try {
+
+            if (file.exists()) {
+                fis = new FileInputStream(file);
+            }else {
+                showAlert("File Not Found", Alert.AlertType.WARNING, "Client applications file does not exist.");
+            }
+
+            if (fis != null) ois = new ObjectInputStream(fis);
+
+            while (true) {
+                visaApplications.add((VisaApplication) ois.readObject());
+            }
+
+        } catch (Exception e) {
+            try {
+                if(ois!=null)
+                    ois.close();
+            }catch (Exception _) {
+                showAlert("File Error", Alert.AlertType.ERROR, "Error closing the file.");
+            }
+        }
+
+        for (VisaApplication application : visaApplications) {
+            if (application.getApplicationId().equals(applicationId)) {
+                filteredApplications.add(application);
+            }
+        }
+
+        if (filteredApplications.isEmpty()) {
+            showAlert("No Matches", Alert.AlertType.WARNING, "No applications found for the given client ID.");
+        }
+
+        for (VisaApplication fApplication : filteredApplications) {
+            if (fApplication.getStatus().equals("Pending")) {
+                fApplication.setRequiredAction("Submit required documents");
+            } else if (fApplication.getStatus().equals("Approved")) {
+                fApplication.setRequiredAction("Collect visa");
+            } else if (fApplication.getStatus().equals("Rejected")) {
+                fApplication.setRequiredAction("Review rejection reason");
+            } else {
+                fApplication.setRequiredAction("Contact support");
+            }
+        }
+
+        trackApplicationsTableView.getItems().setAll(filteredApplications);
+
     }
 
-    private void showAlert(Alert.AlertType t, String title, String msg) {
-        Alert a = new Alert(t);
-        a.setTitle(title);
-        a.setHeaderText(null);
-        a.setContentText(msg);
-        a.getDialogPane().setPrefWidth(480);
-        a.showAndWait();
+
+
+
+    @javafx.fxml.FXML
+    public void backToDashboardOnAction(ActionEvent actionEvent) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Dashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Applicant Dashboard");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            showAlert("Navigation Error", Alert.AlertType.ERROR, "Unable to load the dashboard.");
+        }
     }
+
+
+    private void showAlert(String title, Alert.AlertType alertType, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
 }

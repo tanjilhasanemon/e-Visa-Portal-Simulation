@@ -2,37 +2,67 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="578.0" prefWidth="800.0" style="-fx-background-color: #2B2B2B;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.mainDashboard.MainDashboardController">
 
-    <Label layoutX="222.0" layoutY="53.0" text="e-Visa Management Portal" textFill="white">
+    <Label layoutX="232.0" layoutY="126.0" text="e-Visa Management Portal" textFill="white">
         <font>
             <Font size="28.0" />
         </font>
     </Label>
 
-    <Label layoutX="350.0" layoutY="130.0" text="Login As:" textFill="white">
+    <Label layoutX="360.0" layoutY="205.0" text="Login As:" textFill="white">
         <font>
             <Font size="18.0" />
         </font>
     </Label>
 
-    <Button layoutX="316.0" layoutY="174.0" onAction="#internalUserLoginOnAction" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #5B9BD5; -fx-text-fill: white; -fx-font-weight: bold;" text="Internal User Login" />
+    <Button layoutX="326.0" layoutY="249.0" onAction="#internalUserLoginOnAction" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #5B9BD5; -fx-text-fill: white; -fx-font-weight: bold;" text="Internal User Login" />
 
-    <Label layoutX="302.0" layoutY="237.0" text="Login As External Users:" textFill="white">
+    <Label layoutX="312.0" layoutY="312.0" text="Login As External Users:" textFill="white">
         <font>
             <Font size="16.0" />
         </font>
     </Label>
 
-    <Button layoutX="316.0" layoutY="277.0" onAction="#externalUserLoginOnAction" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #70AD47; -fx-text-fill: white; -fx-font-weight: bold;" text="External User Login" />
+    <Button layoutX="326.0" layoutY="352.0" onAction="#externalUserLoginOnAction" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #70AD47; -fx-text-fill: white; -fx-font-weight: bold;" text="External User Login" />
 
-    <Button layoutX="306.0" layoutY="352.0" onAction="#signUpOnAction" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: #ED7D31; -fx-text-fill: white; -fx-font-weight: bold;" text="Sign Up" />
+    <Button layoutX="316.0" layoutY="427.0" onAction="#signUpOnAction" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: #ED7D31; -fx-text-fill: white; -fx-font-weight: bold;" text="Sign Up" />
 
-    <Button layoutX="306.0" layoutY="406.0" onAction="#forgotPasswordOnAction" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: #A5A5A5; -fx-text-fill: white; -fx-font-weight: bold;" text="Forgot Password" />
+    <Button layoutX="316.0" layoutY="481.0" onAction="#forgotPasswordOnAction" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: #A5A5A5; -fx-text-fill: white; -fx-font-weight: bold;" text="Forgot Password" />
 
-    <Label fx:id="statusLabel" layoutX="62.0" layoutY="501.0" prefHeight="18.0" prefWidth="667.0" textFill="RED" />
+    <Label fx:id="statusLabel" alignment="CENTER" layoutY="47.0" prefHeight="35.0" prefWidth="800.0" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font></Label>
+   <MenuBar layoutX="-4.0" layoutY="-1.0" prefHeight="26.0" prefWidth="800.0">
+      <menus>
+         <Menu mnemonicParsing="false" text="Phone">
+            <items>
+               <MenuItem mnemonicParsing="false" text="(+880) 1712345678" />
+            </items>
+         </Menu>
+         <Menu mnemonicParsing="false" text="Website">
+            <items>
+               <MenuItem mnemonicParsing="false" text="visa.gov.bd" />
+            </items>
+         </Menu>
+         <Menu mnemonicParsing="false" text="Location">
+            <items>
+               <MenuItem mnemonicParsing="false" text="PASSPORT BHABAN E-7, AGARGAON SHER-E-BANGLANAGAR, DHAKA. Fax: 02-88-9123399" />
+            </items>
+         </Menu>
+         <Menu mnemonicParsing="false" text=" About Us">
+            <items>
+               <MenuItem mnemonicParsing="false" text="© 2012 Department of Immigration &amp; PassportsGovernment of the Peoples's Republic of Bangladesh ®Version 1.0.1.0" />
+            </items>
+         </Menu>
+      </menus>
+   </MenuBar>
 
 </AnchorPane>

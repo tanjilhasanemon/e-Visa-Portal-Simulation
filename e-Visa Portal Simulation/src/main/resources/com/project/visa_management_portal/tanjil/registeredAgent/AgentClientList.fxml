@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="652.0" prefWidth="900.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.ClientListController">
+<AnchorPane prefHeight="614.0" prefWidth="900.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.registeredAgent.controller.ClientListController">
 
 
     <Label layoutX="20.0" layoutY="14.0" style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;" text="My Clients">
@@ -27,7 +27,7 @@
         </columns>
     </TableView>
 
-    <Button layoutX="760.0" layoutY="587.0" onAction="#backToDashboardOnAction" prefHeight="36.0" prefWidth="120.0" text="Back to Dashboard" />
-   <Button layoutX="20.0" layoutY="542.0" onAction="#loadClientsOnAction" prefHeight="36.0" prefWidth="120.0" text="Load Clients" />
+    <Button layoutX="678.0" layoutY="544.0" onAction="#backToDashboardOnAction" prefHeight="36.0" prefWidth="207.0" text="Back to Dashboard" />
+   <Button layoutX="418.0" layoutY="544.0" onAction="#addClientOnAction" prefHeight="36.0" prefWidth="207.0" text="Add Client" />
 
 </AnchorPane>

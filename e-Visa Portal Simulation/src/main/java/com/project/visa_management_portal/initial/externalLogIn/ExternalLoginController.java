@@ -1,5 +1,7 @@
 package com.project.visa_management_portal.initial.externalLogIn;
 import com.project.visa_management_portal.ExternalUser;
+import com.project.visa_management_portal.tanjil.applicant.controller.ApplicantDashboardController;
+import com.project.visa_management_portal.tanjil.registeredAgent.controller.AgentDashboardController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -93,6 +95,8 @@ public class ExternalLoginController {
                         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                         stage.setTitle("Applicant Dashboard");
                         stage.setScene(scene);
+                        ApplicantDashboardController nextController = loader.getController();
+                        nextController.receiveApplicantName(a.getName());
                         stage.show();
                     } catch (IOException _) {
                         showAlert("Scene error", "Unable to open Dashboard.");
@@ -150,11 +154,13 @@ public class ExternalLoginController {
                             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                             stage.setTitle("Registered Agent Dashboard");
                             stage.setScene(scene);
+                            AgentDashboardController nextController = loader.getController();
+                            nextController.receiveAgentName(r.getName());
+
                             stage.show();
                         } catch (IOException _) {
                             showAlert("Scene error", "Unable to open Dashboard.");
                         }
-                        break;
                     }
                     }
             if(!userFound) {

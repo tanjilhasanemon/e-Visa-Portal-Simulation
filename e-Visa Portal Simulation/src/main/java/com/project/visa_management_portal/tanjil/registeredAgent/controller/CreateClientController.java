@@ -19,8 +19,6 @@ import java.util.ArrayList;
 
 public class CreateClientController {
     @javafx.fxml.FXML
-    private Label lblClientMsg;
-    @javafx.fxml.FXML
     private TextField clientContactTextField;
     @javafx.fxml.FXML
     private TextField nameTextField;
@@ -32,7 +30,6 @@ public class CreateClientController {
 
     @javafx.fxml.FXML
     public void initialize() {
-        if (lblClientMsg != null) lblClientMsg.setText("Enter client details and press Create.");
 
         clients = new ArrayList<>();
 
@@ -68,8 +65,7 @@ public class CreateClientController {
 
         // Basic validation
         if (name.isEmpty() || passport.isEmpty() || contact.isEmpty()) {
-            showAlert("Validation Error", "All fields are required.");
-            return;
+            showAlert("Input Error", Alert.AlertType.WARNING, "Please fill in all fields.");
         }
 
         Client newClient = new Client(name, passport, contact);
@@ -93,22 +89,16 @@ public class CreateClientController {
             }
             oos.close();
 
-            showAlert("Success", "Client profile created successfully.");
+            showAlert("Success", Alert.AlertType.INFORMATION, "Client profile created successfully.");
             clearFields();
 
         } catch (Exception e) {
-            showAlert("Error", "An error occurred while creating client profile.");
+            showAlert("File Error", Alert.AlertType.ERROR, "An error occurred while saving the client profile.");
 
         }
     }
 
-    private void showAlert(String title, String message) {
-        Alert a = new Alert(Alert.AlertType.ERROR);
-        a.setTitle(title);
-        a.setHeaderText(null);
-        a.setContentText(message);
-        a.showAndWait();
-    }
+
 
     private void clearFields() {
         nameTextField.clear();
@@ -127,8 +117,16 @@ public class CreateClientController {
             stage.setScene(scene);
             stage.show();
         }catch (IOException e){
-            showAlert("Scene error", "Unable to open Applicant Dashboard.");
+            showAlert("Navigation Error", Alert.AlertType.ERROR, "Unable to load the dashboard.");
         }
+    }
+
+    private void showAlert(String title, Alert.AlertType alertType, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }
