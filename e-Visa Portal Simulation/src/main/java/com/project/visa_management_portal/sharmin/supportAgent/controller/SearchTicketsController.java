@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class SearchTicketsController
@@ -41,9 +42,10 @@ public class SearchTicketsController
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        SearchTickets ST =new SearchTickets();
 
-        searchTicketslist.add(ST);
+        searchTicketslist.add(new SearchTickets(101, "John Doe", "Pending", LocalDate.of(2025,12,5)));
+        searchTicketslist.add(new SearchTickets(102, "Jane Smith", "Approved", LocalDate.of(2025,12,4)));
+
         ResulttableTableview.getItems().addAll(searchTicketslist);
 
     }

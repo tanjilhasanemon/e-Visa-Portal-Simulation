@@ -40,26 +40,45 @@ public class ViewTicketsController
         DateTablecolumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         IssueTypeTableColumn.setCellValueFactory(new PropertyValueFactory<>("issueType"));
         statusTablecolumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        ViewTickets vt=new ViewTickets();
+
 
         viewticketslist.add(new ViewTickets(101, "Sharmin","Escalated", "Login Issue",LocalDate.now()));
         viewticketslist.add(new ViewTickets(102, "Bithi", "Refund Query","Closed",LocalDate.now()));
 
-        viewticketslist.add(vt);
         TicketsTableview.getItems().addAll(viewticketslist);
 
     }
 
     @javafx.fxml.FXML
     public void closeButtonOnAction(ActionEvent actionEvent) {
-
+        ViewTickets selectedTicket = TicketsTableview.getSelectionModel().getSelectedItem();
+        if (selectedTicket == null) {
+            showAlert("Error", "Please select a ticket first.");
+            return;
+        }
+        selectedTicket.setStatus("Closed");
+        TicketsTableview.refresh();
+        showAlert("Success", "Ticket closed successfully.");
     }
 
     @javafx.fxml.FXML
     public void escalateButtonOnAction(ActionEvent actionEvent) {
-    }
+            ViewTickets selectedTicket = TicketsTableview.getSelectionModel().getSelectedItem();
+            if (selectedTicket == null) {
+                showAlert("Error", "Please select a ticket first.");
+                return;
+            }
 
-    @javafx.fxml.FXML
-    public void respondButtonOnAcion(ActionEvent actionEvent) {
+            selectedTicket.setStatus("Escalated");
+            TicketsTableview.refresh();
+            showAlert("Success", "Ticket escalated successfully.");
+
     }
-}
+    private void showAlert(String title, String message) {
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        a.setTitle(title);
+        a.setHeaderText(null);
+        a.setContentText(message);
+        a.showAndWait();
+    }
+    }
