@@ -18,11 +18,12 @@ public class AgentDashboardController
 
     @javafx.fxml.FXML
     public void initialize() {
-        statusLabel.setText("Welcome to Registered Agent Dashboard");
+
+
     }
-    private void showAlert(String title, String message) {
+    private void showAlert(String message) {
         Alert a = new Alert(Alert.AlertType.ERROR);
-        a.setTitle(title);
+        a.setTitle("Navigation Error");
         a.setHeaderText(null);
         a.setContentText(message);
         a.showAndWait();
@@ -38,7 +39,7 @@ public class AgentDashboardController
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            showAlert("Scene error", "Unable to open Client Payment Dashboard.");
+            showAlert("Unable to open Client Payment Dashboard.");
         }
 
     }
@@ -53,54 +54,26 @@ public class AgentDashboardController
             stage.setScene(scene);
             stage.show();
         }catch (IOException e) {
-            showAlert("Scene error", "Unable to open Client Visa Apply Dashboard.");
+            showAlert("Unable to open Client Visa Apply Dashboard.");
         }
 
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void contactSupportOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/Agent_Support.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/DeleteAndUpdateClients.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setTitle("Client Support");
             stage.setScene(scene);
             stage.show();
         }catch (IOException e) {
-            showAlert("Scene error", "Unable to open Client Support Dashboard.");
+            showAlert("Unable to open Client Support Dashboard.");
         }
     }
 
-    @javafx.fxml.FXML
-    public void downloadsOnAction(ActionEvent actionEvent){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/Agent_DownloadsClientReceipts.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Download Client Receipts");
-            stage.setScene(scene);
-            stage.show();
-        }catch (IOException e) {
-            showAlert("Scene error", "Unable to open Download Client Receipts Dashboard.");
-        }
 
-    }
-
-    @javafx.fxml.FXML
-    public void uploadClientDocumentsOnAction(ActionEvent actionEvent){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/Agent_UploadClientDocuments.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Upload Client Documents");
-            stage.setScene(scene);
-            stage.show();
-        }catch (IOException e) {
-            showAlert("Scene error", "Unable to open Upload Client Documents Dashboard.");
-        }
-
-    }
 
     @javafx.fxml.FXML
     public void checkAplicationStatusOnAction(ActionEvent actionEvent){
@@ -112,7 +85,7 @@ public class AgentDashboardController
             stage.setScene(scene);
             stage.show();
         }catch (IOException e) {
-            showAlert("Scene error", "Unable to open Client Application Status Dashboard.");
+            showAlert("Unable to open Client Application Status Dashboard.");
         }
 
     }
@@ -128,25 +101,11 @@ public class AgentDashboardController
             stage.setScene(scene);
             stage.show();
         }catch (IOException e) {
-            showAlert("Scene error", "Unable to open Client Travel History Dashboard.");
+            showAlert("Unable to open Client Travel History Dashboard.");
         }
 
     }
 
-    @javafx.fxml.FXML
-    public void viewClientListOnAction(ActionEvent actionEvent){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/AgentClientList.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Client List");
-            stage.setScene(scene);
-            stage.show();
-        }catch (IOException e) {
-            showAlert("Scene error", "Unable to open Client List Dashboard.");
-        }
-
-    }
 
     @javafx.fxml.FXML
     public void createClientProfileOnAction(ActionEvent actionEvent){
@@ -158,13 +117,13 @@ public class AgentDashboardController
             stage.setScene(scene);
             stage.show();
         }catch (IOException e) {
-            showAlert("Scene error", "Unable to open Create Client Dashboard.");
+            showAlert("Unable to open Create Client Dashboard.");
         }
 
     }
 
     @javafx.fxml.FXML
-    public void signOutOnAction(ActionEvent actionEvent) throws IOException {
+    public void signOutOnAction(ActionEvent actionEvent)  {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/initial/mainDashboard/MainDashboard.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -173,11 +132,56 @@ public class AgentDashboardController
             stage.setScene(scene);
             stage.show();
         }catch (IOException e) {
-            showAlert("Scene error", "Unable to open Main Dashboard.");
+            showAlert("Unable to open Main Dashboard.");
         }
 
     }
 
 
+    @javafx.fxml.FXML
+    public void CheckClientListOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/AgentClientList.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Client List");
+            stage.setScene(scene);
+            stage.show();
+        }catch (IOException e) {
+            showAlert("Unable to open Client List Dashboard.");
+        }
+    }
 
+    @javafx.fxml.FXML
+    public void viewClientApplicationsSummeryOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/ViewClientApplicationSummery.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Client Application Summery");
+            stage.setScene(scene);
+            stage.show();
+        }catch (IOException e) {
+            showAlert("Unable to open Client Application Summery Dashboard.");
+        }
+    }
+
+
+    public void receiveAgentName(String agentName){
+        statusLabel.setText("Welcome " + agentName + " to Registered Agent Dashboard");
+    }
+
+    @javafx.fxml.FXML
+    public void deleteAndUpdateClientsOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/DeleteAndUpdateClients.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Delete And Update Clients");
+            stage.setScene(scene);
+            stage.show();
+        }catch (IOException e) {
+            showAlert("Unable to open Delete And Update Clients Dashboard.");
+        }
+    }
 }

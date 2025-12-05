@@ -1,12 +1,14 @@
-package com.project.visa_management_portal.tanjil.registeredAgent.controller;
+package com.project.visa_management_portal.tanjil.applicant.controller;
 
 import com.project.visa_management_portal.tanjil.VisaApplication;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -15,31 +17,32 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
-public class ClientPaymentsController
+public class ApplicantPayFeeController
 {
-    @FXML
+    @javafx.fxml.FXML
     private TextField amountTextField;
-    @FXML
-    private TextField clientSearchTextField;
-    @FXML
+    @javafx.fxml.FXML
     private TextArea receiptTextArea;
-    @FXML
+    @javafx.fxml.FXML
     private Label payableAmountLabel;
+
+    @javafx.fxml.FXML
+    private TextField SearchTextField;
 
     ArrayList <VisaApplication> visaApplications;
 
 
-    @FXML
+    @javafx.fxml.FXML
     public void initialize() {
         visaApplications = new ArrayList<>();
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         try {
-            File file = new File("ClientApplications.bin");
+            File file = new File("ApplicantVisaApplications.bin");
             if (file.exists()) {
                 fis = new FileInputStream(file);
             } else {
-                showAlert("File Not Found", Alert.AlertType.ERROR, "Client applications file does not exist.");
+                showAlert( Alert.AlertType.ERROR, "File Not Found","Client applications file does not exist.");
             }
             if (fis != null) ois = new ObjectInputStream(fis);
             while (true) {
@@ -47,54 +50,52 @@ public class ClientPaymentsController
                 visaApplications.add(visa);
 
             }
-        } catch (Exception e) {
+        } catch (IOException | ClassNotFoundException e) {
             try {
                 if (ois != null) ois.close();
-            } catch (IOException ex) {
-                showAlert("File Error", Alert.AlertType.ERROR, "Error closing the file.");
+            } catch (Exception ex) {
+                showAlert( Alert.AlertType.ERROR, "File Error","Error closing the file.");
             }
         }
-
-
-
     }
 
-    @FXML
+    @javafx.fxml.FXML
     public void searchOnAction(ActionEvent actionEvent) {
-        if (clientSearchTextField.getText().isEmpty()){
-            showAlert("Input Error", Alert.AlertType.WARNING, "Please enter a client ID to search.");
+
+        if (SearchTextField.getText().isEmpty()){
+            showAlert( Alert.AlertType.ERROR, "Input Error","Please enter your application id to search.");
+            return;
         }
 
         ArrayList <VisaApplication> matchedApplications = new ArrayList<>();
+
         String visaFee = "";
 
         for (VisaApplication targetApplication: visaApplications) {
-            if (targetApplication.getClientId().equals(clientSearchTextField.getText())) {
+            if (targetApplication.getApplicationId().equals(SearchTextField.getText())) {
                 matchedApplications.add(targetApplication);
                 visaFee = Integer.toString(targetApplication.getFeeForVisaType(targetApplication.getVisaType()));
             }
         }
         if (matchedApplications.isEmpty()) {
-            showAlert("No Matches", Alert.AlertType.WARNING, "No visa applications found for the given client ID.");
+            showAlert( Alert.AlertType.WARNING, "No Matches","No visa applications found for the given client ID.");
         }
 
         payableAmountLabel.setText(visaFee);
-
-
     }
 
-    @FXML
+    @javafx.fxml.FXML
     public void payOnAction(ActionEvent actionEvent) {
 
         if(amountTextField.getText().isEmpty()){
-            showAlert("Input Error", Alert.AlertType.WARNING, "Please enter an amount to pay.");
+            showAlert( Alert.AlertType.ERROR, "Input Error","Please enter an amount to pay.");
             return;
         }
         int enterAmount = Integer.parseInt(amountTextField.getText().trim());
         int payableAmount = Integer.parseInt(payableAmountLabel.getText().trim());
 
         if (enterAmount != payableAmount){
-            showAlert("Payment Error", Alert.AlertType.WARNING, "The entered amount does not match the payable amount.");
+            showAlert( Alert.AlertType.ERROR,"Payment Error", "The entered amount does not match the payable amount.");
             return;
         }
 
@@ -105,7 +106,7 @@ public class ClientPaymentsController
                 + "          PAYMENT RECEIPT\n"
                 + "═══════════════════════════════════\n"
                 + "Transaction ID: " + transitionId + "\n"
-                + "Client ID: " + clientSearchTextField.getText() + "\n"
+                + "Application ID: " + SearchTextField.getText() + "\n"
                 + "Amount Paid: $" + amountTextField.getText() + "\n"
                 + "Payment Date: " + java.time.LocalDate.now() + "\n"
                 + "Status: SUCCESS\n"
@@ -114,38 +115,30 @@ public class ClientPaymentsController
                 + "═══════════════════════════════════";
 
         receiptTextArea.setText(receipt);
-        showAlert("Payment Successful", Alert.AlertType.INFORMATION, "Payment processed successfully. Receipt generated");
-        clearFields();
-
+        showAlert( Alert.AlertType.INFORMATION, "Payment Successful","Payment processed successfully. Receipt generated");
 
     }
 
-    @FXML
-    public void backToDashBoardOnAction(ActionEvent actionEvent) throws IOException {
+    @javafx.fxml.FXML
+    public void backToDashBoardOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/registeredAgent/RegisteredAgentDashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Dashboard.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Registered Agent Dashboard");
+            stage.setTitle("Applicant Dashboard");
             stage.setScene(scene);
             stage.show();
-        }catch (Exception e) {
-            showAlert("Navigation Error", Alert.AlertType.ERROR, "Unable to load the dashboard.");
+        } catch (Exception e) {
+            showAlert(Alert.AlertType.ERROR, "Navigation Error", "Unable to load the dashboard.");
         }
-
     }
 
-    private void showAlert(String title,Alert.AlertType type, String message) {
-        Alert alert = new Alert(type);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
+    private void showAlert(Alert.AlertType type, String title, String msg) {
+        Alert a = new Alert(type);
+        a.setTitle(title);
+        a.setHeaderText(null);
+        a.setContentText(msg);
+        a.showAndWait();
     }
 
-    private void clearFields() {
-        amountTextField.clear();
-        clientSearchTextField.clear();
-        payableAmountLabel.setText("0.00");
-    }
 }

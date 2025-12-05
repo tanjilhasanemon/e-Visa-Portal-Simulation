@@ -3,7 +3,6 @@ module com.project.visa_management_portal {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.desktop;
-    requires org.jetbrains.annotations;
     //requires com.project.visa_management_portal;
     //requires com.project.visa_management_portal;
     //requires com.project.visa_management_portal;
@@ -58,16 +57,6 @@ module com.project.visa_management_portal {
     opens com.project.visa_management_portal.galib.visaOfficer to javafx.fxml;
     exports com.project.visa_management_portal.galib.visaOfficer;
 
-    opens com.project.visa_management_portal.galib.model to javafx.fxml;
-    exports com.project.visa_management_portal.galib.model;
-
-
-
-
-
-    //opens com.project.visa_management_portal.galib.model to javafx.fxml;
-    //exports com.project.visa_management_portal.galib.model;
-
 
 
 
@@ -78,24 +67,13 @@ module com.project.visa_management_portal {
     exports com.project.visa_management_portal.rifat.policyManager.controller;
 
 
-    opens com.project.visa_management_portal.sharmin.supportagent.controller to javafx.fxml;
-    exports com.project.visa_management_portal.sharmin.supportagent.controller;
 
-    opens com.project.visa_management_portal.sharmin.financeclerk.controller to javafx.fxml;
-    exports com.project.visa_management_portal.sharmin.financeclerk.controller;
-    opens com.project.visa_management_portal.sharmin.financeclerk.modelclass to javafx.fxml,javafx.base;
-    opens com.project.visa_management_portal.sharmin.supportagent.modelclass to javafx.fxml,javafx.base;
-
-
-    //opens com.project.visa_management_portal.sharmin.supportAgent.controller to javafx.fxml;
-    //exports com.project.visa_management_portal.sharmin.supportAgent.controller;
-    //opens com.project.visa_management_portal.sharmin.financeClerk.controller to javafx.fxml;
-    //exports com.project.visa_management_portal.sharmin.financeClerk.controller;
-
-
-
-
-
+//    opens com.project.visa_management_portal.sharmin.supportagent.controller to javafx.fxml;
+//
+//    exports com.project.visa_management_portal.sharmin.supportagent.controller;
+//
+//    opens com.project.visa_management_portal.sharmin.financeclerk.controller to javafx.fxml;
+//    exports com.project.visa_management_portal.sharmin.financeclerk.controller;
 
 
 }

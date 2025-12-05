@@ -202,7 +202,7 @@ public class VisaApplication implements Serializable {
     }
 
     private String generateRandomStatus() {
-        String[] statuses = {"Pending", "Approved", "Rejected", "Under Review", "In Progress"};
+        String[] statuses = {"Pending", "Approved", "Rejected"};
         return statuses[rand.nextInt(statuses.length)];
     }
 

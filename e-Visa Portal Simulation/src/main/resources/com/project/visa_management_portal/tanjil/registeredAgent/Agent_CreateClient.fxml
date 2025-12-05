@@ -24,7 +24,5 @@
 
     <Button layoutX="160.0" layoutY="279.0" onAction="#createClientProfileOnAction" prefHeight="38.0" prefWidth="194.0" style="-fx-background-color: #00a1ec;" text="Create" />
     <Button layoutX="400.0" layoutY="279.0" onAction="#backToDashboardOnAction" prefHeight="38.0" prefWidth="183.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
-
-    <Label fx:id="lblClientMsg" layoutX="40.0" layoutY="270.0" textFill="red" />
     <Label alignment="CENTER" layoutY="480.0" prefHeight="20.0" prefWidth="700.0" style="-fx-background-color: white;" text="eVisa Portal | Agent - Client" />
 </AnchorPane>
