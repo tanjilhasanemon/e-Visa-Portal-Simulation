@@ -34,6 +34,8 @@ public class GenerateReportController
 
     @javafx.fxml.FXML
     public void initialize() {
+        StartDateDatepicker.setValue(LocalDate.now());
+        endDateDatepicker.setValue(LocalDate.now());
         reporttypeCombobox.getItems().addAll("Daily","Monthly","Payment Summary","Refund Summary");
         transactionIdColumn.setCellValueFactory(new PropertyValueFactory<>("transactionId"));
         applicantNameColumn.setCellValueFactory(new PropertyValueFactory<>("applicantName"));
@@ -42,8 +44,9 @@ public class GenerateReportController
         paymentDateColumn.setCellValueFactory(new PropertyValueFactory<>("paymentDate"));
         paymentMethodColumn.setCellValueFactory(new PropertyValueFactory<>("paymentMethod"));
 
-        generateReportslist.add(new GenerateReport(101, "John Doe", 5000, "Completed", LocalDate.of(2025,12,1), "Card"));
-        generateReportslist.add(new GenerateReport(102, "Jane Smith", 7500, "Pending", LocalDate.of(2025,12,1), "Cash"));
+
+        //generateReportslist.add(new GenerateReport(101, "John Doe", 5000, "Completed", LocalDate.of(2025,12,1), "Card"));
+        //generateReportslist.add(new GenerateReport(102, "Jane Smith", 7500, "Pending", LocalDate.of(2025,12,1), "Cash"));
 
         ReportsummaryTbleview.getItems().addAll(generateReportslist);
     }
@@ -52,21 +55,44 @@ public class GenerateReportController
     public void generateButtonOnAction(ActionEvent actionEvent) {
         ReportsummaryTbleview.getItems().clear();
 
+        String selectedReportType = reporttypeCombobox.getValue();
         LocalDate startDate = StartDateDatepicker.getValue();
         LocalDate endDate = endDateDatepicker.getValue();
+
+
+        if (selectedReportType == null) {
+            showAlert("Error", "Please select a report type.");
+            return;
+        }
+
+        // Validation 2 – dates
         if (startDate == null || endDate == null) {
             showAlert("Error", "Please select both start and end dates.");
             return;
         }
+
+        // Filter table data
         for (GenerateReport report : generateReportslist) {
-            if ((report.getPaymentDate().isEqual(startDate) || report.getPaymentDate().isAfter(startDate)) &&
-                    (report.getPaymentDate().isEqual(endDate) || report.getPaymentDate().isBefore(endDate))) {
+            LocalDate paymentDate = report.getPaymentDate();
+
+            boolean inRange =
+                    (paymentDate.isEqual(startDate) || paymentDate.isAfter(startDate)) &&
+                            (paymentDate.isEqual(endDate)   || paymentDate.isBefore(endDate));
+
+            if (inRange) {
                 ReportsummaryTbleview.getItems().add(report);
             }
         }
+
+        // No result
         if (ReportsummaryTbleview.getItems().isEmpty()) {
             showAlert("Info", "No reports found for the selected date range.");
         }
+        GenerateReport reportToAdd = new GenerateReport(
+        );
+
+        ReportsummaryTbleview.getItems().add(reportToAdd);
+        generateReportslist.add(reportToAdd);
 
     }
     private void showAlert(String title, String message) {

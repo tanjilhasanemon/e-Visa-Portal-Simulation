@@ -10,6 +10,7 @@ public class GenerateReport {
     private LocalDate paymentDate;
     private String paymentMethod;
 
+
     public GenerateReport() {
     }
 
