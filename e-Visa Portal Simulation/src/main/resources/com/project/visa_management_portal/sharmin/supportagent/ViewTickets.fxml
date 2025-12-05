@@ -23,9 +23,8 @@
       <Label layoutX="267.0" layoutY="14.0" prefHeight="27.0" prefWidth="187.0" text="View Tickets" />
       <Label layoutX="45.0" layoutY="67.0" text="Ticket ID" />
       <TextField fx:id="ticketidTextField" layoutX="118.0" layoutY="63.0" />
-      <Button layoutX="45.0" layoutY="142.0" mnemonicParsing="false" onAction="#respondButtonOnAcion" prefHeight="25.0" prefWidth="167.0" text="Respond Ticket" />
-      <Button layoutX="267.0" layoutY="142.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="25.0" prefWidth="161.0" text="Close Ticket" />
-      <Button layoutX="472.0" layoutY="142.0" mnemonicParsing="false" onAction="#escalateButtonOnAction" prefHeight="25.0" prefWidth="135.0" text="Escalate Ticket" />
+      <Button layoutX="45.0" layoutY="148.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="25.0" prefWidth="187.0" text="Close Ticket" />
+      <Button layoutX="300.0" layoutY="148.0" mnemonicParsing="false" onAction="#escalateButtonOnAction" prefHeight="25.0" prefWidth="210.0" text="Escalate Ticket" />
       <ComboBox fx:id="statusFilterComboBox" layoutX="443.0" layoutY="67.0" prefWidth="150.0" />
       <Label layoutX="328.0" layoutY="71.0" text=" Status ComboBox" />
    </children>

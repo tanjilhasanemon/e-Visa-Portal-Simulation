@@ -3,49 +3,82 @@ package com.project.visa_management_portal.sharmin.financeclerk.modelclass;
 import java.time.LocalDate;
 
 public class GenerateReport {
-    private String reportType;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private int transactionId;
+    private String applicantName;
+    private int amount;
+    private String status;
+    private LocalDate paymentDate;
+    private String paymentMethod;
 
     public GenerateReport() {
     }
 
-    public GenerateReport(String reportType, LocalDate startDate, LocalDate endDate) {
-        this.reportType = reportType;
-        this.startDate = startDate;
-        this.endDate = endDate;
+    public GenerateReport(int transactionId, String applicantName, int amount, String status, LocalDate paymentDate, String paymentMethod) {
+        this.transactionId = transactionId;
+        this.applicantName = applicantName;
+        this.amount = amount;
+        this.status = status;
+        this.paymentDate = paymentDate;
+        this.paymentMethod = paymentMethod;
     }
 
-    public String getReportType() {
-        return reportType;
+    public int getTransactionId() {
+        return transactionId;
     }
 
-    public void setReportType(String reportType) {
-        this.reportType = reportType;
+    public void setTransactionId(int transactionId) {
+        this.transactionId = transactionId;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public String getApplicantName() {
+        return applicantName;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
+    public void setApplicantName(String applicantName) {
+        this.applicantName = applicantName;
     }
 
-    public LocalDate getEndDate() {
-        return endDate;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public LocalDate getPaymentDate() {
+        return paymentDate;
+    }
+
+    public void setPaymentDate(LocalDate paymentDate) {
+        this.paymentDate = paymentDate;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
     @Override
     public String toString() {
         return "GenerateReport{" +
-                "reportType='" + reportType + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
+                "transactionId=" + transactionId +
+                ", applicantName='" + applicantName + '\'' +
+                ", amount=" + amount +
+                ", status='" + status + '\'' +
+                ", paymentDate=" + paymentDate +
+                ", paymentMethod='" + paymentMethod + '\'' +
                 '}';
     }
 }

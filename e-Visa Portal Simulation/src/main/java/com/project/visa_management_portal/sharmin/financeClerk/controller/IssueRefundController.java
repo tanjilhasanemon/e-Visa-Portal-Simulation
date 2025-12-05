@@ -56,10 +56,35 @@ public class IssueRefundController
     @javafx.fxml.FXML
     public void issueRefundButtonOnAction(ActionEvent actionEvent) {
         IssueRefund selected = RefundsTableView.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            messageLabel.setText("Please select a transaction to refund.");
+            return;
+        }
+
+        if (selected.getStatus().equals("Refunded")) {
+            messageLabel.setText("This transaction is already refunded.");
+            return;
+        }
+        selected.setStatus("Refunded");
+        RefundsTableView.refresh();
+        messageLabel.setText("Refund issued successfully.");
+
 
     }
 
     @javafx.fxml.FXML
     public void searchButtonOnAction(ActionEvent actionEvent) {
-    }
+
+            String search = searchTextField.getText();
+
+            RefundsTableView.getItems().clear();
+
+            for (IssueRefund r : refundList) {
+                if (r.getApplicantName().toLowerCase().contains(search.toLowerCase())) {
+                    RefundsTableView.getItems().add(r);
+                }
+            }
+        }
+
+
 }
