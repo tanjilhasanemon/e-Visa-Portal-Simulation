@@ -29,9 +29,7 @@ public class ExportDataController
         else if (XLSXRadiobutton.isSelected())
             format = "XLSX";
 
-        if (!format.isEmpty()) {
-            showAlert("Export", "Exporting as " + format + "...");
-        } else {
+         else {
             showAlert("Error", "Please select a format to export.");
         }
     }

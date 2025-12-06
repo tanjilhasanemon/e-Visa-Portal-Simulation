@@ -65,13 +65,13 @@ public class GenerateReportController
             return;
         }
 
-        // Validation 2 – dates
+
         if (startDate == null || endDate == null) {
             showAlert("Error", "Please select both start and end dates.");
             return;
         }
 
-        // Filter table data
+
         for (GenerateReport report : generateReportslist) {
             LocalDate paymentDate = report.getPaymentDate();
 
@@ -84,7 +84,7 @@ public class GenerateReportController
             }
         }
 
-        // No result
+
         if (ReportsummaryTbleview.getItems().isEmpty()) {
             showAlert("Info", "No reports found for the selected date range.");
         }
