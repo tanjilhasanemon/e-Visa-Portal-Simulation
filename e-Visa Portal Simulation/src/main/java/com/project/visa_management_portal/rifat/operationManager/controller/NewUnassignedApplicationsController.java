@@ -61,48 +61,48 @@ public class NewUnassignedApplicationsController {
         colSubmittedAt.setCellValueFactory(new PropertyValueFactory<ApplicationsRifat, String>("submittedAt"));
         colStatus.setCellValueFactory(new PropertyValueFactory<ApplicationsRifat, String>("status"));
 
-        ApplicationsRifat a1 = new ApplicationsRifat("2367", "Tourist Visa", LocalDate.of(2024, 6, 1), "Unassigned");
-        ApplicationsRifat a2 = new ApplicationsRifat("2368", "Student Visa", LocalDate.of(2024, 6, 2), "Unassigned");
-        ApplicationsRifat a3 = new ApplicationsRifat("2369", "Work Visa", LocalDate.of(2024, 6, 3), "Unassigned");
-        ApplicationsRifat a4 = new ApplicationsRifat("2370", "Business Visa", LocalDate.of(2024, 6, 4), "Unassigned");
-        ApplicationsRifat a5 = new ApplicationsRifat("2371", "Transit Visa", LocalDate.of(2024, 6, 5), "Unassigned");
-        ApplicationsRifat a6 = new ApplicationsRifat("2372", "Tourist Visa", LocalDate.of(2024, 6, 6), "Unassigned");
-        ApplicationsRifat a7 = new ApplicationsRifat("2373", "Student Visa", LocalDate.of(2024, 6, 7), "Unassigned");
-        ApplicationsRifat a8 = new ApplicationsRifat("2374", "Work Visa", LocalDate.of(2024, 6, 8), "Unassigned");
-        ApplicationsRifat a9 = new ApplicationsRifat("2375", "Business Visa", LocalDate.of(2024, 6, 9), "Unassigned");
-        ApplicationsRifat a10 = new ApplicationsRifat("2376", "Transit Visa", LocalDate.of(2024, 6, 10), "Unassigned");
-        ApplicationsRifat a11 = new ApplicationsRifat("2377", "Tourist Visa", LocalDate.of(2024, 6, 11), "Unassigned");
-        ApplicationsRifat a12 = new ApplicationsRifat("2378", "Student Visa", LocalDate.of(2024, 6, 12), "Unassigned");
-        ApplicationsRifat a13 = new ApplicationsRifat("2379", "Work Visa", LocalDate.of(2024, 6, 13), "Unassigned");
-        ApplicationsRifat a14 = new ApplicationsRifat("2380", "Business Visa", LocalDate.of(2024, 6, 14), "Unassigned");
-        ApplicationsRifat a15 = new ApplicationsRifat("2381", "Transit Visa", LocalDate.of(2024, 6, 15), "Unassigned");
-        ApplicationsRifat a16 = new ApplicationsRifat("2382", "Tourist Visa", LocalDate.of(2024, 6, 16), "Unassigned");
-        ApplicationsRifat a17 = new ApplicationsRifat("2383", "Student Visa", LocalDate.of(2024, 6, 17), "Unassigned");
-        ApplicationsRifat a18 = new ApplicationsRifat("2384", "Work Visa", LocalDate.of(2024, 6, 18), "Unassigned");
-        ApplicationsRifat a19 = new ApplicationsRifat("2385", "Business Visa", LocalDate.of(2024, 6, 19), "Unassigned");
-        ApplicationsRifat a20 = new ApplicationsRifat("2386", "Transit Visa", LocalDate.of(2024, 6, 20), "Unassigned");
-
-
-        applicationList.add(a1);
-        applicationList.add(a2);
-        applicationList.add(a3);
-        applicationList.add(a4);
-        applicationList.add(a5);
-        applicationList.add(a6);
-        applicationList.add(a7);
-        applicationList.add(a8);
-        applicationList.add(a9);
-        applicationList.add(a10);
-        applicationList.add(a11);
-        applicationList.add(a12);
-        applicationList.add(a13);
-        applicationList.add(a14);
-        applicationList.add(a15);
-        applicationList.add(a16);
-        applicationList.add(a17);
-        applicationList.add(a18);
-        applicationList.add(a19);
-        applicationList.add(a20);
+//        ApplicationsRifat a1 = new ApplicationsRifat("2367", "Tourist Visa", LocalDate.of(2024, 6, 1), "Unassigned");
+//        ApplicationsRifat a2 = new ApplicationsRifat("2368", "Student Visa", LocalDate.of(2024, 6, 2), "Unassigned");
+//        ApplicationsRifat a3 = new ApplicationsRifat("2369", "Work Visa", LocalDate.of(2024, 6, 3), "Unassigned");
+//        ApplicationsRifat a4 = new ApplicationsRifat("2370", "Business Visa", LocalDate.of(2024, 6, 4), "Unassigned");
+//        ApplicationsRifat a5 = new ApplicationsRifat("2371", "Transit Visa", LocalDate.of(2024, 6, 5), "Unassigned");
+//        ApplicationsRifat a6 = new ApplicationsRifat("2372", "Tourist Visa", LocalDate.of(2024, 6, 6), "Unassigned");
+//        ApplicationsRifat a7 = new ApplicationsRifat("2373", "Student Visa", LocalDate.of(2024, 6, 7), "Unassigned");
+//        ApplicationsRifat a8 = new ApplicationsRifat("2374", "Work Visa", LocalDate.of(2024, 6, 8), "Unassigned");
+//        ApplicationsRifat a9 = new ApplicationsRifat("2375", "Business Visa", LocalDate.of(2024, 6, 9), "Unassigned");
+//        ApplicationsRifat a10 = new ApplicationsRifat("2376", "Transit Visa", LocalDate.of(2024, 6, 10), "Unassigned");
+//        ApplicationsRifat a11 = new ApplicationsRifat("2377", "Tourist Visa", LocalDate.of(2024, 6, 11), "Unassigned");
+//        ApplicationsRifat a12 = new ApplicationsRifat("2378", "Student Visa", LocalDate.of(2024, 6, 12), "Unassigned");
+//        ApplicationsRifat a13 = new ApplicationsRifat("2379", "Work Visa", LocalDate.of(2024, 6, 13), "Unassigned");
+//        ApplicationsRifat a14 = new ApplicationsRifat("2380", "Business Visa", LocalDate.of(2024, 6, 14), "Unassigned");
+//        ApplicationsRifat a15 = new ApplicationsRifat("2381", "Transit Visa", LocalDate.of(2024, 6, 15), "Unassigned");
+//        ApplicationsRifat a16 = new ApplicationsRifat("2382", "Tourist Visa", LocalDate.of(2024, 6, 16), "Unassigned");
+//        ApplicationsRifat a17 = new ApplicationsRifat("2383", "Student Visa", LocalDate.of(2024, 6, 17), "Unassigned");
+//        ApplicationsRifat a18 = new ApplicationsRifat("2384", "Work Visa", LocalDate.of(2024, 6, 18), "Unassigned");
+//        ApplicationsRifat a19 = new ApplicationsRifat("2385", "Business Visa", LocalDate.of(2024, 6, 19), "Unassigned");
+//        ApplicationsRifat a20 = new ApplicationsRifat("2386", "Transit Visa", LocalDate.of(2024, 6, 20), "Unassigned");
+//
+//
+//        applicationList.add(a1);
+//        applicationList.add(a2);
+//        applicationList.add(a3);
+//        applicationList.add(a4);
+//        applicationList.add(a5);
+//        applicationList.add(a6);
+//        applicationList.add(a7);
+//        applicationList.add(a8);
+//        applicationList.add(a9);
+//        applicationList.add(a10);
+//        applicationList.add(a11);
+//        applicationList.add(a12);
+//        applicationList.add(a13);
+//        applicationList.add(a14);
+//        applicationList.add(a15);
+//        applicationList.add(a16);
+//        applicationList.add(a17);
+//        applicationList.add(a18);
+//        applicationList.add(a19);
+//        applicationList.add(a20);
 
         FileOutputStream fos = null;   // file output stream to write bytes to a file
         ObjectOutputStream oos = null; // object output stream to write objects to the file

@@ -64,7 +64,7 @@
         <Label fx:id="lblTitle" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
 
         <ComboBox fx:id="cmbStatusFilter" layoutX="115.0" layoutY="56.0" prefWidth="160.0" promptText="Application Status" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="56.0" />
-        <TextField fx:id="txtSearch_ID" layoutX="534.0" layoutY="56.0" prefWidth="260.0" promptText="Search..." AnchorPane.leftAnchor="534.0" AnchorPane.topAnchor="56.0" />
+        <TextField fx:id="txtSearch_ID" layoutX="534.0" layoutY="56.0" prefWidth="260.0" promptText="Flagged applicants ID for details" AnchorPane.leftAnchor="534.0" AnchorPane.topAnchor="56.0" />
         <Button fx:id="btnSearch_ID" layoutX="805.0" layoutY="56.0" onAction="#idSearchOnActionButton" text="Search" AnchorPane.leftAnchor="805.0" AnchorPane.topAnchor="56.0" />
 
         <TableView fx:id="tblDecisions" prefHeight="308.0" prefWidth="842.0" AnchorPane.bottomAnchor="189.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="100.0">

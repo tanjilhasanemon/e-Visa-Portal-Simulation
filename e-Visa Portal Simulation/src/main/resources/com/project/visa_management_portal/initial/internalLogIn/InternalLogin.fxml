@@ -4,10 +4,12 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.internalLogIn.InternalLoginController">
+<AnchorPane prefHeight="605.0" prefWidth="600.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.internalLogIn.InternalLoginController">
 
     <Label layoutX="230.0" layoutY="50.0" style="-fx-text-fill: white; -fx-font-size: 18px;" text="Internal User Login" />
 
@@ -19,5 +21,10 @@
     <Button layoutX="200.0" layoutY="250.0" onAction="#logInOnAction" prefWidth="90.0" text="Login" />
     <Button fx:id="backBtn" layoutX="310.0" layoutY="250.0" onAction="#backOnAction" prefWidth="90.0" text="Back" />
    <Label fx:id="loginMessageLabel" layoutX="204.0" layoutY="328.0" prefHeight="18.0" prefWidth="200.0" textFill="WHITE" />
+   <TextArea layoutX="52.0" layoutY="328.0" prefHeight="200.0" prefWidth="495.0" text="Demo Employee Role&#10;&#10;            {&quot;Visa Officer&quot;, &quot;2500333&quot;, &quot;33visa33&quot;},&#10;            {&quot;Issuer&quot;, &quot;2500444&quot;, &quot;44issuer44&quot;},&#10;            {&quot;Operation Manager&quot;, &quot;5&quot;, &quot;5&quot;},&#10;            {&quot;Policy Manager&quot;, &quot;2500666&quot;, &quot;66policy66&quot;},&#10;            {&quot;Finance clerk&quot;, &quot;2210233&quot;, &quot;bithe2001&quot;},      &#10;            {&quot;Support agent&quot;, &quot;2210233&quot;, &quot;bithe2001&quot;}&#10;&#10;">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </TextArea>
 
 </AnchorPane>
