@@ -31,10 +31,10 @@ public class InternalLoginController {
             {"employeeRole", "employeeID","password" },
             {"Visa Officer", "2500333", "33visa33"},
             {"Issuer", "2500444", "44issuer44"},
-            {"Operation Manager", "2500555", "55operation55"},
+            {"Operation Manager", "5", "5"},
             {"Policy Manager", "2500666", "66policy66"},
-            {"Finance Clerk", "2210233", "bithe2001"},      // normalized role text
-            {"Support Agent", "2210233", "bithe2001"}
+            {"Finance clerk", "2210233", "bithe2001"},      // normalized role text
+            {"Support agent", "2210233", "bithe2001"}
     };
 
     @javafx.fxml.FXML
@@ -117,11 +117,11 @@ public class InternalLoginController {
             case "Policy Manager":
                 fxmlPath = "/com/project/visa_management_portal/rifat/policyManager/policyManagerDashboard.fxml";
                 break;
-            case "Finance Clerk":
-                fxmlPath = "/com/project/visa_management_portal/sharmin/financeClerk/finacedashboard.fxml";
+            case "Finance clerk":
+                fxmlPath = "/com/project/visa_management_portal/sharmin/financeclerk/finacedashboard.fxml";
                 break;
-            case "Support Agent":
-                fxmlPath = "/com/project/visa_management_portal/sharmin/supportAgent/SupportDashboard.fxml";
+            case "Support agent":
+                fxmlPath = "/com/project/visa_management_portal/sharmin/supportagent/SupportDashboard.fxml";
                 break;
             default:
                 showAlert("Config error", "No dashboard configured for role: " + role);

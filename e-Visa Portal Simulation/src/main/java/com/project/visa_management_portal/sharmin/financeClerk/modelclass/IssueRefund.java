@@ -1,50 +1,85 @@
 package com.project.visa_management_portal.sharmin.financeclerk.modelclass;
 
+import java.time.LocalDate;
+
 public class IssueRefund {
-    private int applicationId;
-    private double refundAmount;
-    private String reason;
+    private int transactionId;
+    private String applicantName;
+    private int amount;
+    private String status;
+    private String paymentMethod;
+    private LocalDate paymentDate;
 
     public IssueRefund() {
 
     }
 
-    public IssueRefund(int applicationId, double refundAmount, String reason) {
-        this.applicationId = applicationId;
-        this.refundAmount = refundAmount;
-        this.reason = reason;
+    public IssueRefund(int transactionId, String applicantName, String status, int amount, String paymentMethod, LocalDate paymentDate) {
+        this.transactionId = transactionId;
+        this.applicantName = applicantName;
+        this.status = status;
+        this.amount = amount;
+        this.paymentMethod = paymentMethod;
+        this.paymentDate = paymentDate;
     }
 
-    public int getApplicationId() {
-        return applicationId;
+    public int getTransactionId() {
+        return transactionId;
     }
 
-    public void setApplicationId(int applicationId) {
-        this.applicationId = applicationId;
+    public void setTransactionId(int transactionId) {
+        this.transactionId = transactionId;
     }
 
-    public double getRefundAmount() {
-        return refundAmount;
+    public String getApplicantName() {
+        return applicantName;
     }
 
-    public void setRefundAmount(double refundAmount) {
-        this.refundAmount = refundAmount;
+    public void setApplicantName(String applicantName) {
+        this.applicantName = applicantName;
     }
 
-    public String getReason() {
-        return reason;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public LocalDate getPaymentDate() {
+        return paymentDate;
+    }
+
+    public void setPaymentDate(LocalDate paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
     @Override
     public String toString() {
         return "IssueRefund{" +
-                "applicationId=" + applicationId +
-                ", refundAmount=" + refundAmount +
-                ", reason='" + reason + '\'' +
+                "transactionId=" + transactionId +
+                ", applicantName='" + applicantName + '\'' +
+                ", amount=" + amount +
+                ", status='" + status + '\'' +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                ", paymentDate=" + paymentDate +
                 '}';
     }
 }

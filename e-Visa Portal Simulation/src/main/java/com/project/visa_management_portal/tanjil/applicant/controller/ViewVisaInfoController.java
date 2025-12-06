@@ -30,7 +30,7 @@ public class ViewVisaInfoController {
     public void loadOnAction(ActionEvent actionEvent) {
         String selected = visaTypeComboBox.getValue();
         if (selected == null || selected.isBlank()) {
-            showAlert("Please select a visa type to view information.");
+            showAlert("Input required", Alert.AlertType.WARNING,"Please select a Visa Type to load information.");
             return;
         }
         visaInformationTextArea.setText(model.viewVisaInfo(selected));
@@ -46,17 +46,17 @@ public class ViewVisaInfoController {
             stage.setScene(scene);
             stage.show();
         }catch (IOException e) {
-            showAlert("Unable to open Applicant Dashboard.");
+            showAlert("Scene error", Alert.AlertType.ERROR,"Unable to open Applicant Dashboard.");
         }
 
     }
 
-    private void showAlert(String message) {
-        Alert a = new Alert(Alert.AlertType.INFORMATION);
-        a.setTitle("Info");
-        a.setHeaderText(null);
-        a.setContentText(message);
-        a.showAndWait();
+    private void showAlert(String title, Alert.AlertType alertType, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 

@@ -5,19 +5,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import java.io.*;
 import java.util.ArrayList;
+
 public class TrackClientsController {
     @javafx.fxml.FXML
-    private TableColumn<VisaApplication, String> statusTableColumn;
+    private TableColumn <VisaApplication, String> statusTableColumn;
     @javafx.fxml.FXML
-    private TableView<VisaApplication> clientApplicantionsTableView;
+    private TableView <VisaApplication> clientApplicantionsTableView;
     @javafx.fxml.FXML
-    private TableColumn<VisaApplication, String> actionTableColumn;
+    private TableColumn <VisaApplication, String> actionTableColumn;
     @javafx.fxml.FXML
-    private TableColumn<VisaApplication, String> applicationIdTableColumn;
+    private TableColumn <VisaApplication, String> applicationIdTableColumn;
     @javafx.fxml.FXML
     private TextField clientIdTextField;
 
@@ -32,9 +34,8 @@ public class TrackClientsController {
     public void applyFilterOnAction(ActionEvent actionEvent) {
         String searchClientId = clientIdTextField.getText();
 
-        // Simple Validate input
         if (searchClientId.isEmpty()) {
-            showAlert("Input Required", "Please enter a client ID to search.");
+            showAlert("Input Required", AlertType.WARNING, "Please enter a client ID to search.");
             return;
         }
 
@@ -44,60 +45,58 @@ public class TrackClientsController {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         File file = new File("ClientApplications.bin");
+
         try {
+
             if (file.exists()) {
                 fis = new FileInputStream(file);
-                ois = new ObjectInputStream(fis);
-
-                while (true) {
-                    try {
-                        VisaApplication clientApplications = (VisaApplication) ois.readObject();
-                        clientsApplicationsList.add(clientApplications);
-                    } catch (java.io.EOFException e) {
-                        break;
-                    }
-                }
-                ois.close();
-
-                for (VisaApplication application : clientsApplicationsList) {
-                    if (searchClientId == application.getClientId()) {
-                        filteredClientApplication.add(application);
-                    }
-                    else {
-                        showAlert("No Match", "No applications found for the given client ID.");
-                    }
-                }
-                for(VisaApplication application: filteredClientApplication){
-                    if (application.getStatus() == "Pending") {
-                        application.setRequiredAction("Submit required documents");
-                    } else if (application.getStatus() == "Under Review") {
-                        application.setRequiredAction("Wait for verification");
-                    } else if (application.getStatus() == "Documents Requested") {
-                        application.setRequiredAction("Upload additional documents");
-                    } else if (application.getStatus() == "Approved") {
-                        application.setRequiredAction("Collect visa");
-                    } else if (application.getStatus() == "Rejected") {
-                        application.setRequiredAction("Review rejection reason");
-                    } else if (application.getStatus() == "Interview Scheduled") {
-                        application.setRequiredAction("Attend interview");
-                    } else if (application.getStatus() == "In Progress") {
-                        application.setRequiredAction("No action required");
-                    } else if (application.getStatus() == "Visa Issued") {
-                        application.setRequiredAction("Download visa");
-                    } else {
-                        application.setRequiredAction("Contact support");
-                    }
-                }
-                clientApplicantionsTableView.getItems().setAll(filteredClientApplication);
-
-
-            } else {
-                showAlert("File Error", "Clients.bin file not found.");
+            }else {
+                showAlert("File Not Found", AlertType.WARNING, "Client applications file does not exist.");
             }
-        } catch (IOException | ClassNotFoundException e) {
-            showAlert("Error", "An error occurred while reading clients: " );
 
+            if (fis != null) ois = new ObjectInputStream(fis);
+
+            while (true) {
+                clientsApplicationsList.add((VisaApplication) ois.readObject());
+            }
+
+        } catch (Exception e) {
+            try {
+                if(ois!=null)
+                    ois.close();
+            }catch (IOException _) {
+                showAlert("File Error", AlertType.ERROR, "Error closing the file.");
+            }
         }
+
+
+
+        for (VisaApplication application : clientsApplicationsList) {
+            if (searchClientId.equals(application.getClientId())) {
+                filteredClientApplication.add(application);
+
+            }
+        }
+        if (filteredClientApplication.isEmpty()) {
+            showAlert("No Matches", AlertType.WARNING, "No applications found for the given client ID.");
+            return;
+        }
+
+
+
+        for (VisaApplication fApplication : filteredClientApplication) {
+            if (fApplication.getStatus().equals("Pending")) {
+                fApplication.setRequiredAction("Submit required documents");
+            } else if (fApplication.getStatus().equals("Approved")) {
+                fApplication.setRequiredAction("Collect visa");
+            } else if (fApplication.getStatus().equals("Rejected")) {
+                fApplication.setRequiredAction("Review rejection reason");
+            } else {
+                fApplication.setRequiredAction("Contact support");
+            }
+        }
+
+        clientApplicantionsTableView.getItems().setAll(filteredClientApplication);
     }
 
     @javafx.fxml.FXML
@@ -110,13 +109,12 @@ public class TrackClientsController {
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            showAlert("Navigation Error", "Unable to return to dashboard.");
+            showAlert("Navigation Error", AlertType.ERROR, "Unable to return to dashboard.");
         }
     }
 
-
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private void showAlert(String title, AlertType alertType, String message) {
+        Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);

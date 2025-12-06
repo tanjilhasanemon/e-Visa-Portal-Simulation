@@ -1,6 +1,4 @@
 package com.project.visa_management_portal.tanjil.applicant.controller;
-
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -18,7 +16,6 @@ public class ApplicantDashboardController
 
     @javafx.fxml.FXML
     public void initialize() {
-        statusLabel.setText("Welcome to Applicant Dashboard");
 
     }
     private void showAlert(String Title, String message) {
@@ -29,49 +26,7 @@ public class ApplicantDashboardController
         a.showAndWait();
     }
 
-    @javafx.fxml.FXML
-    public void uploadDocumentsOnAction(ActionEvent actionEvent){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_UploadDocuments.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Upload Document");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            showAlert("Scene error", "Unable to open Upload Document Dashboard.");
-        }
-    }
 
-    @javafx.fxml.FXML
-    public void helpAndFeedbackOnAction(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Feedback.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Help & Feedback");
-            stage.setScene(scene);
-            stage.show();
-        }catch (IOException e){
-            showAlert("Scene error", "Unable to open Help & Feedback Dashboard.");
-        }
-
-    }
-
-    @javafx.fxml.FXML
-    public void downloadsOnAction(ActionEvent actionEvent){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Downloads.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Download Receipts");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            showAlert("Scene error", "Unable to open Download Receipts Dashboard.");
-        }
-
-    }
 
     @javafx.fxml.FXML
     public void payFeeOnAction(ActionEvent actionEvent){
@@ -163,6 +118,53 @@ public class ApplicantDashboardController
 
     }
 
+    public void receiveApplicantName(String applicantName){
+        statusLabel.setText("Welcome, " + applicantName + "!");
+    }
 
 
+    @javafx.fxml.FXML
+    public void findApplicationIdOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_FindsApplicationID.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Main Dashboard");
+            stage.setScene(scene);
+            stage.show();
+        }catch (IOException e) {
+            showAlert("Scene error", "Unable to open Main Dashboard.");
+        }
+
+    }
+
+    @javafx.fxml.FXML
+    public void checkAndUpdateOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_CheckAndUpdateApplication.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Main Dashboard");
+            stage.setScene(scene);
+            stage.show();
+        }catch (IOException e) {
+            showAlert("Scene error", "Unable to open Main Dashboard.");
+        }
+
+    }
+
+    @javafx.fxml.FXML
+    public void generateReceiptOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/tanjil/applicant/Applicant_Generate_Receipt.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Main Dashboard");
+            stage.setScene(scene);
+            stage.show();
+        }catch (IOException e) {
+            showAlert("Scene error", "Unable to open Main Dashboard.");
+        }
+
+    }
 }

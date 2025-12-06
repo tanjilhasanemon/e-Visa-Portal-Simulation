@@ -1,38 +1,38 @@
 package com.project.visa_management_portal.sharmin.supportagent.modelclass;
 
 public class SendFeedback {
-    private String subject;
-    private String message;
+    private String username;
+    private String feedbacktype;
 
     public SendFeedback() {
     }
 
-    public SendFeedback(String subject, String message) {
-        this.subject = subject;
-        this.message = message;
+    public SendFeedback(String username, String feedbacktype) {
+        this.username = username;
+        this.feedbacktype = feedbacktype;
     }
 
-    public String getSubject() {
-        return subject;
+    public String getUsername() {
+        return username;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getMessage() {
-        return message;
+    public String getFeedbacktype() {
+        return feedbacktype;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setFeedbacktype(String feedbacktype) {
+        this.feedbacktype = feedbacktype;
     }
 
     @Override
     public String toString() {
         return "SendFeedback{" +
-                "subject='" + subject + '\'' +
-                ", message='" + message + '\'' +
+                "username='" + username + '\'' +
+                ", feedbacktype='" + feedbacktype + '\'' +
                 '}';
     }
 }

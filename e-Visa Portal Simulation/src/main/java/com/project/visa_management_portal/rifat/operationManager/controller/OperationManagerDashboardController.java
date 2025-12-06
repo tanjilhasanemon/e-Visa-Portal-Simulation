@@ -116,17 +116,23 @@ public class OperationManagerDashboardController {
     }
 
     @javafx.fxml.FXML
-    public void flaggedApplicationOnActionButton(ActionEvent actionEvent) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/operationManager/Decisions_ApprovedDeniedFlagged.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Overdue Applications");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            showAlert("Scene error", "Unable to open Upload Document Dashboard.");
-        }
+    public void flaggedApplicationOnActionButton(ActionEvent actionEvent) throws IOException {
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/operationManager/Decisions_ApprovedDeniedFlagged.fxml"));
+//            Scene scene = new Scene(loader.load());
+//            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+//            stage.setTitle("Applications Status");
+//            stage.setScene(scene);
+//            stage.show();
+//        } catch (IOException e) {
+//            showAlert("Scene error", "Unable to open Upload Document Dashboard.");
+//        }
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/rifat/operationManager/Decisions_ApprovedDeniedFlagged.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Decisions - Approved/Denied/Flagged");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
@@ -139,7 +145,7 @@ public class OperationManagerDashboardController {
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            showAlert("Scene error", "Unable to open Upload Document Dashboard.");
+            showAlert("Scene error", "Unable to Switch.");
         }
     }
 

@@ -4,18 +4,63 @@ import java.time.LocalDate;
 
 public class TransactionHistory {
     private int transactionId;
-    private String name;
-    private double amount;
-    private LocalDate date;
+    private String applicantName;
+    private String status;
+    private int amount;
+    private LocalDate paymentDate;
+    private String paymentMethod;
 
     public TransactionHistory() {
+
     }
 
-    public TransactionHistory(int transactionId, String name, double amount, LocalDate date) {
+    public TransactionHistory(int transactionId, String applicantName, String status, int amount, LocalDate paymentDate, String paymentMethod) {
         this.transactionId = transactionId;
-        this.name = name;
+        this.applicantName = applicantName;
+        this.status = status;
         this.amount = amount;
-        this.date = date;
+        this.paymentDate = paymentDate;
+        this.paymentMethod = paymentMethod;
+    }
+
+    public String getApplicantName() {
+        return applicantName;
+    }
+
+    public void setApplicantName(String applicantName) {
+        this.applicantName = applicantName;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public LocalDate getPaymentDate() {
+        return paymentDate;
+    }
+
+    public void setPaymentDate(LocalDate paymentDate) {
+        this.paymentDate = paymentDate;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
     public int getTransactionId() {
@@ -26,37 +71,15 @@ public class TransactionHistory {
         this.transactionId = transactionId;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
     @Override
     public String toString() {
         return "TransactionHistory{" +
                 "transactionId=" + transactionId +
-                ", name='" + name + '\'' +
+                ", applicantName='" + applicantName + '\'' +
+                ", status='" + status + '\'' +
                 ", amount=" + amount +
-                ", date=" + date +
+                ", paymentDate=" + paymentDate +
+                ", paymentMethod='" + paymentMethod + '\'' +
                 '}';
     }
 }

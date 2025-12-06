@@ -3,17 +3,26 @@ package com.project.visa_management_portal.sharmin.supportagent.modelclass;
 import java.time.LocalDate;
 
 public class SearchTickets {
-    private String name;
     private int ticketId;
+    private String name, status;
     private LocalDate date;
 
     public SearchTickets() {
     }
 
-    public SearchTickets(String name, int ticketId, LocalDate date) {
-        this.name = name;
+    public SearchTickets(int ticketId, String name, String status, LocalDate date) {
         this.ticketId = ticketId;
+        this.name = name;
+        this.status = status;
         this.date = date;
+    }
+
+    public int getTicketId() {
+        return ticketId;
+    }
+
+    public void setTicketId(int ticketId) {
+        this.ticketId = ticketId;
     }
 
     public String getName() {
@@ -24,12 +33,12 @@ public class SearchTickets {
         this.name = name;
     }
 
-    public int getTicketId() {
-        return ticketId;
+    public String getStatus() {
+        return status;
     }
 
-    public void setTicketId(int ticketId) {
-        this.ticketId = ticketId;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public LocalDate getDate() {
@@ -43,8 +52,9 @@ public class SearchTickets {
     @Override
     public String toString() {
         return "SearchTickets{" +
-                "name='" + name + '\'' +
-                ", ticketId=" + ticketId +
+                "ticketId=" + ticketId +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
                 ", date=" + date +
                 '}';
     }

@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class VerifyPaymentController
@@ -41,14 +42,9 @@ public class VerifyPaymentController
         StatusTablecolumn.setCellValueFactory(new PropertyValueFactory<>("status"));
         DateTablecolumn.setCellValueFactory(new PropertyValueFactory<>("date"));
 
-        VerifyPayment v1 = new VerifyPayment();
-        VerifyPayment v2 = new VerifyPayment();
-        VerifyPayment v3 = new VerifyPayment();
-
-
-        dataList.add(v1);
-        dataList.add(v2);
-        dataList.add(v3);
+        dataList.add(new VerifyPayment(101, "John Doe", 4556, "Pending", LocalDate.of(2025,12,5)));
+        dataList.add(new VerifyPayment(102, "Jane Smith", 7500, "Completed", LocalDate.of(2025,12,4)));
+        dataList.add(new VerifyPayment(103, "Ali Khan", 1000, "Pending", LocalDate.of(2025,12,3)));
         paymentTableView.getItems().addAll(dataList);
     }
 
