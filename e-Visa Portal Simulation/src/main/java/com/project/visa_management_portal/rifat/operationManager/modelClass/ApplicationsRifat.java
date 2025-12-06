@@ -20,6 +20,12 @@ public class ApplicationsRifat implements Serializable {
     public LocalDate toDate;
 
 
+    public ApplicationsRifat(String appId, String visaType, LocalDate submittedAt, String status) {
+        this.appId = appId;
+        this.visaType = visaType;
+        this.submittedAt = submittedAt;
+        this.status = status;
+    }
 
     // View status applications
     public ApplicationsRifat(String appId, String visaType, LocalDate submittedAt, String assignedOfficer, String status) {
