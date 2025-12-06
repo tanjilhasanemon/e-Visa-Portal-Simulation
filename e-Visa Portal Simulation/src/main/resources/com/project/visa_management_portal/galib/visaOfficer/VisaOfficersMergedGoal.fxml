@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400" prefWidth="700" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.galib.visaOfficer.VisaDecisionController">
+<AnchorPane prefHeight="659.0" prefWidth="932.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.galib.visaOfficer.VisaOfficersMergedGoalController">
 
     <children>
         <Label layoutX="-9.0" layoutY="632.0" prefHeight="26.0" prefWidth="1014.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
@@ -36,22 +36,22 @@
             </font>
         </Text>
 
-        <Button layoutX="307.0" layoutY="88.0" onAction="#verifiedAndPendingListButtonOnAction" prefHeight="26.0" prefWidth="497.0" text="Click Here to See Verified and Pending List" />
-        <Button layoutX="823.0" layoutY="87.0" onAction="#refreshTable1OnAction" prefHeight="26.0" prefWidth="61.0" text="Refresh" />
-        <Button layoutX="773.0" layoutY="587.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="118.0" text="Back To Dashboard" />
-        <Text fill="#ffddb0" layoutX="385.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Final Visa Decision" underline="true">
+        <Button layoutX="248.0" layoutY="88.0" onAction="#verifySelectedPassportOnAction" prefHeight="26.0" prefWidth="82.0" text="Verify" />
+        <Button layoutX="717.0" layoutY="86.0" onAction="#refreshListOnAction" prefHeight="26.0" prefWidth="61.0" text="Refresh" />
+        <Button layoutX="767.0" layoutY="574.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="118.0" text="Back To Dashboard" />
+        <Text fill="#ffddb0" layoutX="385.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Goals Of Visa Officer" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
-        <TextField fx:id="inputAppIdForVerifyTextField" layoutX="46.0" layoutY="88.0" prefHeight="26.0" prefWidth="248.0" promptText="Search by Applicant Passport Number..." />
+        <TextField fx:id="inputAppIdForVerifyTextField" layoutX="46.0" layoutY="88.0" prefHeight="26.0" prefWidth="182.0" promptText="Enter Passport No..." />
         <Label layoutX="8.0" layoutY="43.0" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="15.0" />
             </font>
         </Label>
-        <Label fx:id="notificationLabel" layoutX="290.0" layoutY="601.0" prefHeight="18.0" prefWidth="255.0" textFill="WHITE" />
-        <TableView fx:id="documentTableView" layoutX="46.0" layoutY="128.0" prefHeight="247.0" prefWidth="842.0">
+      <Label fx:id="notificationLabel" layoutX="290.0" layoutY="601.0" prefHeight="18.0" prefWidth="255.0" textFill="WHITE" />
+        <TableView fx:id="documentTableView" layoutX="46.0" layoutY="148.0" prefHeight="250.0" prefWidth="842.0">
             <columns>
                 <TableColumn fx:id="applicantIdCol" prefWidth="75.0" text="Applicant ID" />
                 <TableColumn fx:id="passportNoCol" prefWidth="106.39999389648438" text="Passport No" />
@@ -64,10 +64,10 @@
                 <TableColumn fx:id="passportVerifiedCol" prefWidth="138.39990234375" text="Passport Verified" />
             </columns>
         </TableView>
-        <ComboBox fx:id="filterComboBox2" layoutX="48.0" layoutY="398.0" prefHeight="26.0" prefWidth="193.0" promptText="Select List type before Load" />
-        <Button layoutX="252.0" layoutY="399.0" mnemonicParsing="false" onAction="#loadFInalVerifiedListOnAction" prefHeight="26.0" prefWidth="88.0" text="Load List" />
-        <Button layoutX="707.0" layoutY="399.0" mnemonicParsing="false" onAction="#exportListOnAction" text="Export List&gt;&gt;" />
-      <TableView fx:id="documentTableView1" layoutX="48.0" layoutY="441.0" prefHeight="138.0" prefWidth="842.0">
+        <ComboBox fx:id="filterComboBox2" layoutX="392.0" layoutY="86.0" prefHeight="26.0" prefWidth="193.0" promptText="Select List type before Load" />
+      <Button layoutX="601.0" layoutY="87.0" mnemonicParsing="false" onAction="#loadListInTableView" prefHeight="26.0" prefWidth="88.0" text="Load List" />
+      <Button layoutX="794.0" layoutY="87.0" mnemonicParsing="false" onAction="#exportListOnAction" text="Export List&gt;&gt;" />
+      <TableView fx:id="documentTableView1" layoutX="42.0" layoutY="463.0" prefHeight="104.0" prefWidth="842.0">
          <columns>
             <TableColumn fx:id="applicantIdCol1" prefWidth="75.0" text="Applicant ID" />
             <TableColumn fx:id="passportNoCol1" prefWidth="106.39999389648438" text="Passport No" />
@@ -80,7 +80,9 @@
             <TableColumn fx:id="passportVerifiedCol1" prefWidth="138.39990234375" text="Passport Verified" />
          </columns>
       </TableView>
-      <Button layoutX="823.0" layoutY="398.0" onAction="#refreshFinalListOnAction" prefHeight="26.0" prefWidth="61.0" text="Refresh" />
+      <ComboBox fx:id="filterComboBox21" layoutX="370.0" layoutY="426.0" prefHeight="26.0" prefWidth="242.0" promptText="Select Export Type For Final Decision" />
+      <Button layoutX="42.0" layoutY="426.0" mnemonicParsing="false" onAction="#loadFinalListInTableViewButtonOnAction" prefHeight="26.0" prefWidth="163.0" text="Click For Final Approving" />
+      <Button layoutX="826.0" layoutY="426.0" onAction="#refreshFinalListOnAction" prefHeight="26.0" prefWidth="61.0" text="Refresh" />
 
     </children>
 

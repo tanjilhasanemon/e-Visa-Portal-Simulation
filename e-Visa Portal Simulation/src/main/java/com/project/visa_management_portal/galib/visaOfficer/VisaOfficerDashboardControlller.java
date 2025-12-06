@@ -27,10 +27,10 @@ public class VisaOfficerDashboardControlller
 
     @javafx.fxml.FXML
     public void travelHistoryOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/galib/visaOfficer/travelHistory.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/galib/visaOfficer/VisaOfficersMergedGoal.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setTitle("Travel History Dashboard");
+        stage.setTitle("VisaOfficersMergedGoal");
         stage.setScene(scene);
         stage.show();
     }
@@ -97,17 +97,13 @@ public class VisaOfficerDashboardControlller
 
 
     @javafx.fxml.FXML
-    public void generateFileOnAction(ActionEvent actionEvent){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/galib/visaOfficer/fileGeneratorrr.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Generate File");
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public void generateFileOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/galib/visaOfficer/applicationReview.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Application Review Dashboard");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML

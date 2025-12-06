@@ -9,6 +9,9 @@ module com.project.visa_management_portal {
     //requires com.project.visa_management_portal;
     //requires com.project.visa_management_portal;
     //requires com.project.visa_management_portal;
+    //requires com.project.visa_management_portal;
+    //requires com.project.visa_management_portal;
+    //requires com.project.visa_management_portal;
     // requires com.project.visa_management_portal;
 //    requires com.project.visa_management_portal;
 //    requires com.project.visa_management_portal;

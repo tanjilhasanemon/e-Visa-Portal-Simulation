@@ -3,22 +3,17 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600" prefWidth="900" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.galib.visaOfficer.ApplicationReviewController">
+<AnchorPane prefHeight="595.0" prefWidth="907.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.galib.visaOfficer.ApplicationReviewControlller">
 
     <children>
-        <Label layoutY="573.0" prefHeight="26.0" prefWidth="900.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
+        <Label layoutX="-13.0" layoutY="573.0" prefHeight="26.0" prefWidth="919.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
@@ -29,7 +24,7 @@
             </font>
         </Text>
         <Line endX="-100.00003051757812" endY="24.79998779296875" layoutX="538.0" layoutY="573.0" startX="-100.0" stroke="#36454f" strokeWidth="2.0" />
-        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene Name">
+        <Text fill="#36454f" layoutX="459.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visa Officer Dashboard">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
@@ -39,56 +34,33 @@
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
-
-
-    <!-- Menu -->
-    <MenuBar layoutX="15.0" layoutY="89.0" prefHeight="26.0" prefWidth="867.0">
-        <menus>
-            <Menu text="File">
-                <items>
-                    <MenuItem text="Logout" />
-                </items>
-            </Menu>
-            <Menu text="View">
-                <items>
-                    <MenuItem text="Refresh" />
-                </items>
-            </Menu>
-        </menus>
-    </MenuBar>
-
-    <!-- Search & Filters -->
-    <Label layoutX="14.0" layoutY="129.0" />
-    <TextField layoutX="14.0" layoutY="135.0" prefHeight="26.0" prefWidth="540.0" promptText="Search" />
-
-    <Label layoutX="310" layoutY="40" text="Status:" />
-    <ComboBox layoutX="568.0" layoutY="133.0" prefHeight="26.0" prefWidth="314.0" />
-
-    <Button layoutX="568.0" layoutY="189.0" prefWidth="150.0" text="Refresh" />
-    <Button layoutX="731.0" layoutY="190.0" prefHeight="26.0" prefWidth="150.0" text="Open" />
-    <Button layoutX="568.0" layoutY="500.0" mnemonicParsing="false" onAction="#backToMainDashboardOnAction" prefHeight="26.0" prefWidth="314.0" text="Back To Main Dashboard" />
-
-        <!-- Applications Table -->
-    <TableView layoutX="14.0" layoutY="189.0" prefHeight="338.0" prefWidth="540">
-        <columns>
-            <TableColumn prefWidth="80" text="App ID" />
-            <TableColumn prefWidth="160" text="Name" />
-            <TableColumn prefWidth="120" text="Visa Type" />
-            <TableColumn prefWidth="100" text="Submitted" />
-            <TableColumn prefWidth="80" text="Status" />
-        </columns>
-    </TableView>
-
-    <!-- Detail Pane -->
-    <Label layoutX="575.0" layoutY="169.0" />
-    <TextArea layoutX="568.0" layoutY="231.0" prefHeight="251.0" prefWidth="314" promptText="Application Detail..." wrapText="true" />
-
         <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
         <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Application Review" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
         </Text>
+        <Button layoutX="745.0" layoutY="64.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="116.0" text="Refresh and Clear" />
+        <Button layoutX="33.0" layoutY="494.0" mnemonicParsing="false" onAction="#saveGOVTPassportListToTXTOnAction" prefHeight="26.0" prefWidth="94.0" text="Save Govt PP" />
+        <Button layoutX="384.0" layoutY="494.0" mnemonicParsing="false" onAction="#saveVerifiedApplicationListToBINOnAction" prefHeight="26.0" prefWidth="110.0" text="Save Verified PP" />
+        <Button layoutX="555.0" layoutY="495.0" mnemonicParsing="false" onAction="#savePendingApplicationListToBINOnAction" prefHeight="26.0" prefWidth="116.0" text="Save Pending PP" />
+        <Button layoutX="199.0" layoutY="494.0" mnemonicParsing="false" onAction="#saveApplicantPassportListtToBINOnAction" prefHeight="26.0" prefWidth="116.0" text="Save Applicant PP" />
+        <Button layoutX="745.0" layoutY="495.0" mnemonicParsing="false" onAction="#backToVisaDashBoardOnAction" style="-fx-background-color: #7445ff;" text="Back to Dashboard" textFill="WHITE" />
+        <TableView fx:id="documentTableView" layoutX="33.0" layoutY="102.0" prefHeight="362.0" prefWidth="832.0">
+            <columns>
+                <TableColumn fx:id="applicantIdCol" prefWidth="82.4000244140625" text="Applicant ID" />
+                <TableColumn fx:id="passportNoCol" prefWidth="95.99996185302734" text="Passport No" />
+                <TableColumn fx:id="issuingCountryCol" prefWidth="49.60003662109375" text="Country" />
+                <TableColumn fx:id="firstNameCol" prefWidth="90.4000244140625" text="First Name" />
+                <TableColumn fx:id="dateOfBirthCol" prefWidth="60.79998779296875" text="DOB" />
+                <TableColumn fx:id="genderCol" prefWidth="55.20001220703125" text="Gender" />
+                <TableColumn fx:id="expireDateCol" minWidth="0.0" prefWidth="78.39999389648438" text="Expire Date" />
+                <TableColumn fx:id="paymentStatusCol" prefWidth="84.0" text="Payment" />
+                <TableColumn fx:id="passportVerifiedCol" minWidth="0.0" prefWidth="116.0" text="Passport Verified" />
+            <TableColumn fx:id="govtPassportNoCol" prefWidth="117.5999755859375" text="Govt Passport No" />
+            </columns>
+        </TableView>
+        <Button layoutX="33.0" layoutY="64.0" mnemonicParsing="false" onAction="#loadListOnAction" prefHeight="26.0" prefWidth="116.0" style="-fx-background-color: #7445ff;" text="Load List" textFill="WHITE" />
+      <ComboBox fx:id="filterComboBox" layoutX="237.0" layoutY="64.0" prefHeight="26.0" prefWidth="433.0" promptText="Select List type before Load" />
     </children>
-
 </AnchorPane>

@@ -1,9 +1,9 @@
 package com.project.visa_management_portal.galib.visaOfficer;
 
-import com.project.visa_management_portal.galib.model.ApplicantPassport;
-import com.project.visa_management_portal.galib.model.ApplicationG;
-import com.project.visa_management_portal.galib.model.GovtPassport;
+import com.project.visa_management_portal.AppendableObjectOutputStream;
+import com.project.visa_management_portal.galib.model.Document;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -12,67 +12,87 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 
-public class documentVerificationController
-{
-    @javafx.fxml.FXML
+public class documentVerificationController {
+
+    @FXML
     private TextField inputAppIdForVerifyTextField;
-    @javafx.fxml.FXML
-    private TableColumn <ApplicationG, String>verifiedPassportNoCol;
-    @javafx.fxml.FXML
-    private TableColumn <ApplicationG, String>verifiedPassportVerifiedCol;
-    @javafx.fxml.FXML
-    private TableView <String>verifiedDocumentTableView;
-    @javafx.fxml.FXML
-    private TableColumn  <ApplicationG, String>verifiedPassportNoteCol;
-    @javafx.fxml.FXML
-    private TableColumn  <ApplicationG, String>verifiedAppplicationNameCol;
-    @javafx.fxml.FXML
-    private TableColumn  <ApplicationG, String>verifiedAppIdCol;
-    @javafx.fxml.FXML
-    private RadioButton govtPassportradioButton;
-    @javafx.fxml.FXML
-    private RadioButton applicantPassportradioButton1;
-    @javafx.fxml.FXML
-    private TableColumn <GovtPassport,String>govtFirstNameCol;
-    @javafx.fxml.FXML
-    private TableColumn<GovtPassport,String> govtPassportNoCol;
-    @javafx.fxml.FXML
-    private TableColumn<ApplicantPassport,String> applicantPassportCol1;
-    @javafx.fxml.FXML
-    private TableView<GovtPassport> govtPassportTableView;
-    @javafx.fxml.FXML
-    private TableView<ApplicantPassport> applicantPassportTableView;
-    @javafx.fxml.FXML
-    private TableColumn<ApplicantPassport,String> applucantNameCol;
+    @FXML
+    private TableColumn <Document,String> dateOfBirthCol;
+    @FXML
+    private TableColumn <Document,String> issuingCountryCol;
+    @FXML
+    private TableColumn <Document,String>expireDateCol;
+    @FXML
+    private TableColumn <Document,String>applicantIdCol;
+    @FXML
+    private TableColumn <Document,String>paymentStatusCol;
+    @FXML
+    private TableColumn <Document,String>genderCol;
+    @FXML
+    private TableColumn <Document,String>passportNoCol;
+    @FXML
+    private TableColumn <Document,String>firstNameCol;
+    @FXML
+    private Label notificationLabel;
+    @FXML
+    private TableView <Document>documentTableView;
+    @FXML
+    private TableColumn <Document,String>passportVerifiedCol;
 
-    @javafx.fxml.FXML
+//    ArrayList<Document> NewVerifiedPassportList;
+//    ArrayList<Document> NewPendingPassportList;
+
+    ArrayList<Document> GovtPassportList;
+    ArrayList<Document> PendingApplicationList;
+    ArrayList<Document> VerifiedApplicationList;
+    ArrayList<Document> ApplicantPassportList;
+
+    ArrayList<Document> newApplicantPassportList = new ArrayList<>();
+//    ArrayList<Document> DocList = new ArrayList<>();
+
+    @FXML
     public void initialize() {
-        ToggleGroup tg = new ToggleGroup();
-        govtPassportradioButton.setToggleGroup(tg);
-        applicantPassportradioButton1.setToggleGroup(tg);
+//        NewVerifiedPassportList = new ArrayList<>();
+//        NewPendingPassportList = new ArrayList<>();
 
-        govtPassportNoCol.setCellValueFactory(new PropertyValueFactory<GovtPassport,String>("PassportNO"));
-        govtFirstNameCol.setCellValueFactory(new PropertyValueFactory<GovtPassport, String>("FirstName"));
+        GovtPassportList = new ArrayList<>();
+        //Document(String govtPassportNO, String govtIssuingCountry, String govtFirstName, LocalDate govtDateOfBirth, String govtGender, LocalDate govtExpireDate) {
+
+        PendingApplicationList = new ArrayList<>();
+        //    public Document(String applicantId, String passportNo, String issuingCountry, String firstName, LocalDate dateOfBirth, String gender, LocalDate expireDate, boolean paymentStatus, boolean passportVerified, String govtPassportNO, String govtIssuingCountry, String govtFirstName, LocalDate govtDateOfBirth, String govtGender, LocalDate govtExpireDate, boolean isVerified) {
+
+        VerifiedApplicationList = new ArrayList<>();
+        //    public Document(String applicantId, String passportNo, String issuingCountry, String firstName, LocalDate dateOfBirth, String gender, LocalDate expireDate, boolean paymentStatus, boolean passportVerified, String govtPassportNO, String govtIssuingCountry, String govtFirstName, LocalDate govtDateOfBirth, String govtGender, LocalDate govtExpireDate, boolean isVerified) {
 
 
-        applicantPassportCol1.setCellValueFactory(new PropertyValueFactory<ApplicantPassport,String>("passportNo"));
-        applucantNameCol.setCellValueFactory(new PropertyValueFactory<ApplicantPassport,String>("firstName"));
+        ApplicantPassportList = new ArrayList<>();
+        //    public Document(String applicantId, String passportNo, String issuingCountry, String firstName, LocalDate dateOfBirth, String gender, LocalDate expireDate, boolean paymentStatus, boolean passportVerified) {
 
+
+        // Applicant Passport columns
+        applicantIdCol.setCellValueFactory(new PropertyValueFactory<Document, String>("ApplicantId"));
+        passportNoCol.setCellValueFactory(new PropertyValueFactory<Document, String>("passportNo"));
+        issuingCountryCol.setCellValueFactory(new PropertyValueFactory<Document, String>("issuingCountry"));
+        firstNameCol.setCellValueFactory(new PropertyValueFactory<Document, String>("firstName"));
+        dateOfBirthCol.setCellValueFactory(new PropertyValueFactory<Document, String>("dateOfBirth"));
+        genderCol.setCellValueFactory(new PropertyValueFactory<Document, String>("gender"));
+        expireDateCol.setCellValueFactory(new PropertyValueFactory<Document, String>("expireDate"));
+        paymentStatusCol.setCellValueFactory(new PropertyValueFactory<Document, String>("paymentStatus"));
+        passportVerifiedCol.setCellValueFactory(new PropertyValueFactory<Document, String>("passportVerified"));
     }
 
-
-    @javafx.fxml.FXML
-    public void verifySelectedPassportOnAction(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
+    @FXML
     public void refreshListOnAction(ActionEvent actionEvent) {
+        documentTableView.getItems().clear();
+        inputAppIdForVerifyTextField.setText("");
+
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void backToMainDashboardOnAction(ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/visa_management_portal/galib/visaOfficer/VisaOfficerDashboard.fxml"));
@@ -86,136 +106,136 @@ public class documentVerificationController
         }
     }
 
+    @FXML
+    public void verifySelectedPassportOnAction(ActionEvent actionEvent) { // verify passport from GovtPassportList.bin against input passport no
+        //documentTableView.getItems().clear();
 
-    @javafx.fxml.FXML
-    public void saveVerifiedApplication(ActionEvent actionEvent) {
-    }
-
-//    @Deprecated
-//    public void loadPassportOnAction(ActionEvent actionEvent) {
-    //    notificationLabel.setText("");
-    //
-    //        if (!applicantPassportradioButton1.isSelected() && !govtPassportradioButton.isSelected()) {
-    //    notificationLabel.setText("Error!Passport list isn't loaded!!");
-    //}
-    //
-    //        else if (govtPassportradioButton.isSelected())
-    //    {
-    //        FileInputStream fis = null;
-    //        ObjectInputStream ois = null;
-    //        try {
-    //            File f = new File("GovtPassportList.bin");
-    //            if (f.exists()) {
-    //                fis = new FileInputStream(f);
-    //            } else {
-    //                //Alert: file does not exist
-    //            }
-    //            if (fis != null) ois = new ObjectInputStream(fis);
-    //
-    //            while (true) {
-    //                //System.out.println((GovtPassport) ois.readObject());
-    //                govtPassportTableView.getItems().add((GovtPassport) ois.readObject());
-    //            }
-    //        } catch (Exception e) {
-    //            try {
-    //                ois.close();
-    //
-    //            } catch (IOException ex) {
-    //                //
-    //            }
-    //            notificationLabel.setText("Govt Passport list Loaded SuccessFully!");
-    //        }
-    //    }
-//
-//
-//
-//
-//        //dummyPassportTableView.getItems().clear();
-//          //System.out.println(dummyPassportTableView.getItems());
-//        if (applicantPassportradioButton1.isSelected()) {
-//
-//
-//            FileInputStream fis = null;
-//            ObjectInputStream ois = null;
-//            try {
-//                File f = new File("ApplicantPassportList.bin");
-//                if (f.exists()) {
-//                    fis = new FileInputStream(f);
-//                } else {
-//                    //Alert: file does not exist
-//                }
-//                if (fis != null) ois = new ObjectInputStream(fis);
-//
-//                while (true) {
-//                    //System.out.println((GovtPassport) ois.readObject());
-//                    applicantPassportTableView.getItems().add((ApplicantPassport) ois.readObject());
-//                }
-//            } catch (Exception e) {
-//                try {
-//                    ois.close();
-//
-//                } catch (IOException ex) {
-//                    //
-//                }
-//                notificationLabel.setText("Applicant Passport list Loaded SuccessFully!");
-//            }
-//        }
-//    }
-
-    @javafx.fxml.FXML
-    public void loadApplicantPassportOnAction(ActionEvent actionEvent) {
-        FileInputStream fisr = null;
-        ObjectInputStream oisr = null;
-        try {
-            File gpp = new File("ApplicantPassportList.bin");
-            if (gpp.exists()) {
-                fisr = new FileInputStream(gpp);
-            } else {
-                //Alert: file does not exist
-            }
-            if (fisr != null) oisr = new ObjectInputStream(fisr);
-
-            while (true) {
-                //System.out.println((GovtPassport) ois.readObject());
-                applicantPassportTableView.getItems().add((ApplicantPassport) oisr.readObject());
-            }
-        } catch (Exception e) {
-            try {
-                oisr.close();
-
-            } catch (IOException ex) {
-                //
-            }
-            //notificationLabel.setText("Applicant Passport list Loaded SuccessFully!");
-        }
-    }
-
-    @javafx.fxml.FXML
-    public void loadGovtPassportOnAction(ActionEvent actionEvent) {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
-        try {
-            File gp = new File("GovtPassportList.bin");
-            if (gp.exists()) {
-                fis = new FileInputStream(gp);
-            } else {
-                //Alert: file does not exist
-            }
-            if (fis != null) ois = new ObjectInputStream(fis);
+        try{
+            File f = new File("ApplicantPassportList.bin");
+            if(f.exists()){
+                fis = new FileInputStream(f);
+                ois = new ObjectInputStream(fis);
 
-            while (true) {
-                //System.out.println((GovtPassport) ois.readObject());
-                govtPassportTableView.getItems().add((GovtPassport) ois.readObject());
+                while(true){
+                    Document doc = (Document) ois.readObject();
+                    newApplicantPassportList.add(doc);
+                }
             }
+            else{
+                showAlert("File not found", Alert.AlertType.INFORMATION, "ApplicantPassportList.bin does not exist.");
+            }
+        } catch (EOFException e) {
+            // End of file - expected
         } catch (Exception e) {
+            //
+        } finally { // close streams
             try {
-                ois.close();
-
+                if (ois != null) ois.close();
+                if (fis != null) fis.close();
             } catch (IOException ex) {
-                //
+                // ignore
             }
-            //notificationLabel.setText("Applicant Passport list Loaded SuccessFully!");
         }
 
+        ArrayList<Document> newGovtPassportLis = new ArrayList<>();
+
+        FileInputStream fis1 = null;
+        ObjectInputStream ois1 = null;
+        try{
+            File passport = new File("GovtPassportList.bin");
+            if(passport.exists()){
+                fis1 = new FileInputStream(passport);
+                ois1 = new ObjectInputStream(fis1);
+
+                while(true){
+                    Document doc = (Document) ois1.readObject();
+                    newGovtPassportLis.add(doc);
+                }
+            }
+            else{
+                showAlert("File not found", Alert.AlertType.INFORMATION, "ApplicantPassportList.bin does not exist.");
+            }
+        } catch (EOFException e) {
+            // End of file - expected
+        } catch (Exception e) {
+            //
+        } finally { // close streams
+            try {
+                if (ois1 != null) ois1.close();
+                if (fis1 != null) fis1.close();
+            } catch (IOException ex) {
+                // ignore
+            }
+        }
+
+
+        try {
+            String inputPassportNo = inputAppIdForVerifyTextField.getText().trim();
+
+            if (inputPassportNo.isEmpty()) {
+                showAlert("Input Required", Alert.AlertType.INFORMATION, "Please enter a Passport Number.");
+            }
+            else {
+                inputAppIdForVerifyTextField.clear();
+                for (Document doc : newGovtPassportLis) {
+                    if (doc.getGovtPassportNO().equals(inputPassportNo)) {
+                        // Find matching applicant document
+                        for (Document applicantDoc : newApplicantPassportList) {
+                            if (applicantDoc.isPaymentStatus() && applicantDoc.getPassportNo().equals(inputPassportNo)) {
+                                applicantDoc.setPassportVerified(true);
+                                documentTableView.getItems().add(applicantDoc);
+                                 // Clear input field after successful verification
+                                showAlert1("Success", "verified successfully!");
+                                return;
+
+                            }
+//                            if (documentTableView.getItems().equals(applicantDoc) || applicantDoc.getPassportNo().equals(inputPassportNo)){
+////                                newApplicantPassportList.remove(applicantDoc);
+////                                Document newGovtPassportList = null;
+////                                documentTableView.getItems().addAll(newGovtPassportList);
+//                                showAlert2("Already Verified", "This passport has already been verified.");
+//                                return;
+//
+//                            }
+                            //documentTableView.getItems().clear();
+//                            else {
+//                                showAlert("Not Found", "No matching applicant found for the provided Passport Number.");
+//                            }
+                        }
+                    }
+//                    else {
+//                        //showAlert2("Not Found", "No matching applicant found for the provided Passport Number.");
+//                    }
+                }
+            }
+        }
+        catch (Exception e) {
+            showAlert("Error", Alert.AlertType.INFORMATION, "An error occurred during verification.");
+        }
+    }
+
+    public void showAlert(String title, Alert.AlertType information, String message) {
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        a.setTitle(title);
+        a.setHeaderText(null);
+        a.setContentText(message);
+        a.showAndWait();
+    }
+
+    public void showAlert1(String title, String message) {
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+        a.setTitle(title);
+        a.setHeaderText(null);
+        a.setContentText(message);
+        a.showAndWait();
+    }
+    public void showAlert2(String title, String message) {
+        Alert a = new Alert(Alert.AlertType.WARNING);
+        a.setTitle(title);
+        a.setHeaderText(null);
+        a.setContentText(message);
+        a.showAndWait();
     }
 }

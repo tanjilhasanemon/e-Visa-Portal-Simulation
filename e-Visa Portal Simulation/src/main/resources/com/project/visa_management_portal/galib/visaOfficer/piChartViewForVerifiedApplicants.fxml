@@ -41,7 +41,7 @@
 
 
         <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="540.0" layoutY="38.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
-        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passport And Payment Verification" underline="true">
+        <Text fill="#ffddb0" layoutX="457.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Document Verification" underline="true">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
@@ -52,7 +52,8 @@
                 <Font name="System Bold" size="15.0" />
             </font>
         </Label>
-      <Label fx:id="notificationLabel" layoutX="290.0" layoutY="601.0" prefHeight="18.0" prefWidth="255.0" textFill="WHITE" />
+        <Button layoutX="46.0" layoutY="487.0" onAction="#exportPendingListOnAction" prefHeight="26.0" prefWidth="126.0" text="Export pending List" />
+        <Label fx:id="notificationLabel" layoutX="290.0" layoutY="601.0" prefHeight="18.0" prefWidth="255.0" textFill="WHITE" />
         <TableView fx:id="documentTableView" layoutX="46.0" layoutY="148.0" prefHeight="326.0" prefWidth="842.0">
             <columns>
                 <TableColumn fx:id="applicantIdCol" prefWidth="75.0" text="Applicant ID" />
