@@ -46,9 +46,9 @@ public class IssueRefundController
         paymentMethodColumn.setCellValueFactory(new PropertyValueFactory<>("paymentMethod"));
 
 
-        refundList.add(new IssueRefund(101, "Sharmin", "Paid", 5000, "Nagad", LocalDate.now()));
-        refundList.add(new IssueRefund(102, "Bithi", "Paid", 7000, "Bkash", LocalDate.now()));
-        refundList.add(new IssueRefund(103, "Rafi", "Refunded", 3000, "Card", LocalDate.now()));
+//        refundList.add(new IssueRefund(101, "Sharmin", "Paid", 5000, "Nagad", LocalDate.now()));
+//        refundList.add(new IssueRefund(102, "Bithi", "Paid", 7000, "Bkash", LocalDate.now()));
+//        refundList.add(new IssueRefund(103, "Rafi", "Refunded", 3000, "Card", LocalDate.now()));
 
         RefundsTableView.getItems().addAll(refundList);
     }

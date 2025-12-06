@@ -31,7 +31,7 @@ public class InternalLoginController {
             {"employeeRole", "employeeID","password" },
             {"Visa Officer", "2500333", "33visa33"},
             {"Issuer", "2500444", "44issuer44"},
-            {"Operation Manager", "2500555", "55operation55"},
+            {"Operation Manager", "5", "5"},
             {"Policy Manager", "2500666", "66policy66"},
             {"Finance clerk", "2210233", "bithe2001"},      // normalized role text
             {"Support agent", "2210233", "bithe2001"}

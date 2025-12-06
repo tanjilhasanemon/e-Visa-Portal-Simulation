@@ -32,13 +32,12 @@
         <!-- Enter your fxml code here -->
         <Label fx:id="lblTitle" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
         <TextField fx:id="txtTargetValue" layoutX="692.0" layoutY="377.0" prefWidth="120.0" promptText="target days" AnchorPane.leftAnchor="692.0" AnchorPane.topAnchor="377.0" />
-        <Button fx:id="btnSetTimeLimit" layoutX="825.0" layoutY="377.0" onAction="#setTimeLimitOnActionButton" text="Set" AnchorPane.leftAnchor="825.0" AnchorPane.topAnchor="377.0" />
 
         <TableView fx:id="tblFlagged" layoutX="16.0" layoutY="78.0" prefHeight="283.0" prefWidth="842.0" AnchorPane.bottomAnchor="237.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="78.0">
             <columns>
-                <TableColumn fx:id="colAppID" prefWidth="180.0" text="AppID" />
-                <TableColumn fx:id="colAssignedOfficer" prefWidth="324.0" text="AssignedOfficer" />
-                <TableColumn fx:id="colFlagReason" prefWidth="337.0" text="FlagReason" />
+                <TableColumn fx:id="colAppID" maxWidth="1800.0" minWidth="30.0" prefWidth="180.0" text="AppID" />
+                <TableColumn fx:id="colAssignedOfficer" maxWidth="3240.0" minWidth="30.0" prefWidth="324.0" text="AssignedOfficer" />
+                <TableColumn fx:id="colFlagReason" maxWidth="3370.0" minWidth="30.0" prefWidth="337.0" text="FlagReason" />
             </columns>
         </TableView>
 
@@ -56,14 +55,15 @@
         </Text>
       <TableView fx:id="tb_ResubmissionList" layoutX="16.0" layoutY="409.0" prefHeight="92.0" prefWidth="842.0">
          <columns>
-            <TableColumn fx:id="colAppID1" prefWidth="168.0" text="AppID" />
-            <TableColumn fx:id="colAssignedOfficer1" prefWidth="390.0" text="AssignedOfficer" />
-            <TableColumn fx:id="colFlagReason1" prefWidth="114.0" text="FlagReason" />
+            <TableColumn fx:id="colAppID1" maxWidth="1680.0" minWidth="30.0" prefWidth="168.0" text="AppID" />
+            <TableColumn fx:id="colAssignedOfficer1" maxWidth="2167.9998779296875" minWidth="30.0" prefWidth="216.79998779296875" text="AssignedOfficer" />
+            <TableColumn fx:id="colFlagReasonSearched" maxWidth="2928.0001831054688" minWidth="30.0" prefWidth="292.8000183105469" text="FlagReason" />
+            <TableColumn fx:id="colResubmittedAt" maxWidth="1632.0004882812498" minWidth="30.0" prefWidth="163.20004882812498" text="Submission Date" />
          </columns>
       </TableView>
       <Button fx:id="btnLoadTableFlagged" layoutX="16.0" layoutY="39.0" onAction="#setLoadTableFlaggedOnActionButton" prefHeight="25.0" prefWidth="60.0" text="Load" />
       <TextField fx:id="reSubApplicant_ID" layoutX="16.0" layoutY="371.0" prefHeight="25.0" prefWidth="174.0" promptText="Applicant ID" />
       <Button fx:id="btnSearchAdd" layoutX="213.0" layoutY="371.0" onAction="#searchAdd_OnActionButton" prefHeight="25.0" prefWidth="60.0" text="Search" />
-      <Button fx:id="btnRefreash" layoutX="287.0" layoutY="371.0" mnemonicParsing="false" onAction="#refreshOnActionButton" text="Refreash" />
+      <Button fx:id="btnRefresh" layoutX="287.0" layoutY="371.0" mnemonicParsing="false" onAction="#refreshOnActionButton" text="Refreash" />
     </children>
 </AnchorPane>
