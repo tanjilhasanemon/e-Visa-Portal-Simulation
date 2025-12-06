@@ -44,8 +44,7 @@
         </TableView>
 
         <ComboBox fx:id="cmbOfficer" layoutX="15.0" layoutY="539.0" prefWidth="240.0" AnchorPane.bottomAnchor="62.799999999999955" AnchorPane.leftAnchor="15.0" />
-        <Button fx:id="btnAssign" layoutX="269.0" layoutY="539.0" onAction="#assignApplicationsToVIsaOfficerOnActionButton" text="Assign" AnchorPane.bottomAnchor="62.799999999999955" AnchorPane.leftAnchor="269.0" />
-        <Button fx:id="btnConfirmAssign" layoutX="349.0" layoutY="539.0" onAction="#confirmAssignOnActionButton" text="Confirm Assign" AnchorPane.bottomAnchor="62.799999999999955" AnchorPane.leftAnchor="349.0" />
+        <Button fx:id="btnAssign" layoutX="269.0" layoutY="539.0" onAction="#assignAppToVIsaOfficer_BinFile_VisaTypeOnActBtn" text="Assign" AnchorPane.bottomAnchor="62.799999999999955" AnchorPane.leftAnchor="269.0" />
         <Button fx:id="btnBackToDashBoard" layoutX="729.0" layoutY="56.0" mnemonicParsing="false" onAction="#backToDashboardOnActionButton" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #c92020;" text="Back to Dashboard" textFill="WHITE" />
 
 
@@ -57,5 +56,6 @@
             </font>
         </Text>
       <Button fx:id="btnRefresh" layoutX="740.0" layoutY="513.0" mnemonicParsing="false" onAction="#refreshOnActionButton" prefHeight="25.0" prefWidth="97.0" text="Refresh" />
+      <Button fx:id="btnLoad" layoutX="324.0" layoutY="56.0" mnemonicParsing="false" onAction="#load_OnActionButton" text="Load" />
     </children>
 </AnchorPane>
