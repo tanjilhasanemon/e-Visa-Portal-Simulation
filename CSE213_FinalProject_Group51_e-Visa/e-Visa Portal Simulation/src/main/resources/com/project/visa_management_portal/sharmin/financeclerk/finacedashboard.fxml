@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.financeclerk.controller.FinanceDashboardcontroller">
+   <children>
+      <Button layoutX="63.0" layoutY="51.0" mnemonicParsing="false" onAction="#verifypaymentButtonOnAction" prefHeight="25.0" prefWidth="204.0" text="VerifyPayment" />
+      <Button layoutX="54.0" layoutY="187.0" mnemonicParsing="false" onAction="#issuerefundButtonOnAction" prefHeight="25.0" prefWidth="204.0" text="IssueRefund" />
+      <Button layoutX="54.0" layoutY="118.0" mnemonicParsing="false" onAction="#viewreportsButtonOnAction" prefHeight="25.0" prefWidth="204.0" text=" view Reports" />
+      <Button layoutX="353.0" layoutY="187.0" mnemonicParsing="false" onAction="#exportdataButtonOnAction" prefHeight="25.0" prefWidth="217.0" text="ExportData" />
+      <Button layoutX="484.0" layoutY="330.0" mnemonicParsing="false" onAction="#signoutButtonOnAction" text="sign out" />
+      <Button layoutX="353.0" layoutY="51.0" mnemonicParsing="false" onAction="#PendingpaymentsButtonOnAction" prefHeight="25.0" prefWidth="217.0" text="Pending payments" />
+      <Button layoutX="352.0" layoutY="118.0" mnemonicParsing="false" onAction="#transactionhistoryButtonOnAction" prefHeight="25.0" prefWidth="217.0" text="Transactions history" />
+      <Button layoutX="53.0" layoutY="244.0" mnemonicParsing="false" onAction="#generateReportButtonOnAction" prefHeight="25.0" prefWidth="204.0" text="GenerateReport" />
+   </children>
+</AnchorPane>

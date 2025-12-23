@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="597.0" prefWidth="874.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.operationManager.controller.Targets_ResubmitFlaggedController">
+    <children>
+        <Label layoutY="573.0" prefHeight="25.0" prefWidth="874.0" style="-fx-background-color: #ffddb0;" textFill="#ffddb0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Text fill="#36454f" layoutX="378.0" layoutY="589.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Internal User Scene">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Text fill="#ffddb0" layoutX="228.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Visa Portal" underline="true">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Text>
+
+        <!-- Enter your fxml code here -->
+        <Label fx:id="lblTitle" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0" />
+        <TextField fx:id="txtTargetValue" layoutX="692.0" layoutY="377.0" prefWidth="120.0" promptText="target days" AnchorPane.leftAnchor="692.0" AnchorPane.topAnchor="377.0" />
+
+        <TableView fx:id="tblFlagged" layoutX="16.0" layoutY="78.0" prefHeight="283.0" prefWidth="842.0" AnchorPane.bottomAnchor="237.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="78.0">
+            <columns>
+                <TableColumn fx:id="colAppID" maxWidth="1800.0" minWidth="30.0" prefWidth="180.0" text="AppID" />
+                <TableColumn fx:id="colAssignedOfficer" maxWidth="3240.0" minWidth="30.0" prefWidth="324.0" text="AssignedOfficer" />
+                <TableColumn fx:id="colFlagReason" maxWidth="3370.0" minWidth="30.0" prefWidth="337.0" text="FlagReason" />
+            </columns>
+        </TableView>
+
+        <TextArea fx:id="txtManagerNote" layoutX="14.0" layoutY="489.0" prefHeight="51.0" prefWidth="598.0" promptText="Manager note (optional)" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="262.0" />
+        <Button fx:id="btnConfirmResubmitOfficers" layoutX="663.0" layoutY="516.0" onAction="#confirmResubmitOfficersOnActionBtn" prefHeight="25.0" prefWidth="133.0" text="Confirm Resubmit" AnchorPane.bottomAnchor="57.0" AnchorPane.rightAnchor="78.0" />
+        <Button fx:id="btnBackToDashBoard" layoutX="736.0" layoutY="12.0" mnemonicParsing="false" onAction="#backToDashboardOnActionButton" prefHeight="25.0" prefWidth="131.0" text="Back to Dashboard" />
+
+
+
+        <Line endX="-100.80001831054688" endY="-3.6000022888183594" layoutX="490.0" layoutY="41.0" startX="-100.80001831054688" startY="-27.999996185302734" stroke="#ffddb0" strokeWidth="2.0" />
+        <Text fill="#ffddb0" layoutX="407.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set Time Limit for Review" underline="true">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Text>
+      <TableView fx:id="tb_ResubmissionList" layoutX="16.0" layoutY="409.0" prefHeight="92.0" prefWidth="842.0">
+         <columns>
+            <TableColumn fx:id="colAppID1" maxWidth="1680.0" minWidth="30.0" prefWidth="168.0" text="AppID" />
+            <TableColumn fx:id="colAssignedOfficer1" maxWidth="2167.9998779296875" minWidth="30.0" prefWidth="216.79998779296875" text="AssignedOfficer" />
+            <TableColumn fx:id="colFlagReasonSearched" maxWidth="2928.0001831054688" minWidth="30.0" prefWidth="292.8000183105469" text="FlagReason" />
+            <TableColumn fx:id="colResubmittedAt" maxWidth="1632.0004882812498" minWidth="30.0" prefWidth="163.20004882812498" text="Submission Date" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnLoadTableFlagged" layoutX="16.0" layoutY="39.0" onAction="#setLoadTableFlaggedOnActionButton" prefHeight="25.0" prefWidth="60.0" text="Load" />
+      <TextField fx:id="reSubApplicant_ID" layoutX="16.0" layoutY="371.0" prefHeight="25.0" prefWidth="174.0" promptText="Applicant ID" />
+      <Button fx:id="btnSearchAdd" layoutX="213.0" layoutY="371.0" onAction="#searchAdd_OnActionButton" prefHeight="25.0" prefWidth="60.0" text="Search" />
+      <Button fx:id="btnRefresh" layoutX="287.0" layoutY="371.0" mnemonicParsing="false" onAction="#refreshOnActionButton" text="Refreash" />
+    </children>
+</AnchorPane>

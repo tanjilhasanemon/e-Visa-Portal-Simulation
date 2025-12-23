@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="562.0" prefWidth="765.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.applicant.controller.ApplicantDashboardController">
+
+    <Label layoutX="280.0" layoutY="106.0" style="-fx-text-fill: white; -fx-font-size: 22px;" text="Applicant Dashboard" />
+
+    <Button layoutX="122.0" layoutY="184.0" onAction="#viewVisaInfoOnAction" prefHeight="40.0" prefWidth="220.0" text="View e-Visa Information" />
+    <Button layoutX="122.0" layoutY="244.0" onAction="#applyForVIsaOnAction" prefHeight="40.0" prefWidth="220.0" text="Apply for New Visa" />
+
+    <Button layoutX="422.0" layoutY="184.0" onAction="#travelHistoryOnAction" prefHeight="40.0" prefWidth="220.0" text="Provide Travel History" />
+    <Button layoutX="122.0" layoutY="304.0" onAction="#findApplicationIdOnAction" prefHeight="40.0" prefWidth="220.0" text="Find Your Application ID" />
+
+    <Button layoutX="422.0" layoutY="244.0" onAction="#payFeeOnAction" prefHeight="40.0" prefWidth="220.0" text="Pay Visa Fee" />
+    <Button layoutX="422.0" layoutY="304.0" onAction="#trackApplicationOnAction" prefHeight="40.0" prefWidth="220.0" text="Track Application Status" />
+
+    <Button layoutX="422.0" layoutY="364.0" onAction="#generateReceiptOnAction" prefHeight="40.0" prefWidth="220.0" text="Generate (Receipt of e-Visa)" />
+    <Button layoutX="122.0" layoutY="364.0" onAction="#checkAndUpdateOnAction" prefHeight="40.0" prefWidth="220.0" text="Check &amp; Update Application" />
+
+    <Button layoutX="285.0" layoutY="460.0" onAction="#signOutOnAction" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" text="Sign Out" />
+
+    <Label fx:id="statusLabel" alignment="CENTER" layoutX="-3.0" layoutY="37.0" prefHeight="40.0" prefWidth="765.0" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font></Label>
+
+</AnchorPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.financeclerk.controller.ReportIssueController">
+   <children>
+      <Label layoutX="43.0" layoutY="49.0" text="ticket subject" />
+      <TextField fx:id="ticketSubjectTextfield" layoutX="132.0" layoutY="45.0" />
+      <TextArea fx:id="MessageTextarea" layoutX="355.0" layoutY="66.0" prefHeight="190.0" prefWidth="200.0" text="Message" />
+      <Button layoutX="45.0" layoutY="103.0" mnemonicParsing="false" onAction="#submitButtonOnAction" prefHeight="25.0" prefWidth="238.0" text="Submit" />
+      <Label layoutX="43.0" layoutY="159.0" text="issue type" />
+      <ComboBox fx:id="issueTypeComboBox" layoutX="132.0" layoutY="155.0" prefWidth="150.0" />
+      <Label layoutX="45.0" layoutY="231.0" text="status" />
+   </children>
+</AnchorPane>

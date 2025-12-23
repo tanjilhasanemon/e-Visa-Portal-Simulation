@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="546.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.rifat.modification.ModelClass.AccountController">
+   <children>
+      <TextField fx:id="accountTF" layoutX="117.0" layoutY="33.0" />
+      <Label layoutX="14.0" layoutY="37.0" text="Account Number: " />
+      <Label layoutX="460.0" layoutY="28.0" />
+      <TableView fx:id="tbl_VIew" layoutY="249.0" prefHeight="200.0" prefWidth="614.0">
+        <columns>
+          <TableColumn fx:id="colAcct" prefWidth="109.33331048488617" text="Account" />
+            <TableColumn fx:id="col_interestRate" prefWidth="211.33330535888672" text="Interest Rate" />
+            <TableColumn fx:id="col_Balance" prefWidth="290.0" text="Balance" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="activeStat_CMB" layoutX="404.0" layoutY="32.0" prefWidth="150.0" />
+      <Button layoutX="23.0" layoutY="194.0" mnemonicParsing="false" onAction="#showAccountOnActionBtn" prefHeight="25.0" prefWidth="137.0" text="Show Account Details" />
+   </children>
+</AnchorPane>

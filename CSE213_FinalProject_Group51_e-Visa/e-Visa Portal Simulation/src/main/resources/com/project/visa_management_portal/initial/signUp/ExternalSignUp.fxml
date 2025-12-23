@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="479.0" prefWidth="716.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.initial.signUp.ExternalSignUpController">
+
+    <Label layoutX="260.0" layoutY="25.0" style="-fx-text-fill: white; -fx-font-size: 20px;" text="External User Sign Up">
+        <font><Font size="20" /></font>
+    </Label>
+
+    <!-- Role selection -->
+    <Label layoutX="120.0" layoutY="91.0" text="Register as:" textFill="white" />
+    <ComboBox fx:id="userTypeComboBox" layoutX="260.0" layoutY="87.0" prefWidth="280.0" promptText="Select Usertype (Applicant / Registered Agent)" />
+
+    <!-- Common fields -->
+    <Label layoutX="120.0" layoutY="141.0" text="Name:" textFill="white" />
+    <TextField fx:id="nameTextField" layoutX="260.0" layoutY="137.0" prefWidth="280.0" />
+
+    <Label layoutX="120.0" layoutY="191.0" text="Email:" textFill="white" />
+    <TextField fx:id="emailTextField" layoutX="260.0" layoutY="187.0" prefWidth="280.0" />
+
+    <Label layoutX="120.0" layoutY="241.0" text="Password:" textFill="white" />
+    <PasswordField fx:id="passwordTextField" layoutX="260.0" layoutY="237.0" prefWidth="280.0" />
+
+    <!-- Buttons -->
+    <Button layoutX="260.0" layoutY="393.0" onAction="#signUpOnAction" prefWidth="120.0" style="-fx-background-color:#ED7D31; -fx-text-fill:white;" text="Sign Up" />
+    <Button layoutX="420.0" layoutY="393.0" onAction="#backOnAction" prefWidth="120.0" text="Back" />
+   <Label layoutX="99.0" layoutY="295.0" prefHeight="54.0" prefWidth="146.0" text="Agent License No: &#10;(Only for agent)" textFill="WHITE" />
+   <TextField fx:id="agentLicenseNoTextField" layoutX="260.0" layoutY="295.0" prefHeight="26.0" prefWidth="280.0" />
+   <Label alignment="CENTER" layoutY="458.0" prefHeight="20.0" prefWidth="716.0" style="-fx-background-color: white;" text="External User SignUP" />
+
+</AnchorPane>

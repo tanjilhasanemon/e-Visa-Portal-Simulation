@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.supportagent.controller.EscalateTicketController">
+   <children>
+      <Button layoutX="54.0" layoutY="214.0" mnemonicParsing="false" onAction="#escalateButtonOnAction" prefHeight="25.0" prefWidth="206.0" text="Escalate" />
+      <Button layoutX="359.0" layoutY="214.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="186.0" text="Cancel" />
+      <ComboBox fx:id="priorityCombobox" layoutX="386.0" layoutY="41.0" prefWidth="150.0" />
+      <TextField fx:id="ticketidTextfield" layoutX="113.0" layoutY="41.0" />
+      <Label layoutX="40.0" layoutY="45.0" text="ticket id" />
+      <Label layoutX="314.0" layoutY="45.0" text="Priority" />
+      <Label fx:id="statusLabel" layoutX="61.0" layoutY="315.0" prefHeight="37.0" prefWidth="167.0" text="Status Message Label" />
+      <TextArea fx:id="reasonTextArea" layoutX="352.0" layoutY="285.0" prefHeight="79.0" prefWidth="200.0" text="Reason for escalation" />
+      <ComboBox fx:id="escalatetoCombobox" layoutX="110.0" layoutY="120.0" prefWidth="150.0" />
+      <Label layoutX="33.0" layoutY="124.0" text="Escalate to" />
+   </children>
+</AnchorPane>

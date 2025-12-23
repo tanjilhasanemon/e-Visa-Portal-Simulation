@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.sharmin.supportagent.controller.GenerateSupportReportController">
+   <children>
+      <ComboBox fx:id="ReportTypeCombobox" layoutX="116.0" layoutY="23.0" prefWidth="150.0" />
+      <DatePicker fx:id="StartDateDatepicker" layoutX="406.0" layoutY="23.0" />
+      <DatePicker fx:id="EndDateDatepicker" layoutX="407.0" layoutY="69.0" />
+      <Button layoutX="64.0" layoutY="81.0" mnemonicParsing="false" onAction="#GenerateButtonOnAction" text="Generate" />
+      <TableView fx:id="ReportSummaryTableview" layoutX="47.0" layoutY="157.0" prefHeight="134.0" prefWidth="533.0">
+        <columns>
+          <TableColumn fx:id="ticketIdColumn" prefWidth="91.33331298828125" text="ticketId" />
+          <TableColumn fx:id="userNameColumn" prefWidth="103.33334350585938" text="userName" />
+            <TableColumn fx:id="issueTypeColumn" prefWidth="110.0" text="issueType" />
+            <TableColumn fx:id="statusColumn" prefWidth="104.0" text="status" />
+            <TableColumn fx:id="dateColumn" prefWidth="125.99993896484375" text="date" />
+        </columns>
+      </TableView>
+      <Label layoutX="50.0" layoutY="308.0" text="Message" />
+      <Label layoutX="50.0" layoutY="27.0" text="ReportType" />
+      <Label layoutX="343.0" layoutY="27.0" text="StartDate" />
+      <Label layoutX="343.0" layoutY="73.0" text="EndDate" />
+   </children>
+</AnchorPane>

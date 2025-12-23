@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="635.0" prefWidth="790.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.applicant.controller.ApplicantTravelHistoryController">
+    <Label layoutX="220.0" layoutY="20.0" text="Add Travel History (Applicant)" textFill="#00a1ec" underline="true">
+        <font>
+            <Font name="System Bold" size="26.0" />
+        </font>
+    </Label>
+
+    <Label layoutX="45.0" layoutY="171.0" prefHeight="18.0" prefWidth="78.0" text="Application Id:" textFill="white" />
+    <TextField fx:id="applicationIdTextField" layoutX="148.0" layoutY="167.0" prefHeight="26.0" prefWidth="175.0" />
+
+    <Label layoutX="395.0" layoutY="171.0" text="Country:" textFill="white" />
+    <TextField fx:id="countryTextField" layoutX="483.0" layoutY="167.0" prefHeight="26.0" prefWidth="192.0" />
+
+    <Label layoutX="18.0" layoutY="228.0" text="From (YYYY-MM-DD):" textFill="white" />
+
+    <Label layoutX="366.0" layoutY="228.0" text="To (YYYY-MM-DD):" textFill="white" />
+    <Button layoutX="19.0" layoutY="300.0" onAction="#saveOnAction" prefHeight="38.0" prefWidth="166.0" style="-fx-background-color: #00a1ec;" text="Save" />
+    <Button layoutX="25.0" layoutY="524.0" onAction="#backToDashboardOnAction" prefHeight="48.0" prefWidth="155.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+    <Label alignment="CENTER" layoutY="622.0" prefHeight="20.0" prefWidth="790.0" style="-fx-background-color: white;" text="eVisa Portal | Agent - Travel" />
+    <DatePicker fx:id="fromDatePicker" layoutX="148.0" layoutY="224.0" />
+    <DatePicker fx:id="toDatePicker" layoutX="483.0" layoutY="224.0" prefHeight="26.0" prefWidth="192.0" />
+    <TableView fx:id="travelHistoryTableView" layoutX="196.0" layoutY="300.0" prefHeight="275.0" prefWidth="572.0">
+        <columns>
+            <TableColumn fx:id="applicationIdTableColumn" prefWidth="105.60005187988281" text="Client ID" />
+            <TableColumn fx:id="countryTableColumn" prefWidth="167.20001220703125" text="Country" />
+            <TableColumn fx:id="fromTableColumn" prefWidth="149.60003662109375" text="From" />
+            <TableColumn fx:id="toTableColumn" prefWidth="153.60003662109375" text="To" />
+        </columns>
+    </TableView>
+   <TextArea layoutX="144.0" layoutY="68.0" prefHeight="66.0" prefWidth="183.0" text="Demo Application ID:&#10;9555">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </TextArea>
+</AnchorPane>

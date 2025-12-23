@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="674.0" prefWidth="763.0" style="-fx-background-color: #36454F;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.visa_management_portal.tanjil.applicant.controller.ApplyVisaController">
+    <Label layoutX="240.0" layoutY="20.0" text="Apply for Visa" textFill="#00a1ec" underline="true">
+        <font>
+            <Font name="System Bold" size="26.0" />
+        </font>
+    </Label>
+
+    <Label layoutX="58.0" layoutY="97.0" text="Visa Type:" textFill="white" />
+    <ComboBox fx:id="visaTypeComboBox" layoutX="198.0" layoutY="92.0" prefWidth="200.0" />
+
+    <Label layoutX="55.0" layoutY="302.0" text="Nationality:" textFill="white" />
+    <TextField fx:id="nationalityTextField" layoutX="200.0" layoutY="298.0" prefWidth="200.0" />
+
+    <Label layoutX="47.0" layoutY="245.0" text="Mother Language:" textFill="white" />
+    <TextField fx:id="motherLangTextField" layoutX="198.0" layoutY="241.0" prefWidth="200.0" />
+
+    <Label layoutX="58.0" layoutY="143.0" text="Full Name:" textFill="white" />
+    <TextField fx:id="fullNameTextField" layoutX="198.0" layoutY="138.0" prefHeight="26.0" prefWidth="200.0" />
+
+    <Label layoutX="52.0" layoutY="361.0" text="Passport No.:" textFill="white" />
+    <TextField fx:id="passportNoTextField" layoutX="202.0" layoutY="357.0" prefWidth="200.0" />
+
+    <Label layoutX="53.0" layoutY="451.0" text="Purpose of Visit:" textFill="white" />
+    <TextArea fx:id="purposeOfVisitTextArea" layoutX="200.0" layoutY="421.0" prefHeight="94.0" prefWidth="478.0" />
+
+    <Label layoutX="63.0" layoutY="554.0" text="Gender:" textFill="white" />
+    <RadioButton fx:id="maleRadioButton" layoutX="203.0" layoutY="552.0" text="Male" textFill="white">
+        <toggleGroup>
+            <ToggleGroup fx:id="genderGroup" />
+        </toggleGroup>
+    </RadioButton>
+    <RadioButton fx:id="femaleRadioButton" layoutX="273.0" layoutY="552.0" text="Female" textFill="white" toggleGroup="$genderGroup" />
+
+    <Button layoutX="258.0" layoutY="597.0" onAction="#submitOnAction" prefHeight="37.0" prefWidth="130.0" style="-fx-background-color: #00a1ec;" text="Submit" />
+
+    <Button layoutX="513.0" layoutY="597.0" onAction="#backToDashboardOnAction" prefHeight="37.0" prefWidth="130.0" style="-fx-background-color: #00a1ec;" text="Back to Dashboard" />
+
+    <Label alignment="CENTER" layoutY="654.0" prefHeight="20.0" prefWidth="763.0" style="-fx-background-color: white;" text="eVisa Portal | Applicant Module" />
+   <Label layoutX="47.0" layoutY="190.0" text="Contact E-mail:" textFill="white" />
+   <TextField fx:id="contactEmailTextField" layoutX="198.0" layoutY="185.0" prefHeight="26.0" prefWidth="200.0" />
+</AnchorPane>
